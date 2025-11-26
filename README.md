@@ -1,4 +1,4 @@
-?---
+---
 title: Astrx Mcp Server
 emoji: 📉
 colorFrom: yellow
