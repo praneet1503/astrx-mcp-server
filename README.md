@@ -1,4 +1,4 @@
----
+?---
 title: Astrx Mcp Server
 emoji: 📉
 colorFrom: yellow
@@ -36,18 +36,28 @@ A minimal Model Context Protocol (MCP) server that serves animal data.
 
 ## Running the Server
 
-### Option 1: Local HTTP Server (SSE)
-To run the server locally with `uvicorn` (useful for testing or HTTP clients):
+### Option 1: Hugging Face Space (Cloud)
+The server is deployed on Hugging Face Spaces.
+- **Web UI**: The root URL displays a Gradio interface to test the tools.
+- **MCP Endpoints**:
+  - SSE: `https://<space-url>/mcp/sse`
+  - Messages: `https://<space-url>/mcp/messages`
+
+### Option 2: Local HTTP Server
+To run the server locally with `uvicorn`:
 
 ```bash
-uvicorn server:app --reload
+uvicorn app:app --reload
 ```
 The server will be available at `http://localhost:8000`.
-- SSE Endpoint: `http://localhost:8000/sse`
-- Messages Endpoint: `http://localhost:8000/messages`
+- Web UI: `http://localhost:8000/`
+- SSE Endpoint: `http://localhost:8000/mcp/sse`
+- Messages Endpoint: `http://localhost:8000/mcp/messages`
 
-### Option 2: Claude Desktop (Stdio)
-To connect this server to Claude Desktop:
+### Option 3: Claude Desktop (Stdio)
+To connect this server to Claude Desktop, you can use the `mcp` CLI if installed, or run it as a python script if configured for stdio (currently optimized for HTTP/SSE).
+
+For local development with Claude Desktop, it is recommended to use the SSE endpoint via a proxy or by running locally and pointing Claude to the local SSE URL.
 
 1. Open your Claude Desktop configuration file:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
