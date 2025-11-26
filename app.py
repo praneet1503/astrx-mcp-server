@@ -6,6 +6,7 @@ import logging
 import os
 import sys
 from typing import List, Dict, Optional, Any
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -70,7 +71,13 @@ except Exception as e:
     logger.error(f"Failed to initialize FastMCP: {e}", exc_info=True)
 
 # --- FastAPI App Setup ---
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Lifespan context manager for startup and shutdown events."""
+    load_data()
+    yield
+
+app = FastAPI(lifespan=lifespan)
 
 # 1. CORS Middleware
 app.add_middleware(
@@ -93,10 +100,10 @@ async def catch_exceptions_middleware(request: Request, call_next):
             content={"detail": "Internal Server Error", "error": str(e)}
         )
 
-# 3. Startup Event
-@app.on_event("startup")
-async def startup_event():
-    load_data()
+# 3. Startup Event (Removed in favor of lifespan)
+# @app.on_event("startup")
+# async def startup_event():
+#     load_data()
 
 # 4. Health Check
 @app.get("/health")

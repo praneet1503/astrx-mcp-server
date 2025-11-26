@@ -3,8 +3,8 @@ title: Astrx Mcp Server
 emoji: 📉
 colorFrom: yellow
 colorTo: pink
-sdk: gradio
-sdk_version: 6.0.1
+sdk: docker
+app_port: 7860
 app_file: app.py
 pinned: false
 license: apache-2.0
