@@ -60,6 +60,19 @@ async def log_exceptions(request: Request, call_next):
         logger.error(f"Unhandled exception: {e}", exc_info=True)
         raise e
 
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
+# Debug endpoint to list routes
+@app.get("/debug")
+async def debug_routes():
+    return {
+        "routes": [{"path": route.path, "name": route.name} for route in app.routes],
+        "mounts": [route.path for route in app.routes if getattr(route, "path", "").startswith("/mcp")]
+    }
+
 # Mount MCP app at /mcp to avoid conflicts
 # Endpoints will be /mcp/sse and /mcp/messages
 try:
@@ -82,9 +95,16 @@ with gr.Blocks() as demo:
     btn = gr.Button("List Animals")
     btn.click(fn=list_animals, outputs=output)
 
-# Mount Gradio app at root
-logger.info("Mounting Gradio app...")
-app = gr.mount_gradio_app(app, demo, path="/")
+# Mount Gradio app
+# We mount it at /gradio to avoid conflicts with the root path or other mounts
+logger.info("Mounting Gradio app at /gradio...")
+app = gr.mount_gradio_app(app, demo, path="/gradio")
+
+# Redirect root to Gradio
+from fastapi.responses import RedirectResponse
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/gradio")
 
 if __name__ == "__main__":
     port = int(os.getenv("GRADIO_SERVER_PORT", "7860"))
