@@ -1,20 +1,22 @@
+from __future__ import annotations
 import gradio as gr
 import uvicorn
 import json
 import logging
 import os
 import sys
+from typing import List, Dict, Optional, Any
 from fastapi import FastAPI, Request
-from mcp.server.fastmcp import FastMCP
+from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 
-# Load configuration
+# --- Configuration & Logging ---
 try:
     with open("config.json", "r") as f:
         config = json.load(f)
 except FileNotFoundError:
     config = {"logging_level": "INFO"}
 
-# Configure logging
 logging.basicConfig(
     level=config.get("logging_level", "INFO"),
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -22,92 +24,124 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Define the tool
-def list_animals() -> list[dict]:
-    """
-    Returns a list of animals with their details.
-    """
+# --- Global Data Cache ---
+ANIMALS_CACHE: List[Dict[str, Any]] = []
+
+def load_data():
+    """Loads animals data into the global cache."""
+    global ANIMALS_CACHE
     data_path = os.path.join(os.path.dirname(__file__), "data", "animals.json")
-    logger.info(f"Reading data from {data_path}")
     try:
-        if not os.path.exists(data_path):
-            logger.error(f"Data file not found at {data_path}")
-            return [{"name": "Error", "description": "Data file not found"}]
-            
-        with open(data_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            logger.info(f"Successfully loaded {len(data)} animals")
-            return data
+        if os.path.exists(data_path):
+            with open(data_path, "r", encoding="utf-8") as f:
+                ANIMALS_CACHE = json.load(f)
+            logger.info(f"Successfully loaded {len(ANIMALS_CACHE)} animals into cache.")
+        else:
+            logger.warning(f"Data file not found at {data_path}. Cache is empty.")
+            ANIMALS_CACHE = []
     except Exception as e:
-        logger.error(f"Error reading data file: {e}", exc_info=True)
-        return [{"name": "Error", "description": str(e)}]
+        logger.error(f"Error loading data file: {e}", exc_info=True)
+        ANIMALS_CACHE = []
 
-# Initialize FastMCP server
-logger.info("Initializing FastMCP server...")
-mcp = FastMCP("Animal Service")
-mcp.tool()(list_animals)
+# --- Tool Definition ---
+def list_animals() -> List[Dict[str, Any]]:
+    """
+    Returns a list of animals with their details from the in-memory cache.
+    """
+    # If cache is empty, try reloading (in case file was added later)
+    if not ANIMALS_CACHE:
+        load_data()
+    
+    if not ANIMALS_CACHE:
+         return [{"name": "Error", "description": "No data available"}]
+         
+    return ANIMALS_CACHE
 
-# Create main FastAPI app
+# --- MCP Server Setup (Conditional) ---
+mcp = None
+try:
+    from mcp.server.fastmcp import FastMCP
+    logger.info("Initializing FastMCP server...")
+    mcp = FastMCP("Animal Service")
+    mcp.tool()(list_animals)
+except ImportError:
+    logger.error("Failed to import FastMCP. MCP features will be disabled.")
+except Exception as e:
+    logger.error(f"Failed to initialize FastMCP: {e}", exc_info=True)
+
+# --- FastAPI App Setup ---
 app = FastAPI()
 
-# Add middleware to log errors
+# 1. CORS Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins for Spaces/Dev
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# 2. Error Handling Middleware
 @app.middleware("http")
-async def log_exceptions(request: Request, call_next):
+async def catch_exceptions_middleware(request: Request, call_next):
     try:
-        response = await call_next(request)
-        return response
+        return await call_next(request)
     except Exception as e:
         logger.error(f"Unhandled exception: {e}", exc_info=True)
-        raise e
+        return JSONResponse(
+            status_code=500,
+            content={"detail": "Internal Server Error", "error": str(e)}
+        )
 
-# Health check endpoint
+# 3. Startup Event
+@app.on_event("startup")
+async def startup_event():
+    load_data()
+
+# 4. Health Check
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy"}
-
-# Debug endpoint to list routes
-@app.get("/debug")
-async def debug_routes():
     return {
-        "routes": [{"path": route.path, "name": route.name} for route in app.routes],
-        "mounts": [route.path for route in app.routes if getattr(route, "path", "").startswith("/mcp")]
+        "status": "healthy", 
+        "mcp_enabled": mcp is not None,
+        "animals_count": len(ANIMALS_CACHE)
     }
 
-# Mount MCP app at /mcp to avoid conflicts
-# Endpoints will be /mcp/sse and /mcp/messages
-try:
-    mcp_app = mcp.sse_app()
-    app.mount("/mcp", mcp_app)
-    logger.info("Mounted MCP app at /mcp")
-except Exception as e:
-    logger.error(f"Failed to mount MCP app: {e}", exc_info=True)
+# 5. Mount MCP (if available)
+if mcp:
+    try:
+        mcp_app = mcp.sse_app()
+        app.mount("/mcp", mcp_app)
+        logger.info("Mounted MCP app at /mcp")
+    except Exception as e:
+        logger.error(f"Failed to mount MCP app: {e}", exc_info=True)
 
-# Create Gradio interface
+# --- Gradio Interface ---
 with gr.Blocks() as demo:
     gr.Markdown("# Animal MCP Server")
-    gr.Markdown("## Status: Running")
-    gr.Markdown("The MCP server is running and accessible at the following endpoints:")
-    gr.Markdown("- **SSE Endpoint**: `/mcp/sse`")
-    gr.Markdown("- **Messages Endpoint**: `/mcp/messages`")
+    gr.Markdown(f"## Status: {'Running' if mcp else 'Running (MCP Disabled)'}")
     
+    if mcp:
+        gr.Markdown("The MCP server is active at:")
+        gr.Markdown("- **SSE Endpoint**: `/mcp/sse`")
+        gr.Markdown("- **Messages Endpoint**: `/mcp/messages`")
+    else:
+        gr.Markdown("⚠️ **MCP Server is not active** (Import failed or initialization error).")
+
     gr.Markdown("### Test Tool")
     output = gr.JSON(label="Animals List")
     btn = gr.Button("List Animals")
-    btn.click(fn=list_animals, outputs=output)
+    # Fix: outputs should be a list or single component, but explicit list is safer
+    btn.click(fn=list_animals, outputs=[output])
 
-# Mount Gradio app
-# We mount it at /gradio to avoid conflicts with the root path or other mounts
-logger.info("Mounting Gradio app at /gradio...")
-app = gr.mount_gradio_app(app, demo, path="/gradio")
-
-# Redirect root to Gradio
-from fastapi.responses import RedirectResponse
-@app.get("/")
-async def root():
-    return RedirectResponse(url="/gradio")
+# 6. Mount Gradio at Root
+# This is critical for HF Spaces to render the UI correctly without 404s
+logger.info("Mounting Gradio app at root / ...")
+app = gr.mount_gradio_app(app, demo, path="/")
 
 if __name__ == "__main__":
-    port = int(os.getenv("GRADIO_SERVER_PORT", "7860"))
-    host = os.getenv("GRADIO_SERVER_NAME", "0.0.0.0")
+    # Use PORT env var for HF Spaces, fallback to 7860
+    port = int(os.getenv("PORT", "7860"))
+    host = "0.0.0.0"
     print(f"Starting server on {host}:{port}")
     uvicorn.run(app, host=host, port=port)
