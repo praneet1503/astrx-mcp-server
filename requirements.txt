@@ -1,0 +1,7 @@
+mcp
+uvicorn
+starlette
+requests
+beautifulsoup4
+gradio
+fastapi

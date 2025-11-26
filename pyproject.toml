@@ -1,0 +1,14 @@
+[project]
+name = "animal-mcp-server"
+version = "0.1.0"
+description = "A minimal MCP server serving animal data"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp",
+    "uvicorn",
+    "starlette" # Required for FastMCP SSE support
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

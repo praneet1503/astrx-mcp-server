@@ -1,0 +1,4422 @@
+[
+  {
+    "name": "Golden Retriever",
+    "species": "Unknown",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/golden-retriever/"
+    ]
+  },
+  {
+    "name": "Labrador Retriever",
+    "species": "Unknown",
+    "description": "Labrador Retrievers are a gun dog breed that was bred from Canadian fishing dogs found in the Labrador Territory, northwest of Newfoundland, and in Newfoundland itself. These ancestors of today’s Labrador were also known as St. John’s Water dogs, after the capital of Newfoundland.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/labrador-retriever/"
+    ]
+  },
+  {
+    "name": "German Shepherd",
+    "species": "Dog",
+    "description": "The German Shepherd,[a] also known in Britain as an Alsatian, is a German breed of working dog of medium to large size. It is characterized by its intelligent and obedient nature.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/German_Shepherd"
+    ]
+  },
+  {
+    "name": "Bulldog",
+    "species": "Dog",
+    "description": "",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bulldog"
+    ]
+  },
+  {
+    "name": "Poodle",
+    "species": "Dog",
+    "description": "",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Poodle"
+    ]
+  },
+  {
+    "name": "Beagle",
+    "species": "Dog",
+    "description": "The Beagle is a small breed of scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting rabbit or hare, known as beagling. Possessing a great sense of smell and superior tracking instincts, the beagle is the primary breed used as a detection dog for prohibited agricultural imports and foodstuffs in quarantine around the world. The beagle is a popular pet due to its size and amiable temperament.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Beagle"
+    ]
+  },
+  {
+    "name": "Rottweiler",
+    "species": "Dog",
+    "description": "The Rottweiler (/ˈrɒtwaɪlər/, UK also /-vaɪlər/, German: [ˈʁɔtvaɪ̯lɐ] ⓘ) is a breed of domestic mastiff type dog, regarded as medium-to-large or large. The dogs were known in German as Rottweiler Metzgerhund, meaning Rottweil butchers' dogs, because their main use was to herd livestock and pull carts laden with butchered meat to market. This continued until the mid-19th century when railways replaced droving. Although still used to herd stock in many parts of the world, Rottweilers are now also used as search and rescue dogs, guard dogs, and police dogs.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Rottweiler"
+    ]
+  },
+  {
+    "name": "Dachshund",
+    "species": "Dog",
+    "description": "",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Dachshund"
+    ]
+  },
+  {
+    "name": "Siberian Husky",
+    "species": "Dog",
+    "description": "The Siberian Husky is a breed of medium-sized working sled dog. The breed belongs to the Spitz genetic family. It is recognizable by its thickly furred double coat, erect triangular ears, and distinctive markings, and is smaller than the similar-looking Alaskan Malamute.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Siberian_Husky"
+    ]
+  },
+  {
+    "name": "Great Dane",
+    "species": "Dog",
+    "description": "The Great Dane is a German breed of large mastiff-sighthound, which descends from hunting dogs of the Middle Ages used to hunt bears, wild boar, and deer. They were also used as guardian dogs of German nobility. It is one of the two largest dog breeds in the world, along with the Irish Wolfhound.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Great_Dane"
+    ]
+  },
+  {
+    "name": "Siamese cat",
+    "species": "Cat",
+    "description": "The Siamese cat (Thai: แมวไทย, Maeo Thai; แมวสยาม, Maeo Sayam; แมววิเชียรมาศ, Maeo Wichien Maat) is one of the first distinctly recognised breeds of Asian cat. It derives from the Wichianmat landrace. The Siamese cat is one of several varieties of cats native to Thailand (known as Siam before 1939). The original Siamese became one of the most popular breeds in Europe and North America in the 19th century. Siamese cats have a distinctive colourpoint coat, resulting from a temperature-sensitive type of albinism.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Siamese_cat"
+    ]
+  },
+  {
+    "name": "Persian cat",
+    "species": "Cat",
+    "description": "The Persian cat, also known as the Persian Longhair or simply Persian, is a long-haired traditional breed of cat characterised by a round face and petite, but not flat and not smashed in, muzzle. The short flat nose was created in the US from in-breeding and causes breathing difficulties in the breed, whereas, the traditional Persian breed has a petite nose which enables them to breathe without difficulties.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Persian_cat"
+    ]
+  },
+  {
+    "name": "Maine Coon",
+    "species": "Cat",
+    "description": "The Maine Coon is a large domesticated cat breed. One of the oldest natural breeds in North America, it originated in the U.S. state of Maine, where it is the official state cat. The Maine Coon is a large and social cat, commonly referred to as \"the gentle giant.\" The Maine Coon is predominantly known for its size and dense coat of fur which helps it survive in the harsh climate of Maine. The Maine Coon is often cited as having \"dog-like\" characteristics.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Maine_Coon"
+    ]
+  },
+  {
+    "name": "Ragdoll",
+    "species": "Cat",
+    "description": "The Ragdoll is a breed of cat with a distinct colorpoint coat and blue eyes. Its morphology is large and weighty, and it has a semi-long and silky soft coat. American breeder Ann Baker developed Ragdolls in the 1960s. They are best known for their docile, placid temperament and affectionate nature. The name Ragdoll is derived from the tendency of individuals from the original breeding stock to go limp and relaxed when picked up. The breed is particularly popular in both the United Kingdom and the United States.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Ragdoll"
+    ]
+  },
+  {
+    "name": "Bengal cat",
+    "species": "Cat",
+    "description": "",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bengal_cat"
+    ]
+  },
+  {
+    "name": "Sphynx cat",
+    "species": "Cat",
+    "description": "The Sphynx cat (pronounced SFINKS, /ˈsfɪŋks/ ⓘ) also known as the Canadian Sphynx, is a breed of cat known for its lack of fur. Hairlessness in cats is a naturally occurring genetic mutation, and the Sphynx was developed through selective breeding of these animals, starting in the 1960s.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Sphynx_cat"
+    ]
+  },
+  {
+    "name": "British Shorthair",
+    "species": "Cat",
+    "description": "The British Shorthair is the pedigree version of the traditional British domestic cat, with a distinctively stocky body, thick coat, and broad face. The most familiar colour variant is the \"British Blue\", with a solid grey-blue coat, copper-coloured eyes, and a medium-sized tail. The breed has also been bred in a wide range of other colours and patterns, including tabby and colourpoint.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/British_Shorthair"
+    ]
+  },
+  {
+    "name": "Abyssinian cat",
+    "species": "Cat",
+    "description": "The Abyssinian /æbɪˈsɪniən/ is a breed of cat with a distinctive \"ticked\" tabby coat, in which individual hairs are banded with different colours. They are also known simply as Abys.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Abyssinian_cat"
+    ]
+  },
+  {
+    "name": "Scottish Fold",
+    "species": "Cat",
+    "description": "The Scottish Fold is a distinctive breed of domestic cat characterised by a natural dominant gene mutation associated with osteochondrodysplasia. This genetic anomaly affects cartilage throughout the body, causing the ears to \"fold\", bending forward and down towards the front of the head. While this trait contributes to the breed's unique appearance, often described as \"owl-like\", it also causes health problems.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Scottish_Fold"
+    ]
+  },
+  {
+    "name": "Burmese cat",
+    "species": "Cat",
+    "description": "The Burmese cat (Burmese: ဗမာကြောင်, Băma kyaung, Thai: แมวพม่า or Suphalak, RTGS: Thongdaeng or Supphalak, meaning copper colour) is a breed of domestic cat, originating in Burma, believed to have its roots near the Thai–Burma border and developed in the United States and Britain.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Burmese_cat"
+    ]
+  },
+  {
+    "name": "Bald Eagle",
+    "species": "Unknown",
+    "description": "Bald eagles have 20/5 vision, which is much sharper than a human's.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Accipitriformes",
+      "Family": "Accipitridae",
+      "Genus": "Haliaeetus",
+      "Species": "H. leucocephalus",
+      "Binomial name": "Haliaeetus leucocephalus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/bald-eagle/",
+      "https://nationalzoo.si.edu/animals/bald-eagle",
+      "https://a-z-animals.com/animals/bald-eagle/"
+    ]
+  },
+  {
+    "name": "Peregrine Falcon",
+    "species": "Unknown",
+    "description": "“The Peregrine Falcon is a small, deadly, and powerful aerial diver.”",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Falconiformes",
+      "Family": "Falconidae",
+      "Genus": "Falco",
+      "Species": "F. peregrinus"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/peregrine-falcon/",
+      "https://animalcorner.org/animals/peregrine-falcon/"
+    ]
+  },
+  {
+    "name": "Hummingbird",
+    "species": "Bird",
+    "description": "Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae. With approximately 375 species and 113 genera, they occur from Alaska to Tierra del Fuego, but most species are found in Central and South America. As of 2025, 21 hummingbird species are listed as endangered or critically endangered, with about 191 species declining in population.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Hummingbird"
+    ]
+  },
+  {
+    "name": "Peafowl",
+    "species": "Bird",
+    "description": "Peafowl is a common name for two bird species of the genus Pavo and one species of the closely related genus Afropavo within the tribe Pavonini of the family Phasianidae (the pheasants and their allies). Male peafowl are referred to as peacocks, and female peafowl are referred to as peahens. Despite this, peacock is usually used to refer to both sexes, in common language.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Peafowl"
+    ]
+  },
+  {
+    "name": "Penguin",
+    "species": "Bird",
+    "description": "When one thinks of Antarctic wildlife, penguins are often the first animals that come to mind.Penguinsare birds with black and white feathers and a funny waddle. However, unlike most birds, penguins are unable to fly. Penguins spend as much as 75% of their time underwater, searching for food in the ocean. When they are in the water, they dive and flap their wings as if they are flying under water.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Clade": "Austrodyptornithes",
+      "Order": "Sphenisciformes",
+      "Family": "Spheniscidae"
+    },
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Penguin",
+      "https://animalcorner.org/animals/penguin/"
+    ]
+  },
+  {
+    "name": "Owl",
+    "species": "Bird",
+    "description": "Owls are birds from the order Strigiformes (/ˈstrɪdʒəfɔːrmiːz/), which includes over 200 species of mostly solitary and nocturnal birds of prey typified by an upright stance, a large, broad head, binocular vision, binaural hearing, sharp talons, and feathers adapted for silent flight. Exceptions include the diurnal northern hawk-owl and the gregarious burrowing owl.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Owl"
+    ]
+  },
+  {
+    "name": "Parrot",
+    "species": "Bird",
+    "description": "Parrots (Psittaciformes), also known as psittacines (/ˈsɪtəsaɪnz/), are birds with a strong curved beak, upright stance, and clawed feet.[a] They are classified in four families that contain roughly 410 species in 101 genera, found mostly in tropical and subtropical regions. The four families are the Psittaculidae (Old World parrots), Psittacidae (African and New World parrots), Cacatuidae (cockatoos), and Strigopidae (New Zealand parrots). One-third of all parrot species are threatened by extinction, with a higher aggregate extinction risk (IUCN Red List Index) than any other comparable bird group. Parrots have a generally pantropical distribution with several species inhabiting temperate regions as well. The greatest diversity of parrots is in South America and Australasia.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Parrot"
+    ]
+  },
+  {
+    "name": "Flamingo",
+    "species": "Unknown",
+    "description": "“A flamingo’s feathers don’t turn pink until it reaches 2 or 3 years old”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/flamingo/"
+    ]
+  },
+  {
+    "name": "Swan",
+    "species": "Bird",
+    "description": "",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Swan"
+    ]
+  },
+  {
+    "name": "Woodpecker",
+    "species": "Bird",
+    "description": "Woodpeckers are part of the bird family Picidae, which also includes the piculets, wrynecks and sapsuckers. Members of this family are found worldwide, except for Australia, New Guinea, New Zealand, Madagascar and the extreme polar regions. Most species live in forests or woodland habitats, although a few species are known that live in treeless areas, such as rocky hillsides and deserts, and the Gila woodpecker specializes in exploiting cacti.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Woodpecker"
+    ]
+  },
+  {
+    "name": "Cedar Waxwing",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Their feathers have red, waxy tips that can be hard to identify unless you’re up close.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cedar-waxwing/"
+    ]
+  },
+  {
+    "name": "Ground Squirrel",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Ground squirrels are adept excavators and can dig colonial burrows larger than football fields!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/ground-squirrel/"
+    ]
+  },
+  {
+    "name": "Thylacoleo carnifex",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Thylacoleo carnifex was the largest carnivorous mammal in Australia",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/thylacoleo-carnifex/"
+    ]
+  },
+  {
+    "name": "Western Blind Snake",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The western blind snake is a member of one of the oldest snake families. They are so ancient that they still have remnants of pelvic girdles that you can see as tiny spurs if you flip the snake over. Harmless to humans but murder on colonies of ants and termites, these exceedingly slender snakes spend much of their lives underground and out of sight.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/western-blind-snake/"
+    ]
+  },
+  {
+    "name": "Schipperke",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Schipperkes are sometimes called Belgium barge dogs because they hunted rodents on barges.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/schipperke/"
+    ]
+  },
+  {
+    "name": "Swedish Lapphund",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [
+      "Swedish Lapphund"
+    ],
+    "source_urls": [
+      "https://a-z-animals.com/animals/swedish-lapphund/"
+    ]
+  },
+  {
+    "name": "Moonglow Boa",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "“Moonglow boa constrictors are designer boa morphs that are white or nearly white.“",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/moonglow-boa/"
+    ]
+  },
+  {
+    "name": "Bombay",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The Bombay is a hybrid cat with a distinctive jet-black appearance.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/bombay/"
+    ]
+  },
+  {
+    "name": "Madagascar Tree Boa",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The Madagascar tree boa is a beautiful nonvenomous snake that is born with a bright red base color that changes to green as it matures. This medium-sized boa sleeps in the trees and eats a variety of rodents, small mammals, birds, lizards, and eggs.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/madagascar-tree-boa/"
+    ]
+  },
+  {
+    "name": "Basset Fauve de Bretagne",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "A friendly and intelligent hunting dog that loves nothing more than to spend time with its owner.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/basset-fauve-de-bretagne/"
+    ]
+  },
+  {
+    "name": "Pied Tamarin",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Pied tamarins are endangered primates in northwest Brazil. The Yoda-looking species, who enjoy strong social bonds, also go by Brazilian bare-faced tamarins.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/pied-tamarin/"
+    ]
+  },
+  {
+    "name": "Surgeonfish",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Paracanthurus hepatus, the palette surgeonfish or bluetang, is the only member of its genus",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/surgeonfish/"
+    ]
+  },
+  {
+    "name": "Repenomamus",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "One of the biggest mammals of the dinosaur age that used to eat other dinosaurs",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/repenomamus/"
+    ]
+  },
+  {
+    "name": "Prairie Dog",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The prairie dog sits at the center of the entire ecosystem of the American prairie.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/prairie-dog/"
+    ]
+  },
+  {
+    "name": "Locust",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The word “locust” is given to certain types of grasshoppers with short horns.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/locust/"
+    ]
+  },
+  {
+    "name": "Aye-aye",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The aye-aye is a species of Lemur that is found inhabiting the rainforests of Madagascar. The aye-aye is not only the largest nocturnal primate in the world but is also one of the most unique.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/aye-aye/"
+    ]
+  },
+  {
+    "name": "Wolf Spider",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The wolf spider is a family of carnivorous spiders that have adapted to most of the world’s major ecosystems.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Subphylum": "Chelicerata",
+      "Class": "Arachnida",
+      "Order": "Araneae",
+      "Infraorder": "Araneomorphae",
+      "Superfamily": "Lycosoidea",
+      "Family": "Lycosidae"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/wolf-spider/",
+      "https://animalcorner.org/animals/wolf-spider/"
+    ]
+  },
+  {
+    "name": "Great Hammerhead Shark",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Great hammerhead sharks have a 360-degree view because their eyes are situated on the ends of their mallet-like heads.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/great-hammerhead-shark/"
+    ]
+  },
+  {
+    "name": "Caterpillar",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "It is estimated that there are over 20,000 species of caterpillars in this animal group, and there may be many more left to be discovered.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/caterpillar/"
+    ]
+  },
+  {
+    "name": "Texas Heeler",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Though they are loyal to their family, these dogs can be shy around strangers.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/texas-heeler/"
+    ]
+  },
+  {
+    "name": "Fruit Fly",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Fruit flies are among the most common research animals in the world",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/fruit-fly/"
+    ]
+  },
+  {
+    "name": "Shih Tzu Mix",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Despite having long, flowing hair, Shih Tzus and many of their hybrids are hypoallergenic.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/shih-tzu-mix/"
+    ]
+  },
+  {
+    "name": "Common Furniture Beetle",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "View all of our Common Furniture Beetle pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/common-furniture-beetle/"
+    ]
+  },
+  {
+    "name": "Norwich Terrier",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Though Norwich terriers are small, they have a reputation for being feisty.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/norwichterrier/"
+    ]
+  },
+  {
+    "name": "Blackpoll Warbler",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "A Blackpoll Warbler is a songbird. It’s an omnivore eating mosquitoes, spiders, flies, and fruit. They live in an evergreen forest habitat. One of the most interesting facts about this bird is it travels non-stop on a migration route that proceeds over water.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/blackpoll-warbler/"
+    ]
+  },
+  {
+    "name": "California Tarantula",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "View all of our California Tarantula pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/california-tarantula/"
+    ]
+  },
+  {
+    "name": "Vampire Crab",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Vampire crabs do not depend on saltwater for their development; instead, they live near freshwater rivers and in forests amongst rocks and dense vegetation.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/vampire-crab/"
+    ]
+  },
+  {
+    "name": "King Cobra",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "King cobras measure an average of 11 to 13 feet long. They live in southern China, India, and southeastern Asia. Their habitat includes streams, forests, bamboo thickets, and swamps. This snake is a carnivore eating other snakes, birds, and lizards. King cobras live about 20 years in the wild.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/king-cobra/"
+    ]
+  },
+  {
+    "name": "Great White Shark",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Sharks have lived on the earth longer than almost any other animal — 450 million years — surviving mass extinctions and every other environmental hazard. 3,000 species have lived over a period of nearly half a billion years — making them an evolutionary success story.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Chondrichthyes",
+      "Superorder": "Selachimorpha",
+      "Order": "Lamniformes",
+      "Family": "Lamnidae",
+      "Genus": "Carcharodon",
+      "Species": "C. carcharias",
+      "Binomial name": "Carcharodon carcharias",
+      "": ""
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/great-white-shark/",
+      "https://animalcorner.org/animals/great-white-shark/"
+    ]
+  },
+  {
+    "name": "Eider",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Eiders are sexually dimorphic, with males being larger and more colorful.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eider/"
+    ]
+  },
+  {
+    "name": "Aidi",
+    "species": "Unknown",
+    "description": "The Aidi's cheerful personality and relaxed temperament are just two reasons why this dog is a good choice for families with kids.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/aidi/"
+    ]
+  },
+  {
+    "name": "Tyrannosaurus Rex",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "They had many air pockets in their skeleton which kept them light despite their tremendous size.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/tyrannosaurus-rex/"
+    ]
+  },
+  {
+    "name": "Brown Water Snake",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Has more scales than any other water snake on the continent: 27 to 33 rows of dorsal scales!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/brown-water-snake/"
+    ]
+  },
+  {
+    "name": "Beagle Mix",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Reagles are the best students as they love to learn new tricks, so training them is a breeze.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/beagle-mix/"
+    ]
+  },
+  {
+    "name": "Muskrat",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The muskrat is a feisty rodent that splits its time between water and land.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Cricetidae",
+      "Genus": "Ondatra",
+      "Species": "O. zibethicus",
+      "Binomial name": "Ondatra zibethicus"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/muskrat/",
+      "https://a-z-animals.com/animals/muskrat/"
+    ]
+  },
+  {
+    "name": "Sinosauropteryx",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Sinosauropteryx were prominent in the Cretaceous and Jurassic periods.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/sinosauropteryx/"
+    ]
+  },
+  {
+    "name": "Yellowfin Tuna",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The yellowfin is the second most commonly eaten tuna species in the world.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/yellowfin-tuna/"
+    ]
+  },
+  {
+    "name": "Giant Schnoodle",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Both parents of the Giant Schnoodle are hypoallergenic, making this one of the Doodle breeds that's safest for dander-sensitive owners.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/giant-schnoodle/"
+    ]
+  },
+  {
+    "name": "Sable Black German Shepherd",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "According to the American Kennel Club, the German Shepherd is the second most popular breed in the United States",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/sable-black-german-shepherd/"
+    ]
+  },
+  {
+    "name": "Box Jellyfish",
+    "species": "Unknown",
+    "description": "The Australian box jellyfish is the most venomous marine animal in the world!",
+    "traits": {
+      "Domain": "Eukaryota",
+      "Kingdom": "Animalia",
+      "Phylum": "Cnidaria",
+      "Subphylum": "Medusozoa",
+      "Class": "Cubozoa",
+      "Orders": "CarybdeidaChirodropida",
+      "Families": "AlatinidaeCarukiidaeCarybdeidaeTamoyidaeTripedaliidaeChirodropidaeChiropsalmidaeChiropsellidae",
+      "Genus": "Multiple",
+      "Species": "At least 51 known species - likely to be more"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/box-jellyfish/",
+      "https://animalcorner.org/animals/box-jellyfish/"
+    ]
+  },
+  {
+    "name": "Children’s python",
+    "species": "Unknown",
+    "description": "Children’s python is a species of small nonvenomous snake in the Pythonidae family.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/childrens-python/"
+    ]
+  },
+  {
+    "name": "German Shepherd Guide",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "German Shepherds are fiercely loyal and protective of their families, acting as devoted companions",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/german-shepherd/"
+    ]
+  },
+  {
+    "name": "Eurasian Collared Dove",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The Eurasian collared dove has been extensively studied due to its amazing ability to rapidly colonize new territories.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eurasian-collared-dove/"
+    ]
+  },
+  {
+    "name": "Rat Terrier",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Rat terriers were popular with farmers before 1930 because of their ability to kill rodents.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/rat-terrier/"
+    ]
+  },
+  {
+    "name": "Rock Python",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Rock pythons may have crossbred with the escaped Burmese pythons in Florida.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/rock-python/"
+    ]
+  },
+  {
+    "name": "Stromatolite",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Stromatolites played a key role in the development of life on Earth.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/stromatolite/"
+    ]
+  },
+  {
+    "name": "Squirrel Monkey",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The Squirrel Monkey is the smallest species of New World monkey that is native to the forests and tropical jungles of Central and South America. Measuring only .84 ounces from the top of the head to the base of their tail, these mini monkeys are more than double their size when you include their long tail. Unlike many other species of small monkeys, the tail of the squirrel monkey is not prehensile and therefore cannot be utilized for gripping branches. Rather, their long tail is used to help the squirrel monkey balance when climbing on high branches.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/squirrel-monkey/"
+    ]
+  },
+  {
+    "name": "Huskydoodle",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The Huskydoodle, aka the Huskypoo, belongs to the hybrid group. This dog is a result of breeding a Siberian Husky with a poodle. The history of this hybrid can be traced back to the 1980s when breeders began to make what was referred to as ‘designer dogs.’ Huskydoodles possess the best characteristics of both huskies and poodles.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/huskydoodle/"
+    ]
+  },
+  {
+    "name": "Mouse Spider",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The female mouse spider is rarely seen because they don't leave their burrows.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Subphylum": "Chelicerata",
+      "Class": "Arachnida",
+      "Order": "Araneae",
+      "Infraorder": "Mygalomorphae",
+      "Family": "Actinopodidae",
+      "Genus": "Missulena",
+      "Type species": "M. occatoria",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/mouse-spider/",
+      "https://a-z-animals.com/animals/mouse-spider/"
+    ]
+  },
+  {
+    "name": "Sea Snake",
+    "species": "Unknown",
+    "description": "The sea snake is incredibly venomous, even more than a cobra!”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/sea-snake/"
+    ]
+  },
+  {
+    "name": "Pyrador",
+    "species": "Unknown",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/pyrador/"
+    ]
+  },
+  {
+    "name": "Sharp-Tailed Snake",
+    "species": "Unknown",
+    "description": "This snake uses its sharp tail to steady itself when capturing prey.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/sharp-tailed-snake/"
+    ]
+  },
+  {
+    "name": "Hoopoe",
+    "species": "Unknown",
+    "description": "The hoopoe is a genus of ground-foraging birds with a massive head crest and unusual color scheme.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/hoopoe/"
+    ]
+  },
+  {
+    "name": "Vegavis",
+    "species": "Unknown",
+    "description": "Vegavis was one of the earliest birds to have a sound-producing organ",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/vegavis/"
+    ]
+  },
+  {
+    "name": "Chipoo",
+    "species": "Unknown",
+    "description": "The Chipoo is a cross between a purebred Chihuahua and a purebred Poodle. The common term for this is a designer dog, in which two purebreds are crossed to produce desirable traits from both. The Chihuahua, which originated from Mexico, is a small, short-haired dog with a big, charming personality. The Poodle, which originated from Germany, comes in three sizes (Standard, Miniature, and Toy) and is known for its curly coat, keen intelligence, and athleticism. When crossed together, these two dogs can produce puppies with a wide variety of different characteristics. But owners can usually expect a Chipoo to have smooth, curly, or coarse hair of varying lengths with a brown, blue, black, white, cream, fawn, or silvery gray color.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/chipoo/"
+    ]
+  },
+  {
+    "name": "Bornean Orangutan",
+    "species": "Unknown",
+    "description": "The Bornean Orangutan is one of three species including the Sumatran and the Tapanuli",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/bornean-orangutan/"
+    ]
+  },
+  {
+    "name": "Worm",
+    "species": "Unknown",
+    "description": "Worms are one of the largest groups of invasive species in the world.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/worm/"
+    ]
+  },
+  {
+    "name": "Arsinoitherium",
+    "species": "Unknown",
+    "description": "Arsinoitherium was a twin-horned mammal that looked like a rhino but is more closely related to present-day elephants.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/arsinoitherium/"
+    ]
+  },
+  {
+    "name": "Scarlet Tanager",
+    "species": "Unknown",
+    "description": "Males molt into an olive-yellow color during the fall and winter",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/scarlet-tanager/"
+    ]
+  },
+  {
+    "name": "Tree Frog",
+    "species": "Unknown",
+    "description": "Tree frogs are some of the world’s most whimsical amphibians, thanks to their cute eyes and unique legs and toes that allow them to climb trees easily.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/tree-frog/"
+    ]
+  },
+  {
+    "name": "Lemon Shark",
+    "species": "Unknown",
+    "description": "The Lemon Shark is a vulnerable species commonly found in subtropical waters. They return to the same nursery sites to breed and have electroreceptors that help them hunt fish. They are one of the few sharks known to live in groups.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/lemon-shark/"
+    ]
+  },
+  {
+    "name": "Eastern Turkey (Wild Turkey)",
+    "species": "Unknown",
+    "description": "View all of our Eastern Turkey (Wild Turkey) pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eastern-turkey-wild-turkey/"
+    ]
+  },
+  {
+    "name": "Sarcosuchus",
+    "species": "Unknown",
+    "description": "Sarcosuchus is an extinct genus of crocodyliform reptiles that lived during the Early Cretaceous Period (about 95 to 115 million years ago). The giant reptile was the largest crocodile to have ever lived on the planet. It lived in an area now part of present-day Africa and South America.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/sarcosuchus/"
+    ]
+  },
+  {
+    "name": "Cinnamon Ball Python",
+    "species": "Unknown",
+    "description": "View all of our Cinnamon Ball Python pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cinnamon-ball-python/"
+    ]
+  },
+  {
+    "name": "Coastal Carpet Python",
+    "species": "Unknown",
+    "description": "This subspecies can reach 13 feet, but usually tops out at 9 or 10.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/coastal-carpet-python/"
+    ]
+  },
+  {
+    "name": "Tsetse Fly",
+    "species": "Unknown",
+    "description": "Tsetse flies are large biting flies that live in the tropical regions of Africa.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/tsetse-fly/"
+    ]
+  },
+  {
+    "name": "Springador",
+    "species": "Unknown",
+    "description": "The parental stock Labrador Retriever was nearly wiped out by home country tax policies but the breed found rescue and recovery in foreign lands, particularly in Great Britain.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/springador/"
+    ]
+  },
+  {
+    "name": "Pike Fish",
+    "species": "Unknown",
+    "description": "The pike is a long-bodied and aggressive northern freshwater fish that lies in wait near the bottom of the water for its quarry to pass by so it can snatch them up in the blink of an eye. The term pike, which originated centuries ago before taxonomy was a true science, has sown quite a lot of confusion. All known pike fish belong to a single genus called Esox, but this genus also includes the closely related pickerel and the muskellunge. Together, they make up a broad category of pike-like fish.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/pike-fish/"
+    ]
+  },
+  {
+    "name": "Boelen’s python",
+    "species": "Unknown",
+    "description": "Boelen’s python is a native of New Guinea that is still a bit of a mystery to science.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/boelens-python/"
+    ]
+  },
+  {
+    "name": "Bactrian Camel",
+    "species": "Unknown",
+    "description": "Jeff Kubina from Columbia, Maryland, United States., CC BY-SA 2.0, via Wikimedia Commons",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/bactrian-camel/"
+    ]
+  },
+  {
+    "name": "Cat Snake",
+    "species": "Unknown",
+    "description": "Some cat snakes have a prehensile tail that helps them climb into trees.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cat-snake/"
+    ]
+  },
+  {
+    "name": "Mayan Cichlid",
+    "species": "Unknown",
+    "description": "Mayan cichlids live longer in captivity than they do in the wild.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/mayan-cichlid/"
+    ]
+  },
+  {
+    "name": "Woodrat",
+    "species": "Unknown",
+    "description": "The woodrat, also called the packrat or the trade rat, is famous for picking up or even stealing man-made objects and using them to build its nests and dens. The accumulated trash thrown out of these dens over time can tell scientists the history of a place.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/woodrat/"
+    ]
+  },
+  {
+    "name": "Newt",
+    "species": "Unknown",
+    "description": "“Newts are able to regrow legs, eyes, intestines and other organs”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/newt/"
+    ]
+  },
+  {
+    "name": "Terror Bird",
+    "species": "Unknown",
+    "description": "Though terror birds were flightless, their wings featured an unusual sharp claw which they could use as a weapon.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/terror-bird/"
+    ]
+  },
+  {
+    "name": "Russian Blue",
+    "species": "Unknown",
+    "description": "The Russian blue cat is also known as the Archangel Blue cat, and is thought to have originated from the port of Arkhangelsk in Russia.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/russian-blue/"
+    ]
+  },
+  {
+    "name": "Danios",
+    "species": "Unknown",
+    "description": "These fish make a popular choice for aquarium hobbyists due to their hardy nature.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/danios/"
+    ]
+  },
+  {
+    "name": "Tropicbird",
+    "species": "Unknown",
+    "description": "Tropicbirds are the common name given to one of three species of seafaring birds that are part of the Phaethontidae family.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/tropicbird/"
+    ]
+  },
+  {
+    "name": "Horn Shark",
+    "species": "Unknown",
+    "description": "The horn shark has a tough exterior and sharp spines to protect itself.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/horn-shark/"
+    ]
+  },
+  {
+    "name": "Cervalces latifrons (Broad-Fronted Moose)",
+    "species": "Unknown",
+    "description": "Cervalces latifrons are the largest species of deer that ever existed.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cervalces-latifrons-broad-fronted-moose/"
+    ]
+  },
+  {
+    "name": "Yarara",
+    "species": "Unknown",
+    "description": "This robust-bodied pit viper belongs to one of the most dangerous of the snake genera. Its venom quickly and efficiently kills its prey, and even a small amount can do terrible damage to the human body.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/yarara/"
+    ]
+  },
+  {
+    "name": "Teddy Bear Hamster",
+    "species": "Unknown",
+    "description": "“A teddy bear hamster can stuff its cheek pouches with an amount of food equal to 20 percent of its body weight”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/teddy-bear-hamster/"
+    ]
+  },
+  {
+    "name": "Flathead Catfish",
+    "species": "Unknown",
+    "description": "The only predators that prey on flathead catfish are members of their own species and humans who catch them for commercial and recreational purposes.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/flathead-catfish/"
+    ]
+  },
+  {
+    "name": "Least Flycatcher",
+    "species": "Unknown",
+    "description": "The least flycatcher is a small species of bird that mainly eats insects. Despite their size, they are territorial. This means that they are prone to aggression toward other birds, including those much larger than themselves. Least flycatchers, like many other passerines, are a migratory species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/least-flycatcher/"
+    ]
+  },
+  {
+    "name": "Jagdterrier",
+    "species": "Unknown",
+    "description": "The jagdterrier, also known as the Deutscher (meaning German) jagdterrier, is a German hunting dog that loves its job. A high-energy, courageous, and highly trainable pup, this dog’s name literally translates to hunting terrier.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/jagdterrier/"
+    ]
+  },
+  {
+    "name": "Lake Sturgeon",
+    "species": "Unknown",
+    "description": "Also called the rock sturgeon, this strange-looking, laid-back, long-lived fish hasn’t changed much since the Pleistocene epoch. Its body sports dinosaur-like scutes and like a shark its skeleton is made up mostly of cartilage. Despite its rough looks, its flesh and roe are delectable, and overfishing almost caused its extinction.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/lake-sturgeon/"
+    ]
+  },
+  {
+    "name": "Bison",
+    "species": "Unknown",
+    "description": "With their gigantic heads, massive horns, and shaggy fur, bison are the largest mammal in North America and have long dazzled the imaginations of native peoples and American settlers.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Family": "Bovidae",
+      "Subfamily": "Bovinae",
+      "Subtribe": "Bovina",
+      "Genus": "Bison"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/bison/",
+      "https://animalcorner.org/animals/bison/"
+    ]
+  },
+  {
+    "name": "Drum Fish",
+    "species": "Unknown",
+    "description": "The drum fish makes a croaking sound with its swimming bladder!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/drum-fish/"
+    ]
+  },
+  {
+    "name": "Clownfish",
+    "species": "Unknown",
+    "description": "The Clownfish gained worldwide fame thanks to the popularity of the 2003 film Finding Nemo.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/clownfish/"
+    ]
+  },
+  {
+    "name": "Gaboon Viper",
+    "species": "Unknown",
+    "description": "This strikingly patterned snake is one of the biggest venomous snakes on earth. That doesn’t so much mean length, as it rarely gets any longer than 7 feet, but weight.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Squamata",
+      "Family": "Viperidae",
+      "Genus": "Bitis",
+      "Type Species": "B. gabonica",
+      "Binomial name": "Bitis gabonica"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/gaboon-viper/",
+      "https://animalcorner.org/animals/gaboon-viper/"
+    ]
+  },
+  {
+    "name": "Fluke Fish (summer flounder)",
+    "species": "Fluke",
+    "description": "View all of our Fluke Fish (summer flounder) pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/fluke-fish/"
+    ]
+  },
+  {
+    "name": "American Dog Tick",
+    "species": "Unknown",
+    "description": "“The American dog tick is the primary vector of Rocky Mountain spotted fever.”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/american-dog-tick/"
+    ]
+  },
+  {
+    "name": "Eastern Brown Snake",
+    "species": "Unknown",
+    "description": "The Eastern Brown Snake is a slender, venomous snake native to Australia.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eastern-brown-snake/"
+    ]
+  },
+  {
+    "name": "American Eskimo Dog",
+    "species": "Unknown",
+    "description": "The American Eskimo was once a part of the Barnum and Bailey Circus with which it would tour the country and perform for astounded audiences.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/american-eskimo-dog/"
+    ]
+  },
+  {
+    "name": "Soldier Beetle",
+    "species": "Unknown",
+    "description": "Soldier beetles resemble fireflies, but they're not bioluminescent.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/soldier-beetle/"
+    ]
+  },
+  {
+    "name": "Dobsonfly",
+    "species": "Unknown",
+    "description": "The dobsonfly spends up three years as a larva, and only a week as an adult.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dobsonfly/"
+    ]
+  },
+  {
+    "name": "Chinese Crested Dog",
+    "species": "Unknown",
+    "description": "It’s tough to miss the Chinese Crested dog’s flowing mane, reminiscent of an 1980s hair band, and its big, fluffy ears. This hairless breed of dog comes in two varieties: hairless and powderpuff (with hair). The origins of the Chinese Crested are debated, with some theories suggesting that hairless dogs from Africa or other regions may have influenced the breed’s development in China, where they were bred as small companion dogs.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/chinese-crested-dog/"
+    ]
+  },
+  {
+    "name": "Cobia Fish",
+    "species": "Unknown",
+    "description": "It has teeth not only in its jaws but in its tongue and the roof of its mouth",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cobia-fish/"
+    ]
+  },
+  {
+    "name": "Northern Alligator Lizard",
+    "species": "Unknown",
+    "description": "View all of our Northern Alligator Lizard pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/northern-alligator-lizard/"
+    ]
+  },
+  {
+    "name": "Crayfish",
+    "species": "Unknown",
+    "description": "Female crayfish aren't that maternal; they have to secrete a form of pheromone, referred to as maternal pheromones, that encourages them to take care of their offspring and prevents them from eating their young.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/crayfish/"
+    ]
+  },
+  {
+    "name": "Rhesus Macaque",
+    "species": "Unknown",
+    "description": "Rhesus Macaques are the most widely distributed primate in terms of geographic diversity",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/rhesus-macaque/"
+    ]
+  },
+  {
+    "name": "Snow Leopard",
+    "species": "Unknown",
+    "description": "This beautiful and endangered cat, listed as vulnerable under the IUCN Red List, is well-adapted for life in the cold atmosphere of the Central Asian mountains, including the Himalayas. It has a thick coat whose beauty attracts poachers and huge paws that serve the same purpose as snowshoes, allowing it to walk over snow with ease. Besides its lustrous fur, its small ears allow it to hold on to heat, and its long, strong hind legs allow it to jump from cliff to cliff.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Suborder": "Feliformia",
+      "Family": "Felidae",
+      "Subfamily": "Pantherinae",
+      "Genus": "Panthera",
+      "Species": "P. uncia",
+      "Binomial name": "Panthera uncia",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/snow-leopard/",
+      "https://a-z-animals.com/animals/snow-leopard/"
+    ]
+  },
+  {
+    "name": "Archaeopteryx",
+    "species": "Unknown",
+    "description": "Archaeopteryx is the genus and common name for a dinosaur with features like a bird.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/archaeopteryx/"
+    ]
+  },
+  {
+    "name": "Keeshond",
+    "species": "Unknown",
+    "description": "When pronouncing the word ‘keeshond,’ remember it sounds like you’re saying the words ‘case haunt.’ This medium-sized canine has a thick double coat and dark, searching eyes.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/keeshond/"
+    ]
+  },
+  {
+    "name": "Desert Tortoise",
+    "species": "Unknown",
+    "description": "Desert tortoises are found in the United States and in Mexico. These tortoises burrow tunnels so they can go underground to cool off when the desert heat gets to be too much. The California desert tortoise eats grasses, flowers, and herbs found in their hot, dry environment. These reptiles dig grooves in the sand with their feet to catch rainwater to drink.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/desert-tortoise/"
+    ]
+  },
+  {
+    "name": "Yellow Spotted Lizard",
+    "species": "Unknown",
+    "description": "View all of our Yellow Spotted Lizard pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/yellow-spotted-lizard/"
+    ]
+  },
+  {
+    "name": "Black Throat Monitor",
+    "species": "Unknown",
+    "description": "The black-throat monitor is the second-longest lizard species in Africa and the largest in mass.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/black-throat-monitor/"
+    ]
+  },
+  {
+    "name": "Saturniidae Moth",
+    "species": "Unknown",
+    "description": "Among the largest insects in the world, Saturniidae moths are a family of moths in the order Lepidoptera. Some of the most well-known Saturniids include emperor, royal, and giant silk moths. Most Saturniidae moths have eyespots on their broad wings and large, heavy bodies covered in hair-like scales. Although they usually pose no threat to humans, a few species possess irritating hair, while others produce a potent venom that can prove fatal to humans.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/saturniidae-moth/"
+    ]
+  },
+  {
+    "name": "Hermit Crab",
+    "species": "Unknown",
+    "description": "When selecting a new shell, a hermit crab will inspect it visually and physically before deciding to move in",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/hermit-crab/"
+    ]
+  },
+  {
+    "name": "Husky",
+    "species": "Unknown",
+    "description": "To communicate, Siberian Huskies rarely bark but instead create their own music and howl.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/husky/"
+    ]
+  },
+  {
+    "name": "Manta Ray",
+    "species": "Unknown",
+    "description": "The manta ray, which is also sometimes called the devilfish, is the largest ray in the world. Highly intelligent and mostly solitary, they are found in all of the world’s oceans except for the freezing cold waters of the Arctic and Southern Oceans. Long-lived and slow to reproduce, the species is vulnerable to overfishing and being harvested for international trade. Despite this, these brilliant creatures are incredibly friendly to human divers, often swimming up to greet them. You can learn all about the gorgeous, misunderstood manta ray below!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/manta-ray/"
+    ]
+  },
+  {
+    "name": "Inchworm",
+    "species": "Unknown",
+    "description": "Inchworms are the larvae of the geometer moth (family Geometridae). The caterpillar gets its name from its unique movement style, which seems like they’re measuring the ground. They move this way because they don’t have legs in the midsection of their body. Inchworms are mainly herbivorous, feeding on the bark, branches, and other parts of trees and shrubs. However, at least one species is carnivorous. Many inchworm species are considered destructive agricultural pests because they eat garden edibles and shade trees.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/inchworm/"
+    ]
+  },
+  {
+    "name": "Hawk",
+    "species": "Unknown",
+    "description": "While the Ferruginous hawk is the largest specie in the USA, Asia’s Upland buzzard is the biggest overall.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/hawk/"
+    ]
+  },
+  {
+    "name": "Cocker Spaniel",
+    "species": "Unknown",
+    "description": "With a history as a hunting dog in the 1400s, the Spaniels were eventually divided into land and water dogs. The cocker spaniel was used primarily for land hunting excursions.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cocker-spaniel/"
+    ]
+  },
+  {
+    "name": "Box Tree Moth",
+    "species": "Unknown",
+    "description": "Box Tree Moths, scientifically known as Cydalima perspectalis, are native to Asia and some parts of Russia.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/box-tree-moth/"
+    ]
+  },
+  {
+    "name": "Asian Lady Beetle",
+    "species": "Unknown",
+    "description": "Asian lady beetles infest indoor spaces, but they do not reproduce indoors.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/asian-lady-beetle/"
+    ]
+  },
+  {
+    "name": "Leopard Tortoise",
+    "species": "Unknown",
+    "description": "The most widely distributed tortoise in <a class=\"wpil_keyword_link\" href=\"/animals/location/africa/\" title=\"Africa\" data-wpil-keyword-link=\"linked\">Africa</a>!",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Testudines",
+      "Suborder": "Cryptodira",
+      "Superfamily": "Testudinoidea",
+      "Family": "Testudinidae",
+      "Genus": "Stigmochelys",
+      "Species": "S. pardalis",
+      "Binomial name": "Stigmochelys pardalis",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/leopard-tortoise/",
+      "https://a-z-animals.com/animals/leopard-tortoise/"
+    ]
+  },
+  {
+    "name": "Fire Ball Python",
+    "species": "Unknown",
+    "description": "The fire ball python morph is known for its rich golden and reddish-brown coloration.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/fire-ball-python/"
+    ]
+  },
+  {
+    "name": "Tapir",
+    "species": "Unknown",
+    "description": "Amazingly, the roots of the modern Tapir species can be traced all the way back to the Eocene Epoch, which lasted from 56 to 33.9 million years ago.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Perissodactyla",
+      "Superfamily": "Tapiroidea",
+      "Family": "Tapiridae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/tapir/",
+      "https://a-z-animals.com/animals/tapir/"
+    ]
+  },
+  {
+    "name": "Star-nosed mole",
+    "species": "Unknown",
+    "description": "The star-nosed mole has the ability to sense both electrical fields and ground vibrations",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/star-nosed-mole/"
+    ]
+  },
+  {
+    "name": "Monitor Lizard",
+    "species": "Unknown",
+    "description": "Lizards in the monitor lizard family are among the largest lizards in the world.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/monitor-lizard/"
+    ]
+  },
+  {
+    "name": "Bichir",
+    "species": "Unknown",
+    "description": "Bichirs are slender, prehistoric-looking fish that are often thought to resemble dinosaurs or eastern dragons.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/bichir/"
+    ]
+  },
+  {
+    "name": "French Lop",
+    "species": "Unknown",
+    "description": "Developed in France in the 19th century, the French Lop is one of the largest rabbits in the world. This stout, powerful breed has a large head and long ears that hang down below the jaw. French Lops come in two color varieties and several different color varieties. Although people originally raised them for their meat, they are now mostly kept as companion pets and show animals.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/french-lop/"
+    ]
+  },
+  {
+    "name": "Eryops",
+    "species": "Unknown",
+    "description": "Unlike modern amphibians, Eryops had a well-developed rib cage",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eryops/"
+    ]
+  },
+  {
+    "name": "Banded Palm Civet",
+    "species": "Unknown",
+    "description": "“Banded palm civets were named for their tan and black striped coats which give the banded palm civet more camouflage in the surrounding jungle.”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/banded-palm-civet/"
+    ]
+  },
+  {
+    "name": "Hawaiian Crow",
+    "species": "Unknown",
+    "description": "National Archives at College Park - Still Pictures, Public domain, via Wikimedia Commons",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/hawaiian-crow/"
+    ]
+  },
+  {
+    "name": "White-Eyed Vireo",
+    "species": "Unknown",
+    "description": "During courtship, males put on exciting displays by fluffing their plumage, spreading their tails, and letting out a whining call.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/white-eyed-vireo/"
+    ]
+  },
+  {
+    "name": "Arambourgiania",
+    "species": "Unknown",
+    "description": "The Arambourgiania  was not a dinosaur but instead a pterosaur!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/arambourgiania/"
+    ]
+  },
+  {
+    "name": "Comb-crested Jacana",
+    "species": "Unknown",
+    "description": "The comb-crested jacana is a sizeable tropical wader from Asia and Australia. It inhabits permanent wetlands year-round with an abundance of aquatic vegetation. You will find it foraging for insects, using its enormous feet to walk across the water. Discover all the interesting facts about this jacana, including where to find it, what it eats, and how it reproduces.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/comb-crested-jacana/"
+    ]
+  },
+  {
+    "name": "Desert Ghost Ball Python",
+    "species": "Unknown",
+    "description": "Desert ghost ball pythons are even more beautiful when they're bred with another type like enchi ball pythons.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/desert-ghost-ball-python/"
+    ]
+  },
+  {
+    "name": "Alpine Goat",
+    "species": "Unknown",
+    "description": "Alpine goats are the most common type of goat used for milk, cheese, and other dairy products",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/alpine-goat/"
+    ]
+  },
+  {
+    "name": "Harrier",
+    "species": "At A-Z Animals, we find that",
+    "description": "Harriers used to be called hare hounds as they were originally bred to hunt hares.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/harrier/"
+    ]
+  },
+  {
+    "name": "Deer Head Chihuahua",
+    "species": "Unknown",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/deer-head-chihuahua/"
+    ]
+  },
+  {
+    "name": "Ghost Crab",
+    "species": "Unknown",
+    "description": "Their eyestalks, which are sometimes horned, can swivel 360 degrees",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/ghost-crab/"
+    ]
+  },
+  {
+    "name": "Basenji Dog",
+    "species": "Unknown",
+    "description": "Bred to be hunting dogs in central Africa, Basenjis are believed to be one of the first domesticated dogs. The name “Basenji” means dog of the bush — referring to the African bush of their origin. These unusual, graceful canines are medium-sized with shiny coats and curly tails. Their foreheads are cute and wrinkly, and their eyes are uniquely almond-shaped.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/basenji-dog/"
+    ]
+  },
+  {
+    "name": "Common House Spider",
+    "species": "Unknown",
+    "description": "House spiders have the ability to eat most insects in a home.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/common-house-spider/"
+    ]
+  },
+  {
+    "name": "Dunkleosteus",
+    "species": "Unknown",
+    "description": "Dunkleosteus had a bite force strong enough to cut through pirey.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dunkleosteus/"
+    ]
+  },
+  {
+    "name": "Barbet",
+    "species": "Unknown",
+    "description": "This dog has the nickname ‘Mud dog’ because it likes to play in muddy, swamp-like areas.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/barbet/"
+    ]
+  },
+  {
+    "name": "Peagle: Complete Guide to the Beagle–Pekingese Mix",
+    "species": "Unknown",
+    "description": "Most Peagles love playing with children and can be very gentle and affectionate!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/peagle/"
+    ]
+  },
+  {
+    "name": "House wren",
+    "species": "Unknown",
+    "description": "The wren’s epithet, aedon, comes from a Greek queen who accidentally killed her only son. She was actually aiming for her nephew, and Zeus took pity on her and turned her into a nightingale.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/house-wren/"
+    ]
+  },
+  {
+    "name": "Crocodile",
+    "species": "Unknown",
+    "description": "Crocodiles are one of the most well-known and fearsome animals in the world and are considered apex predators. Their powerful bodies, strong jaws, and immense speed and agility along with their unparalleled stealth, have led to them being one of the world’s top predators in their natural environments.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Crocodilia",
+      "Superfamily": "Crocodyloidea",
+      "Family": "Crocodylidae",
+      "Type genus": "Crocodylus",
+      "": ""
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/crocodile/",
+      "https://animalcorner.org/animals/crocodile/"
+    ]
+  },
+  {
+    "name": "Tailless Whip Scorpion",
+    "species": "Unknown",
+    "description": "The average lifespan of these strange creatures is 5 to 10 years; however,  tailless whip scorpions have been known to live up to a whopping 15 years in captivity!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/tailless-whip-scorpion/"
+    ]
+  },
+  {
+    "name": "Inland Taipan",
+    "species": "Unknown",
+    "description": "A single inland taipan bite has enough venom to kill a hundred men.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/inland-taipan/"
+    ]
+  },
+  {
+    "name": "Wood Frog",
+    "species": "Unknown",
+    "description": "The wood frog lives the furthest north of any other North American amphibian including in the Arctic Circle.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/wood-frog/"
+    ]
+  },
+  {
+    "name": "Lystrosaurus",
+    "species": "Unknown",
+    "description": "Lystrosaurus was one of the few terrestial species that survived the permian extinction",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/lystrosaurus/"
+    ]
+  },
+  {
+    "name": "Eastern Indigo Snake",
+    "species": "Unknown",
+    "description": "Eastern Indigo snakes regularly chase down and eat rattlesnakes and may be immune to their venom.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eastern-indigo-snake/"
+    ]
+  },
+  {
+    "name": "European Bee-Eater",
+    "species": "Unknown",
+    "description": "The European Bee-Eater is a relative of the Kingfisher, with a somewhat varied habitat and unusual nest-building habits. This bird, whose feathers generally contain all the colors of the rainbow, creates burrows, rather than traditional nests. Because of this, they are prone to parasite infestations. As their name suggests, they feed primarily on bees, though they also eat other flying insects, such as wasps.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/european-bee-eater/"
+    ]
+  },
+  {
+    "name": "Haddock",
+    "species": "Unknown",
+    "description": "The haddock is very popular in both recreational and commercial fishing",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/haddock/"
+    ]
+  },
+  {
+    "name": "Swainson’s Hawk",
+    "species": "Unknown",
+    "description": "“Swainson’s hawks are long-distance migrants, and almost the entire population moves from North America to South America during August and September.”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/swainsons-hawk-2/"
+    ]
+  },
+  {
+    "name": "Holy Cross Frog",
+    "species": "Unknown",
+    "description": "The holy cross frog has a cross-shaped colored pattern on its back.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/holy-cross-frog/"
+    ]
+  },
+  {
+    "name": "Northern Harrier",
+    "species": "Unknown",
+    "description": "They can reach speeds of 25 mph but prefer to soar low and slow.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/northern-harrier-2/"
+    ]
+  },
+  {
+    "name": "Indian Palm Squirrel",
+    "species": "",
+    "description": "View all of our Indian Palm Squirrel pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/indian-palm-squirrel/"
+    ]
+  },
+  {
+    "name": "Orchid Dottyback",
+    "species": "Unknown",
+    "description": "This fish camouflages as its prey's parents to trick it into becoming dinner.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/orchid-dottyback/"
+    ]
+  },
+  {
+    "name": "Bullboxer",
+    "species": "Unknown",
+    "description": "Bullboxers have several different breed nicknames, including the pitoxer, bullboxer pit, and the American bull boxer.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/bullboxer/"
+    ]
+  },
+  {
+    "name": "Havamalt",
+    "species": "Unknown",
+    "description": "These pups need natural oils to keep their skin healthy; bathing them often will dry out their skin, so only wash them when necessary.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/havamalt/"
+    ]
+  },
+  {
+    "name": "Water Bug",
+    "species": "Unknown",
+    "description": "Some species of water bugs can deliver a painful bite when handled.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/water-bug/"
+    ]
+  },
+  {
+    "name": "Muttaburrasaurus",
+    "species": "Unknown",
+    "description": "Muttaburrasaurus is named after the town of Muttaburra in central Queensland.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/muttaburrasaurus-2/"
+    ]
+  },
+  {
+    "name": "Eurasian Lynx",
+    "species": "Unknown",
+    "description": "Eurasian lynxes can survive extreme weather up to elevations of 18,000 feet",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eurasian-lynx/"
+    ]
+  },
+  {
+    "name": "Seahorse",
+    "species": "Unknown",
+    "description": "The seahorse has a head that resembles a horse, the tail of a monkey, and a pouch like a kangaroo",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Actinopterygii",
+      "Order": "Syngnathiformes",
+      "Family": "Syngnathidae",
+      "Subfamily": "Hippocampinae",
+      "Genus": "Hippocampus",
+      "Type species": "Hippocampus heptagonus",
+      "": ""
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/seahorse/",
+      "https://animalcorner.org/animals/seahorse/"
+    ]
+  },
+  {
+    "name": "Codfish",
+    "species": "Unknown",
+    "description": "Codfish are carnivorous and eat other fish, including young codfish.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/codfish/"
+    ]
+  },
+  {
+    "name": "Pine Marten",
+    "species": "Martes martes",
+    "description": "A pine marten can jump from tree to tree similar to a squirrel.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Family": "Mustelidae",
+      "Genus": "Martes",
+      "Species": "M. martes",
+      "Binomial name": "Martes martes",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/pine-marten/",
+      "https://a-z-animals.com/animals/pine-marten/"
+    ]
+  },
+  {
+    "name": "Titanoboa",
+    "species": "Unknown",
+    "description": "The Titanoboa was a massive, 42-foot-long boa constrictor that lives 58-60 million years ago.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/titanoboa/"
+    ]
+  },
+  {
+    "name": "Australorp Chicken",
+    "species": "Unknown",
+    "description": "Australorp chickens are among the best egg producers in the world, hens in Australia set consecutive world records with one laying 364 eggs in a single year!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/australorp-chicken/"
+    ]
+  },
+  {
+    "name": "Leonberger",
+    "species": "Unknown",
+    "description": "Bred in 19th-century Germany to resemble a lion, Leonbergers are descended from the Newfoundland, the long-haired Saint Bernard, and the Great Pyrenees, and were intended as both working and companion dogs. They’re classified in the working group because they were once used to pull carts of goods as well as guard homes.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/leonberger/"
+    ]
+  },
+  {
+    "name": "Harpy Eagle",
+    "species": "Unknown",
+    "description": "The harpy eagle is a fearsome predator, a loyal partner, and a nurturing parent.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Accipitriformes",
+      "Family": "Accipitridae",
+      "Subfamily": "Harpiinae",
+      "Genus": "Harpia",
+      "Species": "H. harpyja"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/harpy-eagle/",
+      "https://a-z-animals.com/animals/harpy-eagle/"
+    ]
+  },
+  {
+    "name": "Black Mouth Cur",
+    "species": "Unknown",
+    "description": "From the dog's description in the book, it is believed that Old Yeller was actually a Black Mouth Cur.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/black-mouth-cur/"
+    ]
+  },
+  {
+    "name": "Feist",
+    "species": "Unknown",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/feist/"
+    ]
+  },
+  {
+    "name": "Ackie Monitor",
+    "species": "Unknown",
+    "description": "The ackie monitor has a spiny tail which it uses as in self-defense.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/ackie-monitor/"
+    ]
+  },
+  {
+    "name": "Pit Bull",
+    "species": "Unknown",
+    "description": "“Pit Bull” is an umbrella term that encompasses several dogs developed from bulldogs and terriers, rather than a single breed of dog. The facts about such dogs reveal that they are all “bully” types with a common origin in ancient Molossers, sharing traits of loyalty, protectiveness, and affection. They were originally used to pull down large game such as wild boars, bull baiting, bear baiting, cattle herding, and pit dog fighting. They are also “terrier” types, that is, medium and large-sized terrier breeds used as working farm dogs to kill vermin, hunt, and guard property and people.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/pit-bull/"
+    ]
+  },
+  {
+    "name": "Eagle Ray",
+    "species": "Unknown",
+    "description": "Eagle rays are massive bottom feeding fish that can weigh as much as 500 lbs!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eagle-ray/"
+    ]
+  },
+  {
+    "name": "Lyrebird",
+    "species": "Unknown",
+    "description": "Lyrebirds mimic birds of prey to deter predators such as birds of prey.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/lyrebird/"
+    ]
+  },
+  {
+    "name": "Wax Moth",
+    "species": "Unknown",
+    "description": "The Wax Moth has two different species; the Greater Wax Moth and the Lesser Wax Moth. Both the species, prey on hives and eat beeswax. They are quite destructive and can rapidly chew through combs to devour wax, pollen, larval honey bees’ remains, honey bee cocoon silk, and even enclosed honey bee feces. But they are beneficial to the environment because they can eliminate a dead bee hive colony.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/wax-moth/"
+    ]
+  },
+  {
+    "name": "Nose-Horned Viper",
+    "species": "Unknown",
+    "description": "The fangs of a nose-horned viper can be as long as half an inch!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/nose-horned-viper/"
+    ]
+  },
+  {
+    "name": "Dinocrocuta",
+    "species": "Unknown",
+    "description": "2,953 × 1,720 pixels, file size: 1.07 MB, MIME type: image/jpeg",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dinocrocuta/"
+    ]
+  },
+  {
+    "name": "Blue Picardy Spaniel",
+    "species": "Unknown",
+    "description": "The Blue Picardy is also known as the Epagneul Bleu de Picardie in French",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/blue-picardy-spaniel/"
+    ]
+  },
+  {
+    "name": "Saarloos Wolfdog",
+    "species": "Unknown",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/saarloos-wolfdog/"
+    ]
+  },
+  {
+    "name": "Saint Bernard",
+    "species": "Unknown",
+    "description": "Saint Bernard dogs have a slow progression into mental adulthood, maintaining their puppy-like tendencies for years longer than other breeds.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/saint-bernard/"
+    ]
+  },
+  {
+    "name": "Dorking Chicken",
+    "species": "Unknown",
+    "description": "They are docile birds, so do not mix them with dominant breeds like Cornish chickens and Old English Game.; otherwise, they will quickly fall to the bottom of the pecking order.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dorking-chicken/"
+    ]
+  },
+  {
+    "name": "Housefly",
+    "species": "Unknown",
+    "description": "Up there with the cockroach, the housefly is one of the world’s most annoying insects. Nearly 90 percent of all species invading our habitats are houseflies. They survive on a diet of decomposing garbage and organic waste. Flies are one of the filthiest creatures on the planet, carrying millions of disease-infested microorganisms over their lifespan.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/housefly/"
+    ]
+  },
+  {
+    "name": "Black Crappie",
+    "species": "Unknown",
+    "description": "Black crappie fish can hybridize with white crappie, resulting in a closely related species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/black-crappie/"
+    ]
+  },
+  {
+    "name": "Tuatara",
+    "species": "Unknown",
+    "description": "One of the tuatara’s nicknames among scientists is “living fossil” because of its lack of evolutionary change.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Rhynchocephalia",
+      "Family": "Sphenodontidae",
+      "Genus": "Sphenodon",
+      "Species": "S. punctatus",
+      "Binomial name": "Sphenodon punctatus",
+      "": ""
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/tuatara/",
+      "https://animalcorner.org/animals/tuatara/"
+    ]
+  },
+  {
+    "name": "Scorpion Fish",
+    "species": "Unknown",
+    "description": "These fishes have venom covered spines all over their bodies.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/scorpion-fish/"
+    ]
+  },
+  {
+    "name": "Lizardfish",
+    "species": "Unknown",
+    "description": "The lizardfish can camouflage itself against the sandy bottom to avoid predators.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/lizardfish/"
+    ]
+  },
+  {
+    "name": "Florida Panther",
+    "species": "Unknown",
+    "description": "Florida panthers can leap more than 4.5 meters (15 feet) in the air.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/florida-panther/"
+    ]
+  },
+  {
+    "name": "Fer-de-lance Snake",
+    "species": "Unknown",
+    "description": "Camouflage helps these snakes hide from potential prey as well as potential predators, but it also hides them from barefoot people out for a walk.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/fer-de-lance-snake/"
+    ]
+  },
+  {
+    "name": "Rotterman",
+    "species": "Unknown",
+    "description": "Rottermans are the perfect breed for search and rescue training, and they make excellent guard dogs.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/rotterman/"
+    ]
+  },
+  {
+    "name": "Yellow Anaconda",
+    "species": "Unknown",
+    "description": "Anacondas take prey much bigger compared to body weight than other snakes.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/yellow-anaconda/"
+    ]
+  },
+  {
+    "name": "Tiger Shark",
+    "species": "Unknown",
+    "description": "The tiger shark, also known as a leopard shark, maneater shark, and spotted shark, is a warm, saltwater fish living in various areas throughout the world.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Chondrichthyes",
+      "Superorder": "Selachimorpha",
+      "Order": "Carcharhiniformes",
+      "Family": "Carcharhinidae",
+      "Genus": "Galeocerdo",
+      "Species": "G. cuvier",
+      "Binomial name": "Galeocerdo cuvier",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/tiger-shark/",
+      "https://a-z-animals.com/animals/tiger-shark/"
+    ]
+  },
+  {
+    "name": "Jumping Spider",
+    "species": "Unknown",
+    "description": "Members of the largest spider family, jumping spiders, are diurnal and love to hunt in the sunshine. Unusually pretty for arachnids, they come in a rainbow of colors, though even the biggest one, Hyllus giganteus, is small.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/jumping-spider/"
+    ]
+  },
+  {
+    "name": "Boxsky",
+    "species": "Unknown",
+    "description": "Boxers were bred to be working war dogs, and their boxsky descendants still love to help out on ranches and other outdoor jobs.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/boxsky/"
+    ]
+  },
+  {
+    "name": "Palo Verde Beetle",
+    "species": "Unknown",
+    "description": "The palo verde beetle is one of the largest beetles in North America",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/palo-verde-beetle/"
+    ]
+  },
+  {
+    "name": "Rainbow Shark",
+    "species": "Unknown",
+    "description": "The rainbow shark has been genetically modified to glow in the dark",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/rainbow-shark/"
+    ]
+  },
+  {
+    "name": "Dalmatian Mix",
+    "species": "Unknown",
+    "description": "These canine’s spots are distinctive in their placement, including different shaped markings, making them unique.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dalmatian-mix/"
+    ]
+  },
+  {
+    "name": "Collared Peccary",
+    "species": "Unknown",
+    "description": "The collared peccary (also called a musk hog or javelina) is commonly mistaken for a pig or boar.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/collared-peccary/"
+    ]
+  },
+  {
+    "name": "Dilophosaurus",
+    "species": "Unknown",
+    "description": "Dilophosaurus was the largest predatory dinosaur in North America during the Early Jurassic Epoch of the Jurassic Period.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dilophosaurus/"
+    ]
+  },
+  {
+    "name": "Chicken Snake",
+    "species": "Unknown",
+    "description": "This pretty snake has been known to grow to over 8 feet long, and some people claim that there have been specimens that have grown to 14 feet. If this is true, the chicken snake is one of the largest snakes on earth and not just in the Americas! However big it gets, the chicken snake is not venomous and helps humans by preying on rats and mice.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/chicken-snake/"
+    ]
+  },
+  {
+    "name": "Kit Fox",
+    "species": "Unknown",
+    "description": "Though the dainty kit fox may look adorable, these tiny predators are actually surprisingly hardy. They’re built to expertly thrive in the desert climates they inhabit. Their enormous ears lend them both an exceptional sense of hearing and help disperse the desert heat from their bodies. Like many creatures that inhabit the deserts of the U.S. and Mexico, they’ve adapted to the desert’s daily and seasonal heat fluctuations. They use a network of underground burrows to conserve its energy during the hottest parts of the day.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/kit-fox/"
+    ]
+  },
+  {
+    "name": "Satanic Leaf-Tailed Gecko",
+    "species": "Unknown",
+    "description": "View all of our Satanic Leaf-Tailed Gecko pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/satanic-leaf-tailed-gecko/"
+    ]
+  },
+  {
+    "name": "Racer Snake",
+    "species": "Unknown",
+    "description": "“These great tree climbers are named ‘racers’ because of their ability to dart away from danger at up to 3.5 miles per hour!”",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/racer-snake/"
+    ]
+  },
+  {
+    "name": "Root Aphids",
+    "species": "Unknown",
+    "description": "Nymphs take 9 to 10 days on average to mature, with a complete lifespan of an estimated 30 days.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/root-aphids/"
+    ]
+  },
+  {
+    "name": "Grunion",
+    "species": "Unknown",
+    "description": "Grunions are one of two species of edible marine fish within the genus Leuresthes. These species include the famous California grunion and the lesser-known Gulf grunion. They occur in Pacific waters from California to Baja California. These species participate in a bizarre spawning ritual in which they leave the water to spawn on beaches. The practice of catching these spawning fish by hand is known as a “grunion run.” Both species are small and slender, measuring less than 10 inches in length.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/grunion/"
+    ]
+  },
+  {
+    "name": "Yellow Cobra",
+    "species": "Unknown",
+    "description": "The Yellow Cobra belong to one of the most dangerous families in the world.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/yellow-cobra/"
+    ]
+  },
+  {
+    "name": "Havapoo",
+    "species": "Unknown",
+    "description": "The exact appearance of a Havapoo can vary based on whether the genes of its Poodle or Havanese parent are more dominant.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/havapoo/"
+    ]
+  },
+  {
+    "name": "Belgian Shepherd",
+    "species": "Unknown",
+    "description": "All four Belgian Shepherd varieties have nicknames for Belgian villages",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/belgian-shepherd/"
+    ]
+  },
+  {
+    "name": "Procoptodon",
+    "species": "Unknown",
+    "description": "The largest variety of kangaroo to have ever been discovered.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/procoptodon/"
+    ]
+  },
+  {
+    "name": "Groundhog (Woodchuck)",
+    "species": "Unknown",
+    "description": "View all of our Groundhog (Woodchuck) pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/groundhog-woodchuck/"
+    ]
+  },
+  {
+    "name": "Puertasaurus",
+    "species": "Unknown",
+    "description": "\"The ribcage of a Puertosaurus was as large as a school classroom!\"",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/puertasaurus/"
+    ]
+  },
+  {
+    "name": "Giant Isopod",
+    "species": "Unknown",
+    "description": "The giant isopod is one of the largest isopods in the world, and it can be any one of the 20 species of big isopods. These creatures are in the cold and deep waters in the Pacific, Indian, and Atlantic oceans. Giant isopods are closely related to decapods such as crabs and shrimps, which are found in the Bathynomus genus.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/giant-isopod/"
+    ]
+  },
+  {
+    "name": "Dalmatian",
+    "species": "Unknown",
+    "description": "This breed is known for its sensitive temperament and high energy level.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dalmatian/"
+    ]
+  },
+  {
+    "name": "Nebelung",
+    "species": "Unknown",
+    "description": "Although they are recognized by TICA as their own breed, Nebelung cats are essentially longer-haired Russian blues. They have the Russian blue cat’s coat color of blue-gray with silver tips, but with medium-long strands of a double coat.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/nebelung/"
+    ]
+  },
+  {
+    "name": "Leopard",
+    "species": "Unknown",
+    "description": "The leopard is a medium-sized wildcat that lives in a variety of different habitats across sub-Saharan Africa and southern Asia. Distinguished by their uniquely beautiful “spotted” coat, leopards are apex predators that ambush prey from a perch in the trees. This hunting method is unlike their big cat cousins who engage their prey in high-speed chases.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Suborder": "Feliformia",
+      "Family": "Felidae",
+      "Subfamily": "Pantherinae",
+      "Genus": "Panthera",
+      "Species": "P. pardus",
+      "Binomial name": "Panthera pardus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/leopard/",
+      "https://a-z-animals.com/animals/leopard/"
+    ]
+  },
+  {
+    "name": "Sable Ferret",
+    "species": "Unknown",
+    "description": "Ferrets were used during the Revolutionary War to keep down the rat population.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/sable-ferret/"
+    ]
+  },
+  {
+    "name": "Partridge",
+    "species": "Unknown",
+    "description": "Long-lost civilizations have immortalized male partridges in art, depicting them as a symbol of fertility.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/partridge/"
+    ]
+  },
+  {
+    "name": "Kowari",
+    "species": "Unknown",
+    "description": "Kowaris do not drink or take water; all they get is the water content in their diet.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/kowari/"
+    ]
+  },
+  {
+    "name": "Colossal Squid",
+    "species": "Unknown",
+    "description": "Colossal squids are a lot like other squid species when it comes to the details of their anatomy, including basic body structure with fins and mantle. However, they are distinguished by their massive size and consistent ability to elude comprehensive research. Their preference for extreme depth in the waters surrounding Antarctica has made them a difficult study, and only a few specimens have been obtained to date. Despite limited information, scientists have good reason to believe that this squid species holds several records in the animal kingdom, including that of the largest invertebrate on the planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Mollusca",
+      "Class": "Cephalopoda",
+      "Superorder": "Decapodiformes",
+      "Order": "Oegopsida",
+      "Family": "Cranchiidae",
+      "Subfamily": "Taoniinae",
+      "Genus": "Mesonychoteuthis",
+      "Species": "M. hamiltoni",
+      "Binomial name": "",
+      "Mesonychoteuthis hamiltoni": ""
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/colossal-squid/",
+      "https://animalcorner.org/animals/colossal-squid/"
+    ]
+  },
+  {
+    "name": "Green Mamba",
+    "species": "Unknown",
+    "description": "Green mambas are fast, and can travel up to 7 miles per hour.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/green-mamba/"
+    ]
+  },
+  {
+    "name": "Cactus Moth",
+    "species": "Unknown",
+    "description": "Cactus moths can cause serious damage to cacti in locations where they have no predators.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cactus-moth/"
+    ]
+  },
+  {
+    "name": "Vestal Cuckoo Bumblebee",
+    "species": "Unknown",
+    "description": "Male vestal cuckoo bees can be deceived into mating with orchids!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/vestal-cuckoo-bumblebee/"
+    ]
+  },
+  {
+    "name": "Tornjak",
+    "species": "Unknown",
+    "description": "Tornjaks are very adaptable and can live harmoniously in packs as they get along well with other dogs.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/tornjak/"
+    ]
+  },
+  {
+    "name": "Golden-Crowned Kinglet",
+    "species": "Unknown",
+    "description": "View all of our Golden-Crowned Kinglet pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/golden-crowned-kinglet/"
+    ]
+  },
+  {
+    "name": "California Condor",
+    "species": "Unknown",
+    "description": "California condors are the largest bird in North America and have been around for at least 40,000 years. With a nine-foot-long wingspan, these majestic birds soar in the sky over the wild open country of the Southwest. Unfortunately, these birds are a rare sight due to their critically endangered status. Find out everything you ever wanted to know about the California condor, including their habitats, diet, and behavior.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Accipitriformes",
+      "Family": "Cathartidae",
+      "Genus": "Gymnogyps",
+      "Species": "G. californianus",
+      "Binominal Name": "Gymnogyps californianus"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/california-condor/",
+      "https://animalcorner.org/animals/california-condor/"
+    ]
+  },
+  {
+    "name": "Redtail Catfish",
+    "species": "Unknown",
+    "description": "Like many other Amazonian species, Redtail catfish can breathe air by gulping it from the surface when oxygen levels are low in the water",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/redtail-catfish/"
+    ]
+  },
+  {
+    "name": "Boxweiler",
+    "species": "Unknown",
+    "description": "Boxweilers come in a variety of colors, but they usually feature the subtle brindle pattern that their boxer parents are so famous for.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/boxweiler/"
+    ]
+  },
+  {
+    "name": "Brown Hyena",
+    "species": "Unknown",
+    "description": "Residents of southern Africa, brown hyenas are the rarest species of hyenas. With their scraggly hair and spindly legs, they regularly rank among Africa’s five ugliest animals, and the largest population sticks to the Kalahari Desert.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/brown-hyena/"
+    ]
+  },
+  {
+    "name": "Jack Crevalle",
+    "species": "Unknown",
+    "description": "The jack crevalle is a highly predatory species of marine fish belonging to the genus Caranx. It roams freely throughout the Atlantic Ocean, appearing along the coasts of many adjacent countries. It primarily preys on smaller fish and various invertebrates like crustaceans. Although sport fishers value it as a tough game fish, it is not a popular food fish and has limited commercial value.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/jack-crevalle/"
+    ]
+  },
+  {
+    "name": "Vinegaroon",
+    "species": "Unknown",
+    "description": "Vinegaroons can spray 19 times before the glands are depleted",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/vinegaroon/"
+    ]
+  },
+  {
+    "name": "Yellow-Bellied Sea Snake",
+    "species": "Unknown",
+    "description": "Sea snakes spend approximately 90% of their lives under water.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/yellow-bellied-sea-snake/"
+    ]
+  },
+  {
+    "name": "Cottonmouth",
+    "species": "Unknown",
+    "description": "The cottonmouth (also known as a water moccasin) is a highly venomous pit viper that spends most of its life near water.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/moccasin-snake/"
+    ]
+  },
+  {
+    "name": "Sockeye Salmon",
+    "species": "Unknown",
+    "description": "Called \"red salmon\" because their skin turns bright red to dirty red during spawning season",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/sockeye-salmon/"
+    ]
+  },
+  {
+    "name": "Dormouse",
+    "species": "Unknown",
+    "description": "Found in Europe, <a class=\"wpil_keyword_link\" href=\"/animals/location/africa/\" title=\"Africa\" data-wpil-keyword-link=\"linked\">Africa</a> and Asia!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/dormouse/"
+    ]
+  },
+  {
+    "name": "Cucumber Beetle",
+    "species": "Unknown",
+    "description": "Adults cucumber beetles cause the most damage to cucurbit plants.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cucumber-beetle/"
+    ]
+  },
+  {
+    "name": "Muskrat – Engineers Of The North American Wetlands",
+    "species": "Ondatra zibethicus",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Cricetidae",
+      "Genus": "Ondatra",
+      "Species": "O. zibethicus",
+      "Binomial name": "Ondatra zibethicus"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/muskrat/"
+    ]
+  },
+  {
+    "name": "Peafowl Peacock",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Galliformes",
+      "Family": "Phasianidae",
+      "Subfamily": "Phasianinae",
+      "Tribe": "Pavonini"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/peafowl/"
+    ]
+  },
+  {
+    "name": "Lemon Shark – Masters of Mangroves and Shallow Waters",
+    "species": "Negaprion brevirostris",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Chondrichthyes",
+      "Order": "Carcharhiniformes",
+      "Family": "Carcharhinidae",
+      "Genus": "Negaprion",
+      "Species": "N. brevirostris",
+      "Binomial name": "Negaprion brevirostris"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/lemon-shark/"
+    ]
+  },
+  {
+    "name": "Bactrian Camels",
+    "species": "Camelus bactrianus",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Family": "Camelidae",
+      "Genus": "Camelus",
+      "Species": "C. bactrianus",
+      "Binomial name": "Camelus bactrianus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/bactrian-camel/"
+    ]
+  },
+  {
+    "name": "Box Jellyfish – Deadly Yet Delicate",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Domain": "Eukaryota",
+      "Kingdom": "Animalia",
+      "Phylum": "Cnidaria",
+      "Subphylum": "Medusozoa",
+      "Class": "Cubozoa",
+      "Orders": "CarybdeidaChirodropida",
+      "Families": "AlatinidaeCarukiidaeCarybdeidaeTamoyidaeTripedaliidaeChirodropidaeChiropsalmidaeChiropsellidae",
+      "Genus": "Multiple",
+      "Species": "At least 51 known species - likely to be more"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/box-jellyfish/"
+    ]
+  },
+  {
+    "name": "Gaboon Viper – The Snake with the Longest Fangs",
+    "species": "Bitis gabonica",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Squamata",
+      "Family": "Viperidae",
+      "Genus": "Bitis",
+      "Type Species": "B. gabonica",
+      "Binomial name": "Bitis gabonica"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/gaboon-viper/"
+    ]
+  },
+  {
+    "name": "California Condor – Back From The Brink",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Accipitriformes",
+      "Family": "Cathartidae",
+      "Genus": "Gymnogyps",
+      "Species": "G. californianus",
+      "Binominal Name": "Gymnogyps californianus"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/california-condor/"
+    ]
+  },
+  {
+    "name": "Pea Puffer",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pea-puffer/"
+    ]
+  },
+  {
+    "name": "Tiger Muskellunge (Muskie)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/tiger-muskie-mukellunge/"
+    ]
+  },
+  {
+    "name": "Dandie Dinmont Terrier",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/dandie-dinmont-terrier-2/"
+    ]
+  },
+  {
+    "name": "Nile Crocodile",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/nile-crocodile/"
+    ]
+  },
+  {
+    "name": "Turkey",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/turkey/"
+    ]
+  },
+  {
+    "name": "Dwarf Crocodile",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/dwarf-crocodile/"
+    ]
+  },
+  {
+    "name": "Alaskan Pollock",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/alaskan-pollock/"
+    ]
+  },
+  {
+    "name": "Stargazer Fish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/stargazer-fish/"
+    ]
+  },
+  {
+    "name": "Chipmunk",
+    "species": "",
+    "description": "Chipmunksare small rodents of the squirrel family with a total of 25 different species (see bottom of page), all part of the scientific family, in the family Sciuridae. There are three genera in this family: Tamias (eastern North America), Neotamias (western North America) and Eutamias (Eurasia).",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Sciuridae",
+      "Subfamily": "Xerinae",
+      "Tribe": "Marmotini"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/chipmunk/",
+      "https://a-z-animals.com/animals/chipmunk/"
+    ]
+  },
+  {
+    "name": "Ground Beetle",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Class": "Insecta",
+      "Order": "Coleoptera",
+      "Suborder": "Adephaga",
+      "(unranked)": "Geadephaga",
+      "Superfamily": "Caraboidea",
+      "Family": "Carabidae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/ground-beetle/"
+    ]
+  },
+  {
+    "name": "Husky Jack",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/husky-jack/"
+    ]
+  },
+  {
+    "name": "Bigfin Reef Squid",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Mollusca",
+      "Class": "Cephalopoda",
+      "Order": "Myopsida",
+      "Family": "Loliginidae",
+      "Genus": "Sepioteuthis",
+      "Species": "S. lessoniana"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/bigfin-reef-squid/"
+    ]
+  },
+  {
+    "name": "River Turtle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/river-turtle/"
+    ]
+  },
+  {
+    "name": "Muskellunge (Muskie)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/muskellunge-muskie/"
+    ]
+  },
+  {
+    "name": "Vervet Monkey",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/vervet-monkey/"
+    ]
+  },
+  {
+    "name": "Sumatran Orangutan",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sumatran-orangutan/"
+    ]
+  },
+  {
+    "name": "Dorkie",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/dorkie/"
+    ]
+  },
+  {
+    "name": "Stoat",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Family": "Mustelidae",
+      "Genus": "Mustela",
+      "Species": "M. erminea"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/stoat/"
+    ]
+  },
+  {
+    "name": "Booted Bantam",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/booted-bantam/"
+    ]
+  },
+  {
+    "name": "Giant Beaver",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/giant-beaver/"
+    ]
+  },
+  {
+    "name": "No See Ums",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/no-see-ums/"
+    ]
+  },
+  {
+    "name": "Skipjack Tuna",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/skipjack-tuna/"
+    ]
+  },
+  {
+    "name": "Coryphodon",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/coryphodon/"
+    ]
+  },
+  {
+    "name": "Cockle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cockles/"
+    ]
+  },
+  {
+    "name": "Giant Pacific Octopus",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Mollusca",
+      "Class": "Cephalopoda",
+      "Order": "Octopoda",
+      "Family": "Enteroctopodidae",
+      "Genus": "Enteroctopus",
+      "Species": "E. dofleini"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/giant-pacific-octopus/"
+    ]
+  },
+  {
+    "name": "Mud Dauber Wasp",
+    "species": "",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Class": "Insecta",
+      "Order": "Hymenoptera",
+      "Suborder": "Apocrita",
+      "Superfamily": "Apoidea",
+      "Families": "Some Sphecidae and Crabronidae",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/mud-dauber-wasp/"
+    ]
+  },
+  {
+    "name": "King Shepherd: Loyal, Gentle Giants with a Protective Heart",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/king-shepherd/"
+    ]
+  },
+  {
+    "name": "Common Toad",
+    "species": "Bufo bufo",
+    "description": "TheCommon Toad(Bufo bufo) is also known as the European Toad. Common toads are widespread in mainland Britain, mainly England, Scotland and Wales, however, they are absent from Ireland. Common Toads can also be found over most of Europe, northwest Africa and Asia. Common Toads are Britains largest and heaviestamphibians.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Amphibia",
+      "Order": "Anura",
+      "Family": "Bufonidae",
+      "Genus": "Bufo",
+      "Species": "B. bufo",
+      "Binomial name": "Bufo bufo",
+      "": ""
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/common-toad/",
+      "https://animalcorner.org/animals/common-toad/"
+    ]
+  },
+  {
+    "name": "White Rhino",
+    "species": "Ceratotherium simum",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Perissodactyla",
+      "Family": "Rhinocerotidae",
+      "Genus": "Ceratotherium",
+      "Species": "C. simum",
+      "Binomial name": "Ceratotherium simum",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/white-rhino/"
+    ]
+  },
+  {
+    "name": "Galapagos Flamingo",
+    "species": "Phoenicopterus ruber",
+    "description": "Discover the many amazing animals that live on our planet.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Phoenicopteriformes",
+      "Family": "Phoenicopteridae",
+      "Genus": "Phoenicopterus",
+      "Species": "P. ruber",
+      "Binomial name": "Phoenicopterus ruber",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-flamingo/"
+    ]
+  },
+  {
+    "name": "White Stork Birds",
+    "species": "Ciconia ciconia",
+    "description": "TheWhite Stork(Ciconia ciconia) is a large wading bird that belongs to the family: Ciconiidae.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Ciconiiformes",
+      "Family": "Ciconiidae",
+      "Genus": "Ciconia",
+      "Species": "C. ciconia",
+      "Binomial name": "Ciconia ciconia",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/white-stork-birds/"
+    ]
+  },
+  {
+    "name": "Cape Gannet Bird",
+    "species": "",
+    "description": "The Cape Gannet (Morus capensis) is an easily identified seabird because of its large size. It is part of the Gannet family: Sulidae. Cape Gannets resemble the Northern Gannets apart from the fact that the Northern Gannet is entirely white except for black wing tips.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Suliformes",
+      "Family": "Sulidae",
+      "Genus": "Morus",
+      "Species": "M. capensis"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/cape-gannet-bird/"
+    ]
+  },
+  {
+    "name": "Click Beetle",
+    "species": "",
+    "description": "Click beetlesbelong to the family Elateridae. They are sometimes called ‘elaters’, ‘skipjacks’, ‘snapping beetles’ or ‘spring beetles’. Click beetles are a cosmopolitan family characterized by the unusual clicking mechanism they have. There are a few closely-related families in which a few members have the same mechanism, but all elaterids can click.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Class": "Insecta",
+      "Order": "Coleoptera",
+      "Suborder": "Polyphaga",
+      "Infraorder": "Elateriformia",
+      "Superfamily": "Elateroidea",
+      "Family": "Elateridae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/click-beetle/"
+    ]
+  },
+  {
+    "name": "Atlantic Spotted Dolphins",
+    "species": "Stenella frontalis",
+    "description": "TheAtlantic Spotted Dolphin(Stenella frontalis) is a dolphin found in the Gulf Stream of the North Atlantic Ocean. Older members of the species have a very distinctive spotted coloration all over their body.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Infraorder": "Cetacea",
+      "Family": "Delphinidae",
+      "Genus": "Stenella",
+      "Species": "S. frontalis",
+      "Binomial name": "Stenella frontalis"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/atllantic-spotted-dolphins/"
+    ]
+  },
+  {
+    "name": "Beluga Sturgeon",
+    "species": "",
+    "description": "The Beluga Sturgeon is probably the most famous of all thesturgeon fish. They are ancient fish, that have graced our planet for millions of years.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Actinopterygii",
+      "Order": "Acipenseriformes",
+      "Family": "Acipenseridae",
+      "Genus": "Huso",
+      "Species": "H. huso",
+      "Binominal Name": "Huso huso"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/beluga-sturgeon/"
+    ]
+  },
+  {
+    "name": "Spiny Lobster",
+    "species": "",
+    "description": "Spiny lobsters, also known as langustas, langouste, or rock lobsters, make up the family Palinuridae in the order Decapoda and infraorder Achelata. There are around 60 species of these achelatecrustaceanswhich are split into 12 genera.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Subphylum": "Crustacea",
+      "Class": "Malacostraca",
+      "Order": "Decapoda",
+      "Infraorder": "Achelata",
+      "Family": "Palinuridae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/spiny-lobster/"
+    ]
+  },
+  {
+    "name": "Common Seal",
+    "species": "Phoca vitulina",
+    "description": "TheCommon SealorHarbour Seal, is a true seal of the Northern Hemisphere.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Clade": "Pinnipedia",
+      "Family": "Phocidae",
+      "Genus": "Phoca",
+      "Species": "P. vitulina",
+      "Binomial name": "Phoca vitulina",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/common-seal/"
+    ]
+  },
+  {
+    "name": "African Spurred Tortoise",
+    "species": "",
+    "description": "TheAfrican Spurred Tortoise(Geochelone sulcata) is also known as theSulcata Tortoise, ‘Grooved Tortoise’, the ‘Spur Tortoise’ and the ‘African Spur Thigh Tortoise’. It is a desert-dwelling tortoise whose range extends along the southern edge of the Sahara Desert from Senegal and Mauritania, east through Mali, Chad, the Sudan and Ethiopia to Eritrea.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Sauropsida",
+      "Order": "Testudines",
+      "Family": "Cryptodira",
+      "Genus": "Testudinidae",
+      "Species": "G. sulcata"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/african-spurred-tortoise/"
+    ]
+  },
+  {
+    "name": "Galapagos Rail Bird",
+    "species": "",
+    "description": "Birds of the family ‘Rallidae’ are called Rails. TheGalapagos Rail Birdis a small rail endemic to the Galapagos Islands. It closely resembles the closely related Black Rail of The Americas. It has been threatened by introduced species, such as goats and cats and is considered vulnerable.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Gruiformes",
+      "Family": "Rallidae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-rail-bird/"
+    ]
+  },
+  {
+    "name": "Kittens",
+    "species": "Felis catus",
+    "description": "The femalecatcan begin mating at around 5 to 10 months and the male cat between 9 and 12 months. Kittens can be born at any time of the year.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Suborder": "Feliformia",
+      "Family": "Felidae",
+      "Subfamily": "Felinae",
+      "Genus": "Felis",
+      "Species": "F. catus",
+      "Binomial name": "Felis catus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/kittens/"
+    ]
+  },
+  {
+    "name": "Prairie Dogs",
+    "species": "",
+    "description": "Prairie dogs, are an adorable sight in the grasslands of North America. With their curious eyes and bustling communities, they are full of character and charm. Contrary to their name, they aren’t related to canids but are herbivorousburrowing rodents. They belong to the genus ‘Cynomys‘, which is a member of the ‘Marmotini‘ tribe which includes other types of ground squirrels.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Sciuridae",
+      "Genus": "Cynomys",
+      "Species": "Cynomys gunnisoni,Cynomys leucurus,Cynomys ludovicianus,Cynomys mexicanus,Cynomys parvidens"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/prairie-dogs/"
+    ]
+  },
+  {
+    "name": "Spinner Dolphins",
+    "species": "Stenella longirostris",
+    "description": "TheSpinner Dolphinis found in off-shore tropical waters around the world. There are two species of the Spinner dolphin: the Short Snouted Spinner dolphin and the Long Snouted Spinner Dolphin.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Infraorder": "Cetacea",
+      "Family": "Delphinidae",
+      "Genus": "Stenella",
+      "Species": "S. longirostris",
+      "Binomial name": "Stenella longirostris",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/spinner-dolphins/"
+    ]
+  },
+  {
+    "name": "Galapagos Land Iguana",
+    "species": "Conolophus subcristatus",
+    "description": "TheGalapagos Land Iguanaresembles the mythical creatures of the past-dragons with long tails, clawed feet and spiny crests. Land Iguanas have a spiky dorsal crest which runs along the neck and back. They are heavily bodied with thick back legs and smaller front legs.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Squamata",
+      "Suborder": "Iguania",
+      "Family": "Iguanidae",
+      "Genus": "Conolophus",
+      "Species": "C. subcristatus",
+      "Binomial name": "Conolophus subcristatus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-land-iguana/"
+    ]
+  },
+  {
+    "name": "Harbour Porpoise",
+    "species": "Phocoena phocoena",
+    "description": "Theharbour porpoise(Phocoena phocoena), also spelt harbor porpoise, is one of eight extant species of porpoise. It is one of the smallest cetacean in the sea. As its name implies, it stays close to coastal areas or river estuaries and as such is the most familiar porpoise to whale watchers. The Harbour Porpoise often ventures up rivers and has been seen hundreds of miles from the sea.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Infraorder": "Cetacea",
+      "Family": "Phocoenidae",
+      "Genus": "Phocoena",
+      "Species": "P. phocoena",
+      "Binomial name": "Phocoena phocoena",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/harbour-porpoise/"
+    ]
+  },
+  {
+    "name": "Red Back Jumping Spiders",
+    "species": "Phidippus johnsoni",
+    "description": "TheRedback Spider(Latrodectus hasselti) is a potentially dangerous spider native to Australia. The Redback Spider resembles aBlack widowspider. The Redback Spider is a member of the genus Latrodectus or the widow family of spiders, which are found throughout the world. They are common in disturbed and urban areas.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Subphylum": "Chelicerata",
+      "Class": "Arachnida",
+      "Order": "Araneae",
+      "Infraorder": "Araneomorphae",
+      "Family": "Salticidae",
+      "Subfamily": "Salticinae",
+      "Genus": "Phidippus",
+      "Species": "P. johnsoni",
+      "Binomial name": "Phidippus johnsoni",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/red-back-jumping-spiders/"
+    ]
+  },
+  {
+    "name": "Australasian Grebe",
+    "species": "Tachybaptus novaehollandiae",
+    "description": "The Australasian Grebe (Tachybaptus novaehollandiae) is a small water bird that is found throughoutAustraliaand many Pacific Ocean islands and is now also resident in New Zealand where it was self introduced.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Podicipediformes",
+      "Family": "Podicipedidae",
+      "Genus": "Tachybaptus",
+      "Species": "T. novaehollandiae",
+      "Binomial name": "Tachybaptus novaehollandiae",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/australasian-grebe/"
+    ]
+  },
+  {
+    "name": "Pufferfish",
+    "species": "",
+    "description": "The Pufferfish, are a large family of fish scientifically known asTetraodontidae. Within this family are 28 different genera, and around 193 unique species. Across the range, they are some of the ocean’s and freshwater’s most intriguing creatures.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Actinopterygii",
+      "Order": "Tetraodontiformes",
+      "Family": "Tetraodontidae",
+      "Genus": "28 Genera",
+      "Species": "193 Species"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/pufferfish/"
+    ]
+  },
+  {
+    "name": "Galapagos Lava Heron Bird",
+    "species": "Butorides sundevalli",
+    "description": "Lava Herons(Butorides sundevalli) are endemic (unique) to the Galapagos Islands. They can be mostly observed on the James Bay area of the islands. Lava Herons are small (35 centimetres), grey, dark on wings and back, and orange legs. Lava Herons can be found along the rock shores and mangrove swamps around the islands. The Lava Herons dark grey color blends with the color of lava.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Pelecaniformes",
+      "Family": "Ardeidae",
+      "Genus": "Butorides",
+      "Species": "B. sundevalli",
+      "Binomial name": "Butorides sundevalli",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-lava-heron/"
+    ]
+  },
+  {
+    "name": "Hippopotamus",
+    "species": "Hippopotamus amphibius",
+    "description": "TheHippopotamus(hippopotamus amphibius) is the third largest living land mammal on the earth. The first largest is the elephant and the second is the white rhinoceros. A male hippopotamus is called a ‘bull’, a female hippopotamus is called a ‘cow’ and a baby hippopotamus is called a ‘calf’.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Family": "Hippopotamidae",
+      "Genus": "Hippopotamus",
+      "Species": "H. amphibius",
+      "Binomial name": "Hippopotamus amphibius",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/hippopotamus/"
+    ]
+  },
+  {
+    "name": "Galapagos Silky Shark",
+    "species": "Asio flammeus",
+    "description": "TheSilky Shark(Carcharhinus falciformis), is a large pelagic (found in open waters) shark of tropical and warm temperate seas. The Silky shark is found worldwide in tropical and warm temperate seas. Although usually pelagic, it sometimes approaches the coast, especially at remote offshore islands such as the Galapagos Islands. It is found to depths of at least 500 metres.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Strigiformes",
+      "Family": "Strigidae",
+      "Genus": "Asio",
+      "Species": "A. flammeus",
+      "Binomial name": "Asio flammeus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-silky-shark/"
+    ]
+  },
+  {
+    "name": "Caracal",
+    "species": "Caracal caracal",
+    "description": "TheCaracal(Caracal caracal) is a medium sized wild cat that is native to Africa, Central Asia, the Middle East, northwestern India and arid areas of Pakistan. Belonging to the family Felidae and the order Carnivora, there are three subspecies of caracal recognized.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Suborder": "Feliformia",
+      "Family": "Felidae",
+      "Subfamily": "Felinae",
+      "Genus": "Caracal",
+      "Species": "C. caracal",
+      "Binomial name": "Caracal caracal",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/caracal/"
+    ]
+  },
+  {
+    "name": "Chickaree",
+    "species": "Tamiasciurus douglasii",
+    "description": "TheChickareesquirrel (Tamiasciurus douglasii) is a collective name for the Pine Squirrel, Douglas Squirrel and American Red Squirrel. It is widely distributed in North America, from Alaska, east to Newfoundland, south to Smoky Mountains and south through Rocky Mountains to Arizona and New Mexico and particularly in Pacific coastal states.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Sciuridae",
+      "Genus": "Tamiasciurus",
+      "Species": "T. douglasii",
+      "Binomial name": "Tamiasciurus douglasii",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/chickaree/"
+    ]
+  },
+  {
+    "name": "Jellyfish",
+    "species": "",
+    "description": "Jellyfishare marine invertebrates belonging to the Scyphozoan class, and in turn the phylum Cnidaria. The body of an adult jellyfish is composed of a bell-shaped, jellylike substance enclosing its internal structure, from which the creatures tentacles suspend.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Cnidaria",
+      "Subphylum": "Medusozoa"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/jellyfish/"
+    ]
+  },
+  {
+    "name": "Vulture",
+    "species": "",
+    "description": "Vulturesare medium to large sized Raptors or birds of prey.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/vulture/"
+    ]
+  },
+  {
+    "name": "Deer",
+    "species": "",
+    "description": "In all deer species (except the reindeer), only the male has antlers. Antlers are shed each Spring and immediately a new set starts to grow, taking 16 weeks to reach full size in August. Antlers are made of a type of dense and very solid bone and whilst growing they are covered with a hairy skin called ‘velvet’ which is shed when the antlers have reached their full size for that year.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Infraorder": "Pecora",
+      "Family": "Cervidae",
+      "Type genus": "Cervus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/deer/"
+    ]
+  },
+  {
+    "name": "Opossums",
+    "species": "",
+    "description": "Opossums, generally referred to as ‘Didelphimorpias’ are small marsupials that are found inCentralandSouthern America. Opossums have lived in the Americas for around 55 million years probably evolving from the basic South American marsupials of the late Cretaceous period. They have now spread northwards as far as Canada although those who have are vulnerable to frostbite.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Infraclass": "Marsupialia",
+      "Superorder": "Ameridelphia",
+      "Order": "Didelphimorphia",
+      "Family": "Didelphidae",
+      "Type genus": "Didelphis",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/opossums/"
+    ]
+  },
+  {
+    "name": "Ocelot",
+    "species": "Leopardus pardalis",
+    "description": "TheOcelot(Leopardus pardalis), is also known as the ‘Painted Leopard’, ‘McKenney’s Wildcat’ or ‘Manigordo’ (inCosta Rica).",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Suborder": "Feliformia",
+      "Family": "Felidae",
+      "Subfamily": "Felinae",
+      "Genus": "Leopardus",
+      "Species": "L. pardalis",
+      "Binomial name": "Leopardus pardalis",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/ocelot/"
+    ]
+  },
+  {
+    "name": "Hazel Dormouse",
+    "species": "Muscardinus avellanarius",
+    "description": "TheHazel Dormouse(Muscardinus avellanarius) is a small mammal. The Hazel Dormouse is the only living member of the genus Muscardinus. The Hazel Dormouse is 6 – 9 centimetres long with a tail of 5.7 – 7.5 centimetres. Their weight is between 15 and 30 grams. Little is known about their social organisation, however, it is thought that they sometimes live in pairs.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Gliridae",
+      "Subfamily": "Leithiinae",
+      "Genus": "Muscardinus",
+      "Species": "M. avellanarius",
+      "Binomial name": "Muscardinus avellanarius",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/hazel-dormouse/"
+    ]
+  },
+  {
+    "name": "Red-backed Shrike",
+    "species": "",
+    "description": "TheRed-backed Shrikebird (Lanius collurio) is a member of the shrike family Laniidae. The general color of the males upper parts is reddish. It has a grey head and a typical shrike black stripe through the eye. Underparts are tinged pink and the tail has a black and white pattern similar to that of a wheatear. In the female and young Red-backed Shrikes, the upperparts are brown and vermiculated (wavy lines or markings ). Underparts are buff and also vermiculated.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Passeriformes",
+      "Family": "Laniidae",
+      "Genus": "Lanius",
+      "Species": "L. collurio"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/red-backed-shrike/"
+    ]
+  },
+  {
+    "name": "Gorillas",
+    "species": "",
+    "description": "Great Apes including Gorillas,OrangutansandChimpanzeesbelong to the order ‘Primates’ which also includes human beings. Gorillas are the largest of the ‘Primates’ and are divided into five sub-species:Western Lowland Gorillas,Eastern Lowland Gorillas,Mountain Gorillas, Cross River Gorillas and Bwindi Gorillas. All five sub-species belong to the family ‘Pongidae’. Each sub-species has its own classification:",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Primates",
+      "Suborder": "Haplorhini",
+      "Infraorder": "Simiiformes",
+      "Family": "Hominidae",
+      "Subfamily": "Homininae",
+      "Tribe": "Gorillini",
+      "Genus": "Gorilla",
+      "Type species": "Troglodytes gorilla",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/gorillas/"
+    ]
+  },
+  {
+    "name": "Baltimore oriole",
+    "species": "",
+    "description": "See the Smithsonian's National Zoo's Giant Pandas — Bao Li and Qing Bao — live on camera.",
+    "traits": {},
+    "source_urls": [
+      "https://nationalzoo.si.edu/animals/baltimore-oriole"
+    ]
+  },
+  {
+    "name": "Piranha Fish",
+    "species": "",
+    "description": "ThePiranha Fish(also known as the ‘caribe’ in Venezuela) is a ferocious, schooling, fresh-water fish. It is native to warm rainforest lowland streams and lakes inSouth America– the Orinoco river basin inVenezuela, in the Orinoco River and east of the Andes Mountains,up to the Paraná River inArgentina.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Actinopterygii",
+      "Order": "Characiformes",
+      "Superfamily": "Erythrinoidea",
+      "Family": "Serrasalmidae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/piranha-fish/"
+    ]
+  },
+  {
+    "name": "Mice",
+    "species": "Mus musculus",
+    "description": "Miceare probably the smallest member of the rodent order. Mice are funny and entertaining to observe. Mice are natures ‘busy-bodies’ and they scuttle around being very inquisitive. Mice make brilliant pets, they do not need much space and are very inexpensive to keep. A mouse will sit in your hand and generally explore its surroundings.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Muridae",
+      "Genus": "Mus",
+      "Subgenus": "Mus",
+      "Species": "M. musculus",
+      "Binomial name": "Mus musculus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/mice/"
+    ]
+  },
+  {
+    "name": "Peruvian Fox",
+    "species": "Lycalopex sechurae",
+    "description": "ThePeruvian Fox(Lycalopex sechurae), also called the Sechuran Fox or Sechuran Zorro, is a small canid found in South America. It lives in the Sechura desert in southwestern Ecuador and northwestern Peru. A male fox is called a ‘reynard’, the female is called a ‘vixen’ and the baby is called a ‘kit’. A group of foxes is called a skulk or a leash. Sechuran Foxes are named after the Sechura Desert in Peru.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Family": "Canidae",
+      "Genus": "Lycalopex",
+      "Species": "L. sechurae",
+      "Binomial name": "Lycalopex sechurae",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/peruvian-fox/"
+    ]
+  },
+  {
+    "name": "Galapagos Whale Shark",
+    "species": "Rhincodon typus",
+    "description": "Thewhale shark(Rhincodon typus), is a slow filter feeding (animals that feed by straining suspended matter and food particles from water) shark that is the largest living fish species, reaching up to 18 metres in length. Whale sharks are rare throughout Galapagos and mainly found in open water. They are grey-brown in color fading to paler undersides and have a white spotted pattern.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Chondrichthyes",
+      "Superorder": "Selachimorpha",
+      "Order": "Orectolobiformes",
+      "Family": "Rhincodontidae",
+      "Genus": "Rhincodon",
+      "Species": "R. typus",
+      "Binomial name": "Rhincodon typus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-whale-shark/"
+    ]
+  },
+  {
+    "name": "Eurasian Water Shrew",
+    "species": "Neomys fodiens",
+    "description": "TheEurasian Water Shrew(Neomys fodiens), known in Britain as theWater Shrew, has venomous saliva, although it is not able to puncture the skin of large mammals such as humans. Highly territorial, the Eurasian Water Shrew lives a solitary life and is found throughout northern Eurasia from Great Britain to North Korea.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Eulipotyphla",
+      "Family": "Soricidae",
+      "Genus": "Neomys",
+      "Species": "N. fodiens",
+      "Binomial name": "Neomys fodiens",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/eurasian-water-shrew/"
+    ]
+  },
+  {
+    "name": "Okapi",
+    "species": "Okapia johnstoni",
+    "description": "TheOkapi(Okapia johnstoni) is a mammal located in the Ituri Rainforest in the north east of the Democratic Republic of theCongoin central Africa.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Family": "Giraffidae",
+      "Genus": "Okapia",
+      "Species": "O. johnstoni",
+      "Binomial name": "Okapia johnstoni",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/okapi/"
+    ]
+  },
+  {
+    "name": "Camels",
+    "species": "",
+    "description": "Camelsare even-toed ungulates, meaning ‘hoofed animals’. There are several groups of ungulate mammals whose weight is distributed about equally by the third and fourth toes as they move around. Camels are native to the dry desert areas of western Asia and central and east Asia. The name camel comes from the Greek kámēlos from the Hebrew ‘gamal’ or Arabic ‘Jamal’.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Family": "Camelidae",
+      "Tribe": "Camelini",
+      "Genus": "Camelus",
+      "Type species": "Camelus dromedarius",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/camels/"
+    ]
+  },
+  {
+    "name": "Eastern Lowland Gorillas",
+    "species": "",
+    "description": "TheEastern lowland gorilla(Gorilla beringei graueri) is found only in the tropical forests of eastern Zaire, Africa.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Primates",
+      "Suborder": "Haplorhini",
+      "Infraorder": "Simiiformes",
+      "Family": "Hominidae",
+      "Subfamily": "Homininae",
+      "Genus": "Gorilla",
+      "Species": "G. beringei",
+      "Subspecies": "G. b. graueri",
+      "Trinomial name": "Gorilla beringei graueri",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/eastern-lowland-gorillas/"
+    ]
+  },
+  {
+    "name": "Adelie Penguin",
+    "species": "Pygoscelis adeliae",
+    "description": "The Adelie Penguin(Pygoscelis adeliae) is, together with theEmperor Penguin, one of the only twotypes of penguinliving on the Antarctic mainland. This species is common along the entire Antarctic coast and nearby islands. Adelie penguins are the smallest of the penguins living on the Antarctica continent. Adelie penguins were named after the wife of a French explorer in the 1830s.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Sphenisciformes",
+      "Family": "Spheniscidae",
+      "Genus": "Pygoscelis",
+      "Species": "P. adeliae",
+      "Binomial name": "Pygoscelis adeliae",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/adelie-penguin/"
+    ]
+  },
+  {
+    "name": "Slow Worm",
+    "species": "Anguis fragilis",
+    "description": "Theslow worm(Anguis fragilis), also known as a deaf adder, a slowworm, a blindworm, or regionally, a long-cripple, is a reptile native to western Eurasia. Its genus is Anguis. Despite its name and appearance, it is not actually a worm or asnake, but a lizard, belonging to the family Anguidae and the order Squamata. They have been shown to be a species complex, consisting of 5 distinct but similar species.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Squamata",
+      "Family": "Anguidae",
+      "Genus": "Anguis",
+      "Species": "A. fragilis",
+      "Binomial name": "Anguis fragilis",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/slow-worm/"
+    ]
+  },
+  {
+    "name": "Hoopoe Birds",
+    "species": "",
+    "description": "TheAfrican Hoopoe(Upupa africana) is anAfrican birdthat belongs to the Family: Upupidae which also includes the Eurasian Hoopoe (Upupa epops) although these are two separate species.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Bucerotiformes",
+      "Family": "Upupidae",
+      "Genus": "Upupa"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/hoopoe-birds/"
+    ]
+  },
+  {
+    "name": "Roborovski Hamsters",
+    "species": "Phodopus roborovskii",
+    "description": "Roborovski Hamsters(Phodopus roborovski) are the smallest and fastest of all hamsters and are commonly kept as pets. The distinguishing characteristics of the Roborovski Hamsters are the white spots where their eyebrows would be. Thesehamsters live the longest of any pet hamsters, on average three to three and a half years of age.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Cricetidae",
+      "Subfamily": "Cricetinae",
+      "Genus": "Phodopus",
+      "Species": "P. roborovskii",
+      "Binomial name": "Phodopus roborovskii",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/roborovski-hamsters/"
+    ]
+  },
+  {
+    "name": "Seagull",
+    "species": "",
+    "description": "Gulls, known colloquially as seagulls, belong to the seabird family Laridae. There are 10 genera of gulls, and they are most closely related to the terns (family Sternidae) and only distantly related to auks, skimmers and even more distantly to waders.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Charadriiformes",
+      "Suborder": "Lari",
+      "Family": "Laridae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/seagull/"
+    ]
+  },
+  {
+    "name": "Raccoon",
+    "species": "Procyon lotor",
+    "description": "TheRaccoon(Procyon lotor) is a member of the procyonidae family, a family of smallish animals, with generally slender bodies and long tails. Other members of this family includeCoati, some of which look very similar to raccoons.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Family": "Procyonidae",
+      "Genus": "Procyon",
+      "Species": "P. lotor",
+      "Binomial name": "Procyon lotor",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/racoon/"
+    ]
+  },
+  {
+    "name": "White Bengal Tiger",
+    "species": "",
+    "description": "White Bengal tigers or tigers of mixed Bengal/Amur ancestry have pink noses, white-to-creme colored fur and black, grey or chocolate-colored stripes. White Bengal tigers eyes are usually blue, but may be green or amber.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Suborder": "Feliformia",
+      "Family": "Felidae",
+      "Subfamily": "Pantherinae",
+      "Genus": "Panthera",
+      "Species": "P. tigris",
+      "Subspecies": "P. t. tigris"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/white-bengal-tigers/"
+    ]
+  },
+  {
+    "name": "Shark",
+    "species": "",
+    "description": "In some shape or form,Sharkshave been around for about 400 million years.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Chondrichthyes",
+      "Subclass": "Elasmobranchii",
+      "Infraclass": "Euselachii",
+      "Superorder": "Selachimorpha"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/shark/"
+    ]
+  },
+  {
+    "name": "Serval",
+    "species": "Leptailurus serval",
+    "description": "Rainforest Serval TheServal(Leptailurus serval) is a medium-sized African wild cat. It is closely related to the African Golden Cat and theCaracal. The Serval is generally found in most parts ofAfricaexcluding the arid desert regions to the north around the Sahara, parts of the western tip of Southern Africa and certain areas of thetropical rainforestsof Central Africa.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Suborder": "Feliformia",
+      "Family": "Felidae",
+      "Subfamily": "Felinae",
+      "Genus": "Leptailurus",
+      "Species": "L. serval",
+      "Binomial name": "Leptailurus serval",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/serval/"
+    ]
+  },
+  {
+    "name": "Aardvark",
+    "species": "",
+    "description": "TheAardvark(Orycteropus afer) (‘Digging foot’), sometimes called ‘antbear’ is a medium-sized mammal native to Africa. The name comes from the Afrikaans/Dutch for ‘earth pig’, because early settlers from Europe thought it resembled a pig. However, the aardvark is not related to the pig, it is placed in its own order.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Superorder": "Afrotheria",
+      "Order": "Tubulidentata",
+      "Family": "Orycteropodidae",
+      "Genus": "Orycteropus",
+      "Species": "O. afer"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/aardvark/"
+    ]
+  },
+  {
+    "name": "Tamarin Monkeys",
+    "species": "",
+    "description": "Tamarin Monkeys, are small monkeys of the family Callitrichidae. They arenew-world monkeys, roughly the size of a squirrel. There are many variants however, and we will look at some of these below.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Primates",
+      "Suborder": "Haplorhini",
+      "Infraorder": "Simiiformes",
+      "Family": "Callitrichidae",
+      "Genus": "Saguinus",
+      "Type species": "Saguinus ursulus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/tamarin-monkeys/"
+    ]
+  },
+  {
+    "name": "Northern Short-tailed Shrew",
+    "species": "Blarina brevicauda",
+    "description": "TheNorthern Short-tailed Shrew(Blarina brevicauda) is a large shrew found in central and eastern North America from southern Saskatchewan to AtlanticCanadaand south to Nebraska and Georgia. At one time, this species and theSouthern Short-tailed Shrew(Blarina carolinensis), were considered to be a single species, however, they are now classed as seperate species.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Eulipotyphla",
+      "Family": "Soricidae",
+      "Genus": "Blarina",
+      "Species": "B. brevicauda",
+      "Binomial name": "Blarina brevicauda",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/northern-short-tailed-shrew/"
+    ]
+  },
+  {
+    "name": "Indian Cuckoo Bird",
+    "species": "",
+    "description": "TheIndian Cuckoois found widely across Asia from Pakistan to India, and Sri Lanka, Indonesia, China and Russia.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Cuculiformes",
+      "Family": "Cuculidae",
+      "Genus": "Cuculus",
+      "Species": "C. micropterus"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/indian-cuckoo-bird/"
+    ]
+  },
+  {
+    "name": "Peccary (Javelina)",
+    "species": "",
+    "description": "Peccary (Javelina) ThePeccariesare medium sized, even toed ungulate mammals. Today there are four living species of peccaries, found from the southwestern United States through Central America and into South America and Trinidad. Collared peccaries are known as javelinas. A second species is the White-lipped peccary (Tayassu pecari), which is found in the rainforests of Central and South America.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Suborder": "Suina",
+      "Family": "Tayassuidae",
+      "Type genus": "Tayassu",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/peccary-javelina/"
+    ]
+  },
+  {
+    "name": "Australian Swiftlet",
+    "species": "Aerodramus terraereginae",
+    "description": "The Australian Swiftlet (Aerodramus terraereginae) is a small bird endemic to Queensland, Australia particularly in the tropical north east regions.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Apodiformes",
+      "Family": "Apodidae",
+      "Genus": "Aerodramus",
+      "Species": "A. terraereginae",
+      "Binomial name": "Aerodramus terraereginae",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/australian-swiftlet/"
+    ]
+  },
+  {
+    "name": "King Penguin",
+    "species": "Aptenodytes patagonicus",
+    "description": "King Penguinslive on the subantarctic islands at the northern reaches of Antarctica, as well as Tierra del Fuego, the Falkland Islands and other temperate islands of the region. The King penguin is the second largest penguin. It is sometimes confused with the largerEmperor penguin. Despite the specific name of ‘patagonicus’, King penguins no longer breed in Patagonia, or indeed any other part of South America.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Sphenisciformes",
+      "Family": "Spheniscidae",
+      "Genus": "Aptenodytes",
+      "Species": "A. patagonicus",
+      "Binomial name": "Aptenodytes patagonicus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/king-penguin/"
+    ]
+  },
+  {
+    "name": "Galapagos Swallow Tailed Gull",
+    "species": "Creagrus furcatus",
+    "description": "TheSwallow Tailed Gullis an equatorial seabird in the gull family Laridae. The species is endemic to the Galapagos Islands. When it is not breeding it is totally pelagic, migrating eastward to the coasts of Ecuador and Peru.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Charadriiformes",
+      "Family": "Laridae",
+      "Genus": "Creagrus",
+      "Species": "C. furcatus",
+      "Binomial name": "Creagrus furcatus",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-swallow-tailed-gull/"
+    ]
+  },
+  {
+    "name": "Mouse Deer",
+    "species": "",
+    "description": "The Mouse Deer, also known as Chevrotain, is a really peculiar little ungulate. Captivating and elusive in equal measure. They belong to two genera ‘Tragulus‘ and ‘Moschiola‘, which are members of the ‘Tragulidae‘ family. This is the only family in the infraorder ‘Tragulina‘, which falls under the order ‘Artiodactyla‘ which is mostly made up of similar, though generally larger ungulates.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Suborder": "Ruminantia",
+      "Infraorder": "Tragulina",
+      "Family": "Tragulidae",
+      "Genus": "Hyemoschus,Moschiola,Tragulus",
+      "Species": "10 Extant Species"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/mouse-deer/"
+    ]
+  },
+  {
+    "name": "Right Whales",
+    "species": "",
+    "description": "Right Whalesare baleen whales belonging to the family ‘Balaenidae’. Three right whale species are recognized in the genus ‘Eubalaena’, while the Bowhead Whale, also a Right whale, is placed in its own genus, ‘Balaena’.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Infraorder": "Cetacea",
+      "Family": "Balaenidae",
+      "Genus": "Eubalaena",
+      "Type species": "Balaena australis",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/right-whales/"
+    ]
+  },
+  {
+    "name": "American alligator",
+    "species": "",
+    "description": "See the Smithsonian's National Zoo's Giant Pandas — Bao Li and Qing Bao — live on camera.",
+    "traits": {},
+    "source_urls": [
+      "https://nationalzoo.si.edu/animals/american-alligator"
+    ]
+  },
+  {
+    "name": "Tiger",
+    "species": "",
+    "description": "See the Smithsonian's National Zoo's Giant Pandas — Bao Li and Qing Bao — live on camera.",
+    "traits": {},
+    "source_urls": [
+      "https://nationalzoo.si.edu/animals/tiger"
+    ]
+  },
+  {
+    "name": "Emu",
+    "species": "Dromaius novaehollandiae",
+    "description": "Emu TheEmuis a large, tough flightless bird found in many parts of Australia and New Guinea. It is Australia’s largest bird and the only member of the Genus: Dromaius.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Infraclass": "Palaeognathae",
+      "Order": "Casuariiformes",
+      "Family": "Casuariidae",
+      "Genus": "Dromaius",
+      "Species": "D. novaehollandiae",
+      "Binomial name": "Dromaius novaehollandiae",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/emu/"
+    ]
+  },
+  {
+    "name": "Dromedary Camels",
+    "species": "Camelus dromedarius",
+    "description": "TheDromedary Camel(Camelus dromedarius) is a large even-toed ungulate native to northern Africa and western Asia, also the land of east Africa, Sudan, Ethiopia and Somalia. Dromedary Camels have one hump and are desert dwellers. The Dromedary Camels is also the best-known member of the camel family.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Artiodactyla",
+      "Family": "Camelidae",
+      "Genus": "Camelus",
+      "Species": "C. dromedarius",
+      "Binomial name": "Camelus dromedarius",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/dromedary-camels/"
+    ]
+  },
+  {
+    "name": "Katipo Spider",
+    "species": "Latrodectus katipo",
+    "description": "TheKatipo or Red Katipo Spider(Latrodectus katipo) is a vulnerable,venomous spidernative to New Zealand. The Katipo Spider is a widow spider and is related to the black katipo, the Australian red-back spider and the black widow spiders. The Katipo spider is considered endangered. The Katipo Spider has also been sighted in parts of California. Katipo is a Māori name and means ‘night-stinger’.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Subphylum": "Chelicerata",
+      "Class": "Arachnida",
+      "Order": "Araneae",
+      "Infraorder": "Araneomorphae",
+      "Family": "Theridiidae",
+      "Genus": "Latrodectus",
+      "Species": "L. katipo",
+      "Binomial name": "Latrodectus katipo",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/katipo-spider/"
+    ]
+  },
+  {
+    "name": "Galapagos Rays",
+    "species": "",
+    "description": "Manta Rays | Golden Rays | Spotted Eagle Ray | Stingrays",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Chondrichthyes",
+      "Order": "Myliobatiformes",
+      "Suborder": "Myliobatoidei"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-rays/"
+    ]
+  },
+  {
+    "name": "Rattlesnakes",
+    "species": "",
+    "description": "Rattlesnakescome in different varieties and there are numerous sub species and color variations. However, one characteristic that they do have in common is jointed rattles on their tail. Rattlesnakes are agroup of venomous snakes, genera ‘Crotalus’ and ‘Sistrurus’. Rattlesnakes belong to the class of venomous snakes known commonly as ‘pit vipers’.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Reptilia",
+      "Order": "Squamata",
+      "Suborder": "Serpentes",
+      "Family": "Viperidae",
+      "Subfamily": "Crotalinae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/rattlesnakes/"
+    ]
+  },
+  {
+    "name": "Spiders",
+    "species": "",
+    "description": "Spidersare classified in the order Araneae, one of several orders within the larger class of arachnids, a group which also contains scorpions, mites, ticks and opiliones (harvestmen).",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Subphylum": "Chelicerata",
+      "Class": "Arachnida",
+      "Order": "Araneae"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/spiders/"
+    ]
+  },
+  {
+    "name": "Bigfin Squid",
+    "species": "",
+    "description": "Bigfin squidare agroup of cephalopodsin the genus Magnapinna and family Magnapinnidae. Little is known about the big fin squid as no adult specimens have ever been captured or sampled. Nonetheless, these animals are notable for their arms and tentacles that are extremely long and thought to be 4 to 8 m (13 to 26 ft) in length.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Mollusca",
+      "Class": "Cephalopoda",
+      "Order": "Oegopsida",
+      "Family": "Magnapinnidae",
+      "Genus": "Magnapinna",
+      "Type species": "Magnapinna pacifica",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/bigfin-squid/"
+    ]
+  },
+  {
+    "name": "Galapagos Fur Seals",
+    "species": "Arctocephalus galapagoensis",
+    "description": "TheGalapagos Fur Seal(Arctocephalus galapagoensis) is the smallest of all the pinnipeds. Galapagos Fur Seals are smaller than theGalapagos Sea Lionsreaching a length of 5 feet and weighing up to 68 kilograms at maturity. Galapagos Fur Seals eyes are large which helps them to hunt for squid and fish when hunting at night, avoiding sharks which are their natural predator.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Carnivora",
+      "Clade": "Pinnipedia",
+      "Family": "Otariidae",
+      "Genus": "Arctocephalus",
+      "Species": "A. galapagoensis",
+      "Binomial name": "Arctocephalus galapagoensis",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/galapagos-fur-seals/"
+    ]
+  },
+  {
+    "name": "West African Manatee",
+    "species": "Trichechus senegalensis",
+    "description": "TheAfrican Manatee(Trichechus senegalensis) is a species of manatee and is the least studied of the four species of sirenians. Photos of African Manatees are very rare. Although very little is known about this species, scientists think they are similar to theWest Indian Manatees.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Sirenia",
+      "Family": "Trichechidae",
+      "Genus": "Trichechus",
+      "Species": "T. senegalensis",
+      "Binomial name": "Trichechus senegalensis",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/west-african-manatee/"
+    ]
+  }
+]
