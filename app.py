@@ -3,7 +3,8 @@ import uvicorn
 import json
 import logging
 import os
-from fastapi import FastAPI
+import sys
+from fastapi import FastAPI, Request
 from mcp.server.fastmcp import FastMCP
 
 # Load configuration
@@ -14,7 +15,11 @@ except FileNotFoundError:
     config = {"logging_level": "INFO"}
 
 # Configure logging
-logging.basicConfig(level=config.get("logging_level", "INFO"))
+logging.basicConfig(
+    level=config.get("logging_level", "INFO"),
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    stream=sys.stdout
+)
 logger = logging.getLogger(__name__)
 
 # Define the tool
@@ -23,24 +28,46 @@ def list_animals() -> list[dict]:
     Returns a list of animals with their details.
     """
     data_path = os.path.join(os.path.dirname(__file__), "data", "animals.json")
+    logger.info(f"Reading data from {data_path}")
     try:
+        if not os.path.exists(data_path):
+            logger.error(f"Data file not found at {data_path}")
+            return [{"name": "Error", "description": "Data file not found"}]
+            
         with open(data_path, "r", encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+            logger.info(f"Successfully loaded {len(data)} animals")
+            return data
     except Exception as e:
-        logger.error(f"Error reading data file: {e}")
+        logger.error(f"Error reading data file: {e}", exc_info=True)
         return [{"name": "Error", "description": str(e)}]
 
 # Initialize FastMCP server
+logger.info("Initializing FastMCP server...")
 mcp = FastMCP("Animal Service")
 mcp.tool()(list_animals)
 
 # Create main FastAPI app
 app = FastAPI()
 
+# Add middleware to log errors
+@app.middleware("http")
+async def log_exceptions(request: Request, call_next):
+    try:
+        response = await call_next(request)
+        return response
+    except Exception as e:
+        logger.error(f"Unhandled exception: {e}", exc_info=True)
+        raise e
+
 # Mount MCP app at /mcp to avoid conflicts
 # Endpoints will be /mcp/sse and /mcp/messages
-mcp_app = mcp.sse_app()
-app.mount("/mcp", mcp_app)
+try:
+    mcp_app = mcp.sse_app()
+    app.mount("/mcp", mcp_app)
+    logger.info("Mounted MCP app at /mcp")
+except Exception as e:
+    logger.error(f"Failed to mount MCP app: {e}", exc_info=True)
 
 # Create Gradio interface
 with gr.Blocks() as demo:
@@ -56,6 +83,7 @@ with gr.Blocks() as demo:
     btn.click(fn=list_animals, outputs=output)
 
 # Mount Gradio app at root
+logger.info("Mounting Gradio app...")
 app = gr.mount_gradio_app(app, demo, path="/")
 
 if __name__ == "__main__":
