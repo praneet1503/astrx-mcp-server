@@ -100,11 +100,7 @@ async def catch_exceptions_middleware(request: Request, call_next):
             content={"detail": "Internal Server Error", "error": str(e)}
         )
 
-# 3. Startup Event (Removed in favor of lifespan)
-# @app.on_event("startup")
-# async def startup_event():
-#     load_data()
-
+# 3. Startup Event (Handled by lifespan)
 # 4. Health Check
 @app.get("/health")
 async def health_check():
@@ -146,9 +142,3 @@ with gr.Blocks() as demo:
 logger.info("Mounting Gradio app at root / ...")
 app = gr.mount_gradio_app(app, demo, path="/")
 
-if __name__ == "__main__":
-    # Use PORT env var for HF Spaces, fallback to 7860
-    port = int(os.getenv("PORT", "7860"))
-    host = "0.0.0.0"
-    print(f"Starting server on {host}:{port}")
-    uvicorn.run(app, host=host, port=port)
