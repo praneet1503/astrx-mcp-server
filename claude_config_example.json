@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "astrx-animals": {
+      "command": "python3",
+      "args": [
+        "/Users/Praneet/astrx-mcp-server/mcp_server.py"
+      ]
+    }
+  }
+}
