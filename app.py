@@ -1,13 +1,19 @@
 from __future__ import annotations
-import gradio as gr
+try:
+    import gradio as gr
+    GRADIO_AVAILABLE = True
+except Exception:
+    gr = None
+    GRADIO_AVAILABLE = False
 import uvicorn
 import json
 import logging
 import os
 import sys
 from typing import List, Dict, Optional, Any
+from pathlib import Path
 from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -26,12 +32,20 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # --- Global Data Cache ---
+BASE_DIR = Path(__file__).parent
+
 ANIMALS_CACHE: List[Dict[str, Any]] = []
+
+def get_data_file_paths() -> tuple[Path, Path]:
+    data_dir = BASE_DIR / "data"
+    return data_dir / "animals.json", data_dir / "animals.csv"
+
 
 def load_data():
     """Loads animals data into the global cache."""
     global ANIMALS_CACHE
-    data_path = os.path.join(os.path.dirname(__file__), "data", "animals.json")
+    json_path, csv_path = get_data_file_paths()
+    data_path = json_path
     try:
         if os.path.exists(data_path):
             with open(data_path, "r", encoding="utf-8") as f:
@@ -43,6 +57,19 @@ def load_data():
     except Exception as e:
         logger.error(f"Error loading data file: {e}", exc_info=True)
         ANIMALS_CACHE = []
+
+
+def run_scraper():
+    """Runs the scraper main function synchronously if available.
+    Returns the scraper result or raises an exception.
+    """
+    if str(BASE_DIR) not in sys.path:
+        sys.path.append(str(BASE_DIR))
+    import importlib
+    scraper_mod = importlib.import_module("scraper")
+    if hasattr(scraper_mod, "main"):
+        return scraper_mod.main()
+    raise RuntimeError("No main entrypoint in scraper module")
 
 # --- Tool Definition ---
 def list_animals() -> List[Dict[str, Any]]:
@@ -120,9 +147,10 @@ if mcp:
         logger.error(f"Failed to mount MCP app: {e}", exc_info=True)
 
 # --- Gradio Interface ---
-with gr.Blocks() as demo:
-    gr.Markdown("# Animal MCP Server")
-    gr.Markdown(f"## Status: {'Running' if mcp else 'Running (MCP Disabled)'}")
+if GRADIO_AVAILABLE:
+    with gr.Blocks() as demo:
+        gr.Markdown("# Animal MCP Server")
+        gr.Markdown(f"## Status: {'Running' if mcp else 'Running (MCP Disabled)'}")
     
     if mcp:
         gr.Markdown("The MCP server is active at:")
@@ -131,14 +159,55 @@ with gr.Blocks() as demo:
     else:
         gr.Markdown("⚠️ **MCP Server is not active** (Import failed or initialization error).")
 
-    gr.Markdown("### Test Tool")
-    output = gr.JSON(label="Animals List")
-    btn = gr.Button("List Animals")
+        gr.Markdown("### Test Tool")
+        output = gr.JSON(label="Animals List")
+        btn = gr.Button("List Animals")
     # Fix: outputs should be a list or single component, but explicit list is safer
-    btn.click(fn=list_animals, outputs=[output])
+        btn.click(fn=list_animals, outputs=[output])
 
 # 6. Mount Gradio at Root
 # This is critical for HF Spaces to render the UI correctly without 404s
-logger.info("Mounting Gradio app at root / ...")
-app = gr.mount_gradio_app(app, demo, path="/")
+if GRADIO_AVAILABLE:
+    logger.info("Mounting Gradio app at root / ...")
+    app = gr.mount_gradio_app(app, demo, path="/")
+else:
+    logger.info("Gradio not available; skipping UI mount")
+
+
+# Required Classic API endpoints
+@app.get("/")
+async def root():
+    return "API is running"
+
+
+@app.get("/data")
+async def data_endpoint():
+    try:
+        if not ANIMALS_CACHE:
+            load_data()
+        if not ANIMALS_CACHE:
+            raise HTTPException(status_code=404, detail="Dataset not found")
+        return ANIMALS_CACHE
+    except Exception as e:
+        logger.error(f"Error in /data endpoint: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/scrape")
+async def scrape_endpoint():
+    try:
+        # Import scraper module from workspace root and call main()
+        if str(BASE_DIR) not in sys.path:
+            sys.path.append(str(BASE_DIR))
+        import importlib
+        scraper_mod = importlib.import_module("scraper")
+        if hasattr(scraper_mod, "main"):
+            scraper_mod.main()
+        # Clear cache so data is reloaded on subsequent /data calls
+        global ANIMALS_CACHE
+        ANIMALS_CACHE = []
+        return {"status": "ok", "message": "Scraper executed"}
+    except Exception as e:
+        logger.error(f"Error executing scraper: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
