@@ -192,12 +192,6 @@ async def lifespan(app: FastAPI):
 # --- Main App ---
 app = FastAPI(title="Astrx MCP Server", lifespan=lifespan)
 
-# Mount Gradio App
-# We mount it at the root "/" so it's the main interface
-# The API docs will still be at /docs
-gradio_app = create_gradio_app()
-app = gr.mount_gradio_app(app, gradio_app, path="/")
-
 @app.get("/health")
 def health():
     return {"status":"UP"}
@@ -207,6 +201,12 @@ def data_preview(limit: int = 100):
     if _cached_df is None:
         raise HTTPException(status_code=404, detail="No data available on the server")
     return _cached_df.head(limit).where(pd.notnull(_cached_df), None).to_dict(orient="records")
+
+# Mount Gradio App
+# We mount it at the root "/" so it's the main interface
+# The API docs will still be at /docs
+gradio_app = create_gradio_app()
+app = gr.mount_gradio_app(app, gradio_app, path="/")
 
 if __name__ == "__main__":
     import uvicorn
