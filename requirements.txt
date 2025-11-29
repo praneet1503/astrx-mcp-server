@@ -1,7 +1,4 @@
 fastapi
-uvicorn
+uvicorn[standard]
 pandas
 python-multipart
-modal
-playwright
-beautifulsoup4

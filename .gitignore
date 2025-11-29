@@ -4,3 +4,10 @@
 .env
 .vscode/
 __pycache__/
+# local data and secrets
+data/
+local_scraper/
+secrets/
+*.sqlite3
+*.pyc
+logs/
