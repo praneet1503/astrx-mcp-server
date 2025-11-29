@@ -45,7 +45,7 @@ async def lifespan(app: FastAPI):
     yield
     _cached_df = None
 
-app = FastAPI(title="Scraped Data API", lifespan=lifespan)
+app = FastAPI(title="Astrx MCP Server", lifespan=lifespan)
 
 @app.get("/")
 def root():
