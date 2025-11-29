@@ -1,0 +1,72 @@
+name: Scrape and Deploy Data
+
+on:
+  schedule:
+    # Run every Sunday at midnight
+    - cron: '0 0 * * 0'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r local_scraper/requirements-scraper.txt
+        pip install huggingface_hub
+
+    - name: Setup Modal
+      run: |
+        modal token set --token-id ${{ secrets.MODAL_TOKEN_ID }} --token-secret ${{ secrets.MODAL_TOKEN_SECRET }}
+
+    - name: Run Scraper
+      run: |
+        modal run local_scraper/scraper.py
+
+    - name: Validate Data
+      run: |
+        python scripts/validate_data.py
+
+    - name: Archive Data
+      run: |
+        python scripts/archive_data.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add data/animals.json data/versions/
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit."
+        else
+          git commit -m "Auto-update animals.json [skip ci]"
+          git push
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Sync to Hugging Face Space (Optional)
+      if: env.HF_TOKEN != ''
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        HF_SPACE_REPO: ${{ secrets.HF_SPACE_REPO }} # e.g., username/space-name
+      run: |
+        if [ -n "$HF_SPACE_REPO" ]; then
+          echo "Syncing to HF Space: $HF_SPACE_REPO"
+          huggingface-cli upload $HF_SPACE_REPO data/animals.json data/animals.json --repo-type space --token $HF_TOKEN
+        else
+          echo "HF_SPACE_REPO secret not set, skipping sync."
+        fi

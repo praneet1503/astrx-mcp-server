@@ -5,8 +5,10 @@ import pandas as pd
 import os
 import gradio as gr
 import json
-import requests
 from dotenv import load_dotenv
+
+# Import logic
+from logic import query_claude, set_animals_data, search_animals, initialize_retriever
 
 # Load environment variables
 load_dotenv()
@@ -15,13 +17,8 @@ BASE = Path(__file__).parent
 DATA_DIR = BASE / "data"
 DATA_FILE = DATA_DIR / "animals.json"
 
-# --- Configuration ---
-CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
-CLAUDE_MODEL = "claude-3-haiku-20240307"
-
 # --- Global State ---
 _cached_df = None
-ANIMALS_DATA = []
 
 # --- Helper Functions ---
 def load_data_list():
@@ -37,89 +34,6 @@ def load_data_list():
     except Exception as e:
         print(f"Error loading data: {e}")
         return []
-
-def search_animals(query):
-    """
-    Simple keyword search to find relevant animals.
-    Returns a list of animal dictionaries.
-    """
-    query_words = query.lower().split()
-    matches = []
-    
-    for animal in ANIMALS_DATA:
-        # Search in name and description
-        text = (animal.get("name", "") + " " + str(animal.get("description", ""))).lower()
-        
-        # Score based on how many query words appear
-        score = sum(1 for word in query_words if word in text)
-        
-        if score > 0:
-            matches.append((score, animal))
-            
-    # Sort by score (descending) and take top 20
-    matches.sort(key=lambda x: x[0], reverse=True)
-    return [m[1] for m in matches[:20]]
-
-def query_claude(user_input):
-    """
-    Sends the user input and the dataset context to Claude.
-    """
-    api_key = os.getenv("CLAUDE_API_KEY")
-    if not api_key:
-        return "Error: CLAUDE_API_KEY not found in environment variables."
-    
-    if not ANIMALS_DATA:
-        return "Error: No animal data loaded. Please check the server logs."
-
-    # Retrieval Step: Find relevant animals to reduce token count
-    relevant_animals = search_animals(user_input)
-    
-    if not relevant_animals:
-        context_str = "No specific animals found matching the query in the dataset."
-    else:
-        context_str = json.dumps(relevant_animals, ensure_ascii=False)
-
-    print(f"Sending {len(relevant_animals)} records to Claude...")
-
-    system_prompt = (
-        "You are an expert zoologist assistant. "
-        "You have access to a subset of the animal dataset relevant to the user's query below. "
-        "Your task is to answer the user's question based strictly on this provided data. "
-        "If the answer is not in the data, say so. "
-        "Cite the 'name' of the animal when providing facts.\n\n"
-        f"RELEVANT DATA:\n{context_str}"
-    )
-
-    headers = {
-        "x-api-key": api_key,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json"
-    }
-
-    payload = {
-        "model": CLAUDE_MODEL,
-        "max_tokens": 1024,
-        "system": system_prompt,
-        "messages": [
-            {"role": "user", "content": user_input}
-        ]
-    }
-
-    try:
-        response = requests.post(CLAUDE_API_URL, headers=headers, json=payload)
-        
-        if response.status_code == 200:
-            result = response.json()
-            content = result.get("content", [])
-            if content and len(content) > 0:
-                return content[0].get("text", "No text returned.")
-            else:
-                return "Empty response from Claude."
-        else:
-            return f"API Error {response.status_code}: {response.text}"
-
-    except Exception as e:
-        return f"Request Failed: {str(e)}"
 
 # --- Gradio UI ---
 def create_gradio_app():
@@ -139,6 +53,7 @@ def create_gradio_app():
         submit_btn = gr.Button("Ask Claude", variant="primary")
         output_box = gr.Textbox(label="Claude's Answer", lines=10)
         
+        # Gradio supports async functions natively
         submit_btn.click(
             fn=query_claude,
             inputs=[user_input],
@@ -146,14 +61,19 @@ def create_gradio_app():
         )
         
         gr.Markdown("---")
-        gr.Markdown(f"**Dataset Status:** Loaded {len(ANIMALS_DATA)} records.")
+        # We can't easily show len(ANIMALS_DATA) here dynamically without state, 
+        # but we can show a static message or load it
+        gr.Markdown(f"**Status:** Server Ready.")
     return demo
 
 # --- FastAPI Lifecycle ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global _cached_df, ANIMALS_DATA
+    global _cached_df
     try:
+        # Initialize Semantic Search Model
+        initialize_retriever()
+
         # Load data for API (Pandas)
         if DATA_DIR.exists():
             data_files = list((DATA_DIR).glob("*.csv")) + list((DATA_DIR).glob("*.json"))
@@ -169,12 +89,13 @@ async def lifespan(app: FastAPI):
                         _cached_df = pd.read_json(f, lines=True)
                 print(f"Loaded {_cached_df.shape[0]} records for API.")
         
-        # Load data for Gradio (List of Dicts)
-        ANIMALS_DATA = load_data_list()
+        # Load data for Logic (List of Dicts)
+        animals_list = load_data_list()
+        set_animals_data(animals_list)
         
     except Exception as e:
         _cached_df = None
-        ANIMALS_DATA = []
+        set_animals_data([])
         print("Warning: failed to load local data:", e)
 
     # Log public URL for HF Spaces
@@ -187,7 +108,7 @@ async def lifespan(app: FastAPI):
 
     yield
     _cached_df = None
-    ANIMALS_DATA = []
+    set_animals_data([])
 
 # --- Main App ---
 app = FastAPI(title="Astrx MCP Server", lifespan=lifespan)
@@ -203,8 +124,6 @@ def data_preview(limit: int = 100):
     return _cached_df.head(limit).where(pd.notnull(_cached_df), None).to_dict(orient="records")
 
 # Mount Gradio App
-# We mount it at the root "/" so it's the main interface
-# The API docs will still be at /docs
 gradio_app = create_gradio_app()
 app = gr.mount_gradio_app(app, gradio_app, path="/")
 
