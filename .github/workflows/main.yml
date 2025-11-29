@@ -2,8 +2,8 @@ name: Scrape and Deploy Data
 
 on:
   schedule:
-    # Run every Sunday at midnight
-    - cron: '0 0 * * 0'
+    # Run every 10 minutes
+    - cron: '*/10 * * * *'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
