@@ -422,15 +422,15 @@ def main():
     existing_map = {normalize_text(d["name"]).lower(): d for d in existing_data}
     
     # 1. A-Z Animals
-    az_links = az_get_links.remote()
+    az_links = az_get_links.local()
     print(f"A-Z Animals: Found {len(az_links)} links.")
     
     # 2. Animal Corner
-    ac_links = ac_get_links.remote()
+    ac_links = ac_get_links.local()
     print(f"Animal Corner: Found {len(ac_links)} links.")
     
     # 3. National Zoo
-    nz_links = nz_get_links.remote()
+    nz_links = nz_get_links.local()
     print(f"National Zoo: Found {len(nz_links)} links.")
     
     # Combine and prioritize
@@ -505,11 +505,11 @@ def main():
     results = []
     for source, url in tasks:
         if source == "az":
-            res = az_scrape_details.remote(url)
+            res = az_scrape_details.local(url)
         elif source == "ac":
-            res = ac_scrape_details.remote(url)
+            res = ac_scrape_details.local(url)
         elif source == "nz":
-            res = nz_scrape_details.remote(url)
+            res = nz_scrape_details.local(url)
         else:
             res = None
             

@@ -72,6 +72,10 @@ def load_dataset():
 def root():
     return "API is running"
 
+@app.get("/health")
+def health():
+    return {"status": "UP"}
+
 @app.get("/data")
 def get_data():
     data = load_dataset()
