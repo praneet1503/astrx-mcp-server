@@ -33,6 +33,15 @@ async def lifespan(app: FastAPI):
     except Exception as e:
         _cached_df = None
         print("Warning: failed to load local data:", e)
+
+    # Log public URL for HF Spaces
+    space_host = os.getenv("SPACE_HOST")
+    if space_host:
+        print(f"Public API URL: https://{space_host}")
+        print(f"Swagger UI: https://{space_host}/docs")
+    else:
+        print("Local URL: http://localhost:7860")
+
     yield
     _cached_df = None
 
