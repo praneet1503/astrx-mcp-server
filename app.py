@@ -6,10 +6,19 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import pandas as pd
 import importlib
+import subprocess
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Install Playwright browsers
+try:
+    logger.info("Installing Playwright browsers...")
+    subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
+    logger.info("Playwright browsers installed successfully.")
+except Exception as e:
+    logger.error(f"Failed to install playwright browsers: {e}")
 
 # Initialize FastAPI
 app = FastAPI()
