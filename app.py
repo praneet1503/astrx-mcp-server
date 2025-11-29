@@ -1,213 +1,112 @@
-from __future__ import annotations
-try:
-    import gradio as gr
-    GRADIO_AVAILABLE = True
-except Exception:
-    gr = None
-    GRADIO_AVAILABLE = False
-import uvicorn
-import json
-import logging
-import os
 import sys
-from typing import List, Dict, Optional, Any
+import logging
 from pathlib import Path
-from contextlib import asynccontextmanager
-from fastapi import FastAPI, Request, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+import pandas as pd
+import importlib
 
-# --- Configuration & Logging ---
-try:
-    with open("config.json", "r") as f:
-        config = json.load(f)
-except FileNotFoundError:
-    config = {"logging_level": "INFO"}
-
-logging.basicConfig(
-    level=config.get("logging_level", "INFO"),
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    stream=sys.stdout
-)
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# --- Global Data Cache ---
-BASE_DIR = Path(__file__).parent
+# Initialize FastAPI
+app = FastAPI()
 
-ANIMALS_CACHE: List[Dict[str, Any]] = []
-
-def get_data_file_paths() -> tuple[Path, Path]:
-    data_dir = BASE_DIR / "data"
-    return data_dir / "animals.json", data_dir / "animals.csv"
-
-
-def load_data():
-    """Loads animals data into the global cache."""
-    global ANIMALS_CACHE
-    json_path, csv_path = get_data_file_paths()
-    data_path = json_path
-    try:
-        if os.path.exists(data_path):
-            with open(data_path, "r", encoding="utf-8") as f:
-                ANIMALS_CACHE = json.load(f)
-            logger.info(f"Successfully loaded {len(ANIMALS_CACHE)} animals into cache.")
-        else:
-            logger.warning(f"Data file not found at {data_path}. Cache is empty.")
-            ANIMALS_CACHE = []
-    except Exception as e:
-        logger.error(f"Error loading data file: {e}", exc_info=True)
-        ANIMALS_CACHE = []
-
-
-def run_scraper():
-    """Runs the scraper main function synchronously if available.
-    Returns the scraper result or raises an exception.
-    """
-    if str(BASE_DIR) not in sys.path:
-        sys.path.append(str(BASE_DIR))
-    import importlib
-    scraper_mod = importlib.import_module("scraper")
-    if hasattr(scraper_mod, "main"):
-        return scraper_mod.main()
-    raise RuntimeError("No main entrypoint in scraper module")
-
-# --- Tool Definition ---
-def list_animals() -> List[Dict[str, Any]]:
-    """
-    Returns a list of animals with their details from the in-memory cache.
-    """
-    # If cache is empty, try reloading (in case file was added later)
-    if not ANIMALS_CACHE:
-        load_data()
-    
-    if not ANIMALS_CACHE:
-         return [{"name": "Error", "description": "No data available"}]
-         
-    return ANIMALS_CACHE
-
-# --- MCP Server Setup (Conditional) ---
-mcp = None
-try:
-    from mcp.server.fastmcp import FastMCP
-    logger.info("Initializing FastMCP server...")
-    mcp = FastMCP("Animal Service")
-    mcp.tool()(list_animals)
-except ImportError:
-    logger.error("Failed to import FastMCP. MCP features will be disabled.")
-except Exception as e:
-    logger.error(f"Failed to initialize FastMCP: {e}", exc_info=True)
-
-# --- FastAPI App Setup ---
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    """Lifespan context manager for startup and shutdown events."""
-    load_data()
-    yield
-
-app = FastAPI(lifespan=lifespan)
-
-# 1. CORS Middleware
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins for Spaces/Dev
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# 2. Error Handling Middleware
-@app.middleware("http")
-async def catch_exceptions_middleware(request: Request, call_next):
-    try:
-        return await call_next(request)
-    except Exception as e:
-        logger.error(f"Unhandled exception: {e}", exc_info=True)
-        return JSONResponse(
-            status_code=500,
-            content={"detail": "Internal Server Error", "error": str(e)}
-        )
+# Constants
+BASE_DIR = Path(__file__).parent
+DATA_DIR = BASE_DIR / "data"
+DATA_FILE_JSON = DATA_DIR / "animals.json"
+DATA_FILE_CSV = DATA_DIR / "animals.csv"
 
-# 3. Startup Event (Handled by lifespan)
-# 4. Health Check
-@app.get("/health")
-async def health_check():
-    return {
-        "status": "healthy", 
-        "mcp_enabled": mcp is not None,
-        "animals_count": len(ANIMALS_CACHE)
-    }
+# Global Cache
+CACHED_DATA = None
 
-# 5. Mount MCP (if available)
-if mcp:
-    try:
-        mcp_app = mcp.sse_app()
-        app.mount("/mcp", mcp_app)
-        logger.info("Mounted MCP app at /mcp")
-    except Exception as e:
-        logger.error(f"Failed to mount MCP app: {e}", exc_info=True)
+def load_dataset():
+    """
+    Loads the dataset from JSON or CSV.
+    Caches the result in memory.
+    """
+    global CACHED_DATA
+    if CACHED_DATA is not None:
+        return CACHED_DATA
 
-# --- Gradio Interface ---
-if GRADIO_AVAILABLE:
-    with gr.Blocks() as demo:
-        gr.Markdown("# Animal MCP Server")
-        gr.Markdown(f"## Status: {'Running' if mcp else 'Running (MCP Disabled)'}")
-    
-    if mcp:
-        gr.Markdown("The MCP server is active at:")
-        gr.Markdown("- **SSE Endpoint**: `/mcp/sse`")
-        gr.Markdown("- **Messages Endpoint**: `/mcp/messages`")
-    else:
-        gr.Markdown("⚠️ **MCP Server is not active** (Import failed or initialization error).")
+    if DATA_FILE_JSON.exists():
+        try:
+            logger.info(f"Loading data from {DATA_FILE_JSON}")
+            # Read JSON using pandas
+            df = pd.read_json(DATA_FILE_JSON)
+            CACHED_DATA = df.to_dict(orient="records")
+            return CACHED_DATA
+        except ValueError:
+            # Fallback for simple list of dicts if pandas fails on format
+            import json
+            with open(DATA_FILE_JSON, 'r') as f:
+                CACHED_DATA = json.load(f)
+            return CACHED_DATA
+        except Exception as e:
+            logger.error(f"Error loading JSON: {e}")
 
-        gr.Markdown("### Test Tool")
-        output = gr.JSON(label="Animals List")
-        btn = gr.Button("List Animals")
-    # Fix: outputs should be a list or single component, but explicit list is safer
-        btn.click(fn=list_animals, outputs=[output])
+    if DATA_FILE_CSV.exists():
+        try:
+            logger.info(f"Loading data from {DATA_FILE_CSV}")
+            df = pd.read_csv(DATA_FILE_CSV)
+            CACHED_DATA = df.to_dict(orient="records")
+            return CACHED_DATA
+        except Exception as e:
+            logger.error(f"Error loading CSV: {e}")
 
-# 6. Mount Gradio at Root
-# This is critical for HF Spaces to render the UI correctly without 404s
-if GRADIO_AVAILABLE:
-    logger.info("Mounting Gradio app at root / ...")
-    app = gr.mount_gradio_app(app, demo, path="/")
-else:
-    logger.info("Gradio not available; skipping UI mount")
+    return {"error": "Dataset not found"}
 
-
-# Required Classic API endpoints
 @app.get("/")
-async def root():
+def root():
     return "API is running"
 
-
 @app.get("/data")
-async def data_endpoint():
-    try:
-        if not ANIMALS_CACHE:
-            load_data()
-        if not ANIMALS_CACHE:
-            raise HTTPException(status_code=404, detail="Dataset not found")
-        return ANIMALS_CACHE
-    except Exception as e:
-        logger.error(f"Error in /data endpoint: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
+def get_data():
+    data = load_dataset()
+    if isinstance(data, dict) and "error" in data:
+        raise HTTPException(status_code=404, detail=data["error"])
+    return data
 
 @app.get("/scrape")
-async def scrape_endpoint():
+def scrape_data():
+    global CACHED_DATA
     try:
-        # Import scraper module from workspace root and call main()
+        logger.info("Starting scraper...")
+        
+        # Ensure current directory is in sys.path to import scraper
         if str(BASE_DIR) not in sys.path:
             sys.path.append(str(BASE_DIR))
-        import importlib
-        scraper_mod = importlib.import_module("scraper")
-        if hasattr(scraper_mod, "main"):
-            scraper_mod.main()
-        # Clear cache so data is reloaded on subsequent /data calls
-        global ANIMALS_CACHE
-        ANIMALS_CACHE = []
-        return {"status": "ok", "message": "Scraper executed"}
+
+        # Import scraper
+        import scraper
+        
+        # Run the main function
+        if hasattr(scraper, "main"):
+             scraper.main()
+        else:
+            raise ImportError("No main() function found in scraper.py")
+
+        # Clear cache to reload new data on next request
+        CACHED_DATA = None
+        
+        return {"status": "success", "message": "Scraper executed successfully"}
+
     except Exception as e:
-        logger.error(f"Error executing scraper: {e}")
+        logger.error(f"Scraping failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=7860)
 

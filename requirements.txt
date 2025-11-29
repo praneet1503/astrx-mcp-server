@@ -1,9 +1,7 @@
-mcp
-uvicorn
-starlette
-requests
-beautifulsoup4
-gradio
 fastapi
-pydantic>=2.0
-sse-starlette
+uvicorn
+pandas
+python-multipart
+modal
+playwright
+beautifulsoup4
