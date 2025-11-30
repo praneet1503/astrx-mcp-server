@@ -268,6 +268,23 @@ async def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
             if score > 0.2: 
                 # Create a copy to avoid mutating the global list
                 item = ANIMALS_DATA[idx].copy()
+                
+                # Filter out results with "null values" (incomplete data)
+                # If description is missing or generic, and no other key info exists, skip it.
+                desc = item.get('description', '')
+                is_placeholder = desc == "Imported from external database."
+                has_diet = bool(item.get('diet'))
+                has_fun_fact = bool(item.get('fun_fact'))
+                # Check for traits (list or dict)
+                traits = item.get('traits')
+                has_traits = bool(traits) if isinstance(traits, (list, dict)) else False
+                
+                # Also check physiological data
+                has_physio = bool(item.get('body_mass') or item.get('metabolic_rate') or item.get('brain_size'))
+
+                if (not desc or is_placeholder) and not (has_diet or has_fun_fact or has_traits or has_physio):
+                    continue
+
                 item['_score'] = score
                 # Mark if Modal was used (for UI display)
                 if use_modal:
