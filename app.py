@@ -75,6 +75,7 @@ def create_gradio_app():
                 "SambaNova – Llama 3.1 70B",
                 "SambaNova – Llama 3.1 8B",
                 "SambaNova – DeepSeek R1",
+                "Google Gemini – 3.0 Pro Preview",
                 "Google Gemini – 1.5 Pro",
                 "Google Gemini – 1.5 Flash",
                 "Blaxel – MCP Model",
