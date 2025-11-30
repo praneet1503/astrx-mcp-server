@@ -311,9 +311,9 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
     try:
         api_key = get_gemini_key()
         
-        model_id = "gemini-1.5-flash"
+        model_id = "gemini-1.5-flash-latest"
         if "Pro" in model_version:
-            model_id = "gemini-1.5-pro"
+            model_id = "gemini-1.5-pro-latest"
             
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
         headers = {"Content-Type": "application/json"}
