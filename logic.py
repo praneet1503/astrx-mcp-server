@@ -5,8 +5,6 @@ import numpy as np
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
-from anthropic import AsyncAnthropic
-from openai import AsyncOpenAI
 
 # --- Configuration ---
 CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
@@ -44,49 +42,32 @@ def validate_keys() -> Dict[str, bool]:
     """
     return {k: v is not None for k, v in SESSION_KEYS.items()}
 
-def get_samba_client():
+def get_samba_key():
     """
-    Returns a SambaNova (OpenAI-compatible) client if the key is present.
+    Returns the SambaNova API key if present.
     """
     key = SESSION_KEYS.get("samba") or os.getenv("SAMBANOVA_API_KEY")
     if not key:
         raise ValueError("SambaNova API Key is missing.")
-    
-    return AsyncOpenAI(
-        api_key=key,
-        base_url="https://api.sambanova.ai/v1",
-    )
+    return key
 
-def get_claude_client():
+def get_claude_key():
     """
-    Returns an Anthropic client if the key is present.
+    Returns the Claude API key if present.
     """
     key = SESSION_KEYS.get("claude") or os.getenv("CLAUDE_API_KEY")
     if not key:
         raise ValueError("Claude API Key is missing.")
-    
-    return AsyncAnthropic(api_key=key)
+    return key
 
-
-
-def get_modal_client():
+def get_blaxel_key():
     """
-    Returns a Modal client if the key is present.
-    """
-    key = SESSION_KEYS.get("modal")
-    if not key:
-        raise ValueError("Modal API Token is missing.")
-    # Modal usually uses config/env vars, but we can return the token for manual usage
-    return {"client": "modal_placeholder", "key_present": True}
-
-def get_blaxel_client():
-    """
-    Returns a Blaxel client if the key is present.
+    Returns the Blaxel API key if present.
     """
     key = SESSION_KEYS.get("blaxel")
     if not key:
         raise ValueError("Blaxel API Key is missing.")
-    return {"client": "blaxel_placeholder", "key_present": True}
+    return key
 
 def initialize_retriever():
     """
@@ -185,69 +166,104 @@ def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
 
 async def run_samba(prompt: str, model_version: str) -> str:
     """
-    Executes the prompt using SambaNova's API.
+    Executes the prompt using SambaNova's API via httpx.
     """
     try:
-        client = get_samba_client()
+        api_key = get_samba_key()
         
         # Map UI names to actual model IDs
-        # Default to 8B if not specified or unknown
         model = "Meta-Llama-3.1-8B-Instruct"
         if "405B" in model_version:
             model = "Meta-Llama-3.1-405B-Instruct"
         elif "70B" in model_version:
             model = "Meta-Llama-3.1-70B-Instruct"
             
-        response = await client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant. Answer based on the provided context."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.1,
-            top_p=0.1
-        )
-        return response.choices[0].message.content
+        url = "https://api.sambanova.ai/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.1,
+            "top_p": 0.1
+        }
+        
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            return response.json()["choices"][0]["message"]["content"]
+            
     except ValueError as e:
-        return f"Error: {str(e)}"
+        return f"Configuration Error: {str(e)}"
+    except httpx.HTTPStatusError as e:
+        return f"SambaNova API Error: {e.response.text}"
     except Exception as e:
         return f"SambaNova Error: {str(e)}"
 
 async def run_claude(prompt: str, model_version: str) -> str:
     """
-    Executes the prompt using Anthropic's Claude API.
+    Executes the prompt using Anthropic's Claude API via httpx.
     """
     try:
-        client = get_claude_client()
+        api_key = get_claude_key()
         
         # Map UI names to Anthropic model IDs
         model = "claude-3-haiku-20240307"
         if "Sonnet" in model_version:
             model = "claude-3-5-sonnet-20240620"
             
-        response = await client.messages.create(
-            model=model,
-            max_tokens=1024,
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-        return response.content[0].text
+        url = "https://api.anthropic.com/v1/messages"
+        headers = {
+            "x-api-key": api_key,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json"
+        }
+        payload = {
+            "model": model,
+            "max_tokens": 1024,
+            "messages": [{"role": "user", "content": prompt}]
+        }
+        
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            return response.json()["content"][0]["text"]
+            
     except ValueError as e:
-        return f"Error: {str(e)}"
+        return f"Configuration Error: {str(e)}"
+    except httpx.HTTPStatusError as e:
+        return f"Claude API Error: {e.response.text}"
     except Exception as e:
         return f"Claude Error: {str(e)}"
 
 async def run_blaxel(prompt: str) -> str:
     """
-    Stub for Blaxel inference.
+    Executes the prompt using Blaxel's API via httpx.
     """
     try:
-        client_info = get_blaxel_client()
-        # In Phase A.3, we will use client_info['client'] to make the call
-        return "[Blaxel] Routing successful! (API call not implemented yet)"
+        api_key = get_blaxel_key()
+        
+        url = "https://api.blaxel.ai/v1/generate"
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "model": "blaxel-mcp",
+            "prompt": prompt
+        }
+        
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            return response.json()["output"]
+            
     except ValueError as e:
-        return f"Error: {str(e)}"
+        return f"Configuration Error: {str(e)}"
+    except httpx.HTTPStatusError as e:
+        return f"Blaxel API Error: {e.response.text}"
     except Exception as e:
         return f"Blaxel Error: {str(e)}"
 
@@ -255,7 +271,7 @@ def run_local(prompt: str) -> str:
     """
     Stub for Local inference.
     """
-    return "[Local] Routing successful! Using tiny fallback model."
+    return f"[Local Dummy Model] You said: {prompt[:200]}"
 
 async def run_model(provider: str, user_input: str) -> str:
     """
