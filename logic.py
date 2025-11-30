@@ -62,6 +62,29 @@ def save_keys(samba_key: str, claude_key: str, modal_key: str, blaxel_key: str, 
     
     return "Keys Saved Securely (Session Only)"
 
+def format_thinking_process(text: str) -> str:
+    """
+    Formats the thinking process in the model's response.
+    Supports <think> tags and > blockquote style.
+    """
+    # Check for <think> tags (Standard DeepSeek R1)
+    if "<think>" in text and "</think>" in text:
+        parts = text.split("</think>", 1)
+        thinking = parts[0].replace("<think>", "").strip()
+        answer = parts[1].strip()
+        return f"<details><summary>🧠 Thinking Process</summary>\n\n{thinking}\n</details>\n\n{answer}"
+    
+    # Check for > blockquote style (User's specific case)
+    # Pattern: Starts with > and separated by a standalone > line
+    if text.strip().startswith(">"):
+        if "\n>\n" in text:
+            parts = text.split("\n>\n", 1)
+            thinking = parts[0].strip().lstrip(">").strip()
+            answer = parts[1].strip()
+            return f"<details><summary>🧠 Thinking Process</summary>\n\n{thinking}\n</details>\n\n{answer}"
+            
+    return text
+
 def validate_keys() -> Dict[str, bool]:
     """
     Returns a dictionary indicating which keys are present.
@@ -290,7 +313,10 @@ async def run_samba(prompt: str, model_choice: Optional[str]) -> str:
     if not text:
         raise RuntimeError("SambaNova API returned empty content.")
 
-    return f"Powered by SambaNova ({model_id})\n\n{text.strip()}"
+    # Format thinking process if present
+    formatted_text = format_thinking_process(text.strip())
+
+    return f"Powered by SambaNova ({model_id})\n\n{formatted_text}"
 
 async def run_claude(prompt: str, model_version: str) -> str:
     """
