@@ -25,7 +25,14 @@ This repository includes a GitHub Action workflow to automate data scraping and 
 2. **Hugging Face Sync (Optional)**:
    - If you want to sync the data to a Hugging Face Space automatically:
      - Add `HF_TOKEN`: Your Hugging Face Write Token.
-     - Add `HF_SPACE_REPO`: The repository ID of your Space (e.g., `username/space-name`).
+     - `HF_SPACE_REPO`: The repository ID of your Space (e.g., `username/space-name`).
+
+3. **Hugging Face Space Configuration**:
+   - Go to your Space's **Settings** tab.
+   - Scroll down to **Variables and secrets**.
+   - Click **New secret**.
+   - Name: `CLAUDE_API_KEY`
+   - Value: Your Anthropic API Key (starts with `sk-ant-...`).
 
 ### Workflow
 
