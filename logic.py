@@ -5,6 +5,8 @@ import numpy as np
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
+from anthropic import AsyncAnthropic
+from openai import AsyncOpenAI
 
 # --- Configuration ---
 CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
@@ -44,15 +46,16 @@ def validate_keys() -> Dict[str, bool]:
 
 def get_samba_client():
     """
-    Returns a SambaNova client if the key is present.
+    Returns a SambaNova (OpenAI-compatible) client if the key is present.
     """
-    key = SESSION_KEYS.get("samba")
+    key = SESSION_KEYS.get("samba") or os.getenv("SAMBANOVA_API_KEY")
     if not key:
         raise ValueError("SambaNova API Key is missing.")
-    # Placeholder for actual SDK initialization
-    # from openai import OpenAI
-    # return OpenAI(api_key=key, base_url="https://api.sambanova.ai/v1")
-    return {"client": "samba_placeholder", "key_present": True}
+    
+    return AsyncOpenAI(
+        api_key=key,
+        base_url="https://api.sambanova.ai/v1",
+    )
 
 def get_claude_client():
     """
@@ -61,10 +64,10 @@ def get_claude_client():
     key = SESSION_KEYS.get("claude") or os.getenv("CLAUDE_API_KEY")
     if not key:
         raise ValueError("Claude API Key is missing.")
-    # Placeholder or actual SDK
-    # import anthropic
-    # return anthropic.AsyncAnthropic(api_key=key)
-    return {"client": "claude_placeholder", "key_present": True, "key": key}
+    
+    return AsyncAnthropic(api_key=key)
+
+
 
 def get_modal_client():
     """
@@ -182,12 +185,29 @@ def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
 
 async def run_samba(prompt: str, model_version: str) -> str:
     """
-    Stub for SambaNova inference.
+    Executes the prompt using SambaNova's API.
     """
     try:
-        client_info = get_samba_client()
-        # In Phase A.3, we will use client_info['client'] to make the call
-        return f"[SambaNova] Routing successful! Model: {model_version}. (API call not implemented yet)"
+        client = get_samba_client()
+        
+        # Map UI names to actual model IDs
+        # Default to 8B if not specified or unknown
+        model = "Meta-Llama-3.1-8B-Instruct"
+        if "405B" in model_version:
+            model = "Meta-Llama-3.1-405B-Instruct"
+        elif "70B" in model_version:
+            model = "Meta-Llama-3.1-70B-Instruct"
+            
+        response = await client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant. Answer based on the provided context."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.1,
+            top_p=0.1
+        )
+        return response.choices[0].message.content
     except ValueError as e:
         return f"Error: {str(e)}"
     except Exception as e:
@@ -195,12 +215,24 @@ async def run_samba(prompt: str, model_version: str) -> str:
 
 async def run_claude(prompt: str, model_version: str) -> str:
     """
-    Stub for Anthropic Claude inference.
+    Executes the prompt using Anthropic's Claude API.
     """
     try:
-        client_info = get_claude_client()
-        # In Phase A.3, we will use client_info['client'] to make the call
-        return f"[Claude] Routing successful! Model: {model_version}. (API call not implemented yet)"
+        client = get_claude_client()
+        
+        # Map UI names to Anthropic model IDs
+        model = "claude-3-haiku-20240307"
+        if "Sonnet" in model_version:
+            model = "claude-3-5-sonnet-20240620"
+            
+        response = await client.messages.create(
+            model=model,
+            max_tokens=1024,
+            messages=[
+                {"role": "user", "content": prompt}
+            ]
+        )
+        return response.content[0].text
     except ValueError as e:
         return f"Error: {str(e)}"
     except Exception as e:
