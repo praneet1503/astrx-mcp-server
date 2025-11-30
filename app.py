@@ -8,7 +8,7 @@ import json
 from dotenv import load_dotenv
 
 # Import logic
-from logic import run_model, set_animals_data, search_animals, initialize_retriever, save_keys
+from logic import run_model, set_animals_data, search_animals, initialize_retriever, save_keys, get_random_animal_fact
 
 # Load environment variables
 load_dotenv()
@@ -100,10 +100,25 @@ def create_gradio_app():
                 placeholder="e.g., Which animals live in the desert? or Tell me about the Golden Retriever."
             )
             
-        submit_btn = gr.Button("Ask AI", variant="primary")
+        with gr.Row():
+            submit_btn = gr.Button("Ask AI", variant="primary")
+            random_fact_btn = gr.Button("🎲 Random Animal Fact", variant="secondary")
         
         gr.Markdown("### 🤖 AI Answer")
         output_box = gr.Markdown(value="*Ask a question to see the answer here...*")
+        
+        # --- Event Handlers ---
+        submit_btn.click(
+            fn=run_model,
+            inputs=[model_provider, user_input, use_blaxel],
+            outputs=output_box
+        )
+        
+        random_fact_btn.click(
+            fn=get_random_animal_fact,
+            inputs=[model_provider],
+            outputs=output_box
+        )
         
         gr.Examples(
             examples=[
@@ -116,16 +131,15 @@ def create_gradio_app():
             label="Example Queries"
         )
         
-        # Gradio supports async functions natively
-        submit_btn.click(
-            fn=run_model,
-            inputs=[model_provider, user_input, use_blaxel],
-            outputs=output_box
-        )
-        
         gr.Markdown("---")
-        # We can't easily show len(ANIMALS_DATA) here dynamically without state, 
-        # but we can show a static message or load it
+        gr.Markdown(
+            "### 🏆 Hackathon Sponsors\n"
+            "- **SambaNova Cloud**: Fast inference for Llama 3.1 & 3.3 models.\n"
+            "- **Anthropic Claude**: High-intelligence reasoning.\n"
+            "- **Google Gemini**: Multimodal capabilities.\n"
+            "- **Blaxel**: Serverless agent hosting & suggestions.\n"
+            "- **Modal**: Serverless GPU embeddings."
+        )
         gr.Markdown(f"**Status:** Server Ready.")
     return demo
 

@@ -3,6 +3,7 @@ import os
 import httpx
 import asyncio
 import numpy as np
+import random
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
@@ -396,6 +397,50 @@ def run_local(prompt: str) -> str:
     """
     return f"[Local Dummy Model] You said: {prompt[:200]}"
 
+async def get_random_animal_fact(provider: str) -> str:
+    """
+    Generates a random animal fact using the selected provider.
+    """
+    if not ANIMALS_DATA:
+        return "⚠️ No animal data loaded to pick from."
+    
+    try:
+        # Pick a random animal
+        animal = random.choice(ANIMALS_DATA)
+        name = animal.get("name", "Unknown Animal")
+        
+        prompt = (
+            f"Tell me a fascinating, short 'Did You Know?' fact about the {name}. "
+            "Keep it under 50 words and make it engaging."
+        )
+        
+        response_text = ""
+        badge = ""
+
+        # Route to provider (simplified)
+        if "SambaNova" in provider:
+             badge = "### ⚡ Powered by SambaNova Cloud"
+             response_text = await run_samba(prompt, "Llama 3.1 70B")
+        elif "Gemini" in provider:
+             badge = "### 💎 Powered by Google Gemini"
+             response_text = await run_gemini(prompt, "1.5 Flash")
+        elif "Claude" in provider:
+             badge = "### 🧠 Powered by Anthropic Claude"
+             response_text = await run_claude(prompt, "Haiku")
+        elif "Blaxel" in provider:
+             badge = "### 🚀 Powered by Blaxel"
+             response_text = await run_blaxel(prompt)
+        else:
+             # Fallback to local description
+             badge = "### 📂 Local Data"
+             desc = animal.get('description', 'No description available.')
+             response_text = f"**Random Fact about {name}:** {desc[:200]}..."
+        
+        return f"{badge}\n\n{response_text}"
+             
+    except Exception as e:
+        return f"❌ Failed to generate fact: {str(e)}"
+
 async def run_model(provider: str, user_input: str, use_blaxel: bool = False) -> str:
     """
     Unified routing function to dispatch requests to the selected provider.
@@ -413,7 +458,13 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
     else:
         # Add source info to context
         source_label = relevant_animals[0].get('_source', 'Unknown Source')
-        context_str = f"[Search Source: {source_label}]\n" + json.dumps(relevant_animals, ensure_ascii=False)
+        
+        # Format as readable text instead of JSON for better fallback visibility
+        formatted_context = []
+        for idx, animal in enumerate(relevant_animals):
+            formatted_context.append(f"{idx+1}. **{animal.get('name', 'Unknown')}**: {animal.get('description', '')[:300]}...")
+        
+        context_str = f"**Search Source:** {source_label}\n\n" + "\n".join(formatted_context)
 
     # 2. Construct Prompt with Context
     full_prompt = (
@@ -447,9 +498,12 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
 
     # 4. Route to Main Provider
     main_response = ""
+    badge = ""
     print(f"DEBUG: Routing to provider: {provider}")
+    
     try:
         if provider.startswith("SambaNova"):
+            badge = "### ⚡ Powered by SambaNova Cloud"
             # Extract version if needed, e.g., "SambaNova – Samba-1" -> "Samba-1"
             version = provider.split("–")[-1].strip()
             try:
@@ -458,12 +512,13 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
                 # Fallback for SambaNova
                 print(f"SambaNova API failed: {e}")
                 main_response = (
-                    f"**Powered by SambaNova Cloud** (Unavailable)\n\n"
+                    f"(Unavailable)\n\n"
                     f"SambaNova is unavailable: {str(e)}\n\n"
                     f"Showing keyword search result instead:\n\n{context_str}"
                 )
         
         elif provider.startswith("Claude"):
+            badge = "### 🧠 Powered by Anthropic Claude"
             version = provider.split("–")[-1].strip()
             try:
                 main_response = await run_claude(full_prompt, version)
@@ -473,52 +528,58 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
                 try:
                     # Fallback to a capable SambaNova model (Llama 3.3 70B)
                     fallback_result = await run_samba(full_prompt, "Llama 3.3 70B")
+                    badge = "### ⚡ Powered by SambaNova Cloud (Fallback from Claude)"
                     main_response = (
-                        f"### ⚡ Powered by SambaNova Cloud (Fallback from Claude)\n"
                         f"> *(Claude unavailable: {str(e)})*\n\n"
                         f"{fallback_result.replace('### ⚡ Powered by SambaNova Cloud', '').strip()}"
                     )
                 except Exception as samba_e:
                     # If fallback also fails, show keyword search
+                    badge = "### ❌ Service Unavailable"
                     main_response = (
-                        f"### ❌ Powered by Claude (Unavailable)\n"
-                        f"### ❌ Fallback to SambaNova (Unavailable)\n\n"
                         f"Claude Error: {str(e)}\n"
                         f"SambaNova Error: {str(samba_e)}\n\n"
                         f"Showing keyword search result instead:\n\n{context_str}"
                     )
         
         elif provider.startswith("Google Gemini"):
+            badge = "### 💎 Powered by Google Gemini"
             print("DEBUG: Calling Gemini...")
             version = provider.split("–")[-1].strip()
             main_response = await run_gemini(full_prompt, version)
         
         elif provider.startswith("Blaxel"):
+            badge = "### 🚀 Powered by Blaxel"
             print("DEBUG: Calling Blaxel (Main)...")
             main_response = await run_blaxel(full_prompt)
         
         elif provider.startswith("Local"):
+            badge = "### 📂 Local Model"
             main_response = run_local(full_prompt)
         
         else:
+            badge = "### ❓ Unknown Provider"
             main_response = f"Error: Unknown provider '{provider}'"
             
     except Exception as e:
+        badge = "### ⚠️ Error"
         main_response = f"Routing Error: {str(e)}"
 
     # 5. Combine Results
+    final_output = f"{badge}\n\n{main_response}"
+
     if blaxel_task:
         try:
             blaxel_result = await blaxel_task
             # Check if blaxel_result is an error message
             if "Error" not in blaxel_result and "Configuration Error" not in blaxel_result:
-                main_response += f"\n\n---\n\n### ✨ Suggested by Blaxel (Sponsor)\n\n{blaxel_result}"
+                final_output += f"\n\n---\n\n### ✨ Suggested by Blaxel (Sponsor)\n\n{blaxel_result}"
             else:
                 print(f"Blaxel task returned error: {blaxel_result}")
         except Exception as e:
             print(f"Blaxel task failed: {e}")
 
-    return main_response
+    return final_output
 
 # Deprecated: Kept for backward compatibility if needed, but run_model should be used.
 async def query_claude(user_input: str) -> str:
