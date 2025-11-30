@@ -4,6 +4,7 @@ import time
 import random
 import os
 import re
+import asyncio
 from typing import List, Dict, Any, Optional
 from abc import ABC, abstractmethod
 import modal
@@ -14,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 # Constants
 OUTPUT_FILE = "data/animals.json"
-MAX_ANIMALS_PER_RUN = 50
+MAX_ANIMALS_PER_RUN = 150
 
 # Modal Configuration
 app = modal.App("animal-scraper-modular")
@@ -372,21 +373,32 @@ def nz_scrape_details(url: str) -> Optional[Dict[str, Any]]:
 
 # --- Main Execution ---
 
-@app.local_entrypoint()
-def run_scrape_once():
+async def collect_map_results(func, items, name="scraper"):
+    """Helper to collect results from an async map."""
+    results = []
+    if not items:
+        return results
+    print(f"Scraping {len(items)} items with {name}...")
+    async for res in func.map.aio(items):
+        results.append(res)
+    return results
+
+async def scrape_single_batch():
     existing_data = load_existing_data()
     existing_map = {normalize_text(d["name"]).lower(): d for d in existing_data}
     
-    # 1. A-Z Animals
-    az_links = az_get_links.remote()
+    print("Starting parallel link gathering...")
+    
+    # Run link gathering in parallel
+    results = await asyncio.gather(
+        az_get_links.remote.aio(),
+        ac_get_links.remote.aio(),
+        nz_get_links.remote.aio()
+    )
+    az_links, ac_links, nz_links = results
+    
     print(f"A-Z Animals: Found {len(az_links)} links.")
-    
-    # 2. Animal Corner
-    ac_links = ac_get_links.remote()
     print(f"Animal Corner: Found {len(ac_links)} links.")
-    
-    # 3. National Zoo
-    nz_links = nz_get_links.remote()
     print(f"National Zoo: Found {len(nz_links)} links.")
     
     # Combine and prioritize
@@ -459,16 +471,16 @@ def run_scrape_once():
     ac_tasks = [url for src, url in tasks if src == "ac"]
     nz_tasks = [url for src, url in tasks if src == "nz"]
 
+    # Run scraping in parallel
+    scrape_results_groups = await asyncio.gather(
+        collect_map_results(az_scrape_details, az_tasks, "A-Z Animals"),
+        collect_map_results(ac_scrape_details, ac_tasks, "Animal Corner"),
+        collect_map_results(nz_scrape_details, nz_tasks, "National Zoo")
+    )
+    
     results = []
-    if az_tasks:
-        print(f"Scraping {len(az_tasks)} A-Z Animals...")
-        results.extend(list(az_scrape_details.map(az_tasks)))
-    if ac_tasks:
-        print(f"Scraping {len(ac_tasks)} Animal Corner animals...")
-        results.extend(list(ac_scrape_details.map(ac_tasks)))
-    if nz_tasks:
-        print(f"Scraping {len(nz_tasks)} National Zoo animals...")
-        results.extend(list(nz_scrape_details.map(nz_tasks)))
+    for group in scrape_results_groups:
+        results.extend(group)
             
     # Merge and Save
     for res in results:
@@ -482,3 +494,15 @@ def run_scrape_once():
             existing_map[name_key] = res
             
     save_data(list(existing_map.values()))
+
+@app.local_entrypoint()
+async def run_scraper_loop():
+    for i in range(10):
+        print(f"\n\n=== 🚀 Starting Batch {i+1}/10 ===")
+        try:
+            await scrape_single_batch()
+            print(f"=== ✅ Completed Batch {i+1}/10 ===")
+        except Exception as e:
+            print(f"=== ❌ Error in Batch {i+1}/10: {e} ===")
+            # Optional: wait a bit before retrying or continuing
+            await asyncio.sleep(5)
