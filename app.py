@@ -68,14 +68,15 @@ def create_gradio_app():
         model_provider = gr.Dropdown(
             label="Choose Model Provider",
             choices=[
-                "SambaNova – Samba-1",
-                "SambaNova – Samba-1.1",
-                "Claude – Haiku",
-                "Claude – Sonnet",
-                "Blaxel – MCP Model",
-                "Local – Tiny Model"
+                "SambaNova (Optional) – Llama 3.1 8B",
+                "SambaNova (Optional) – Llama 3.1 70B",
+                "SambaNova (Optional) – Llama 3.1 405B",
+                "Claude (Necessary) – Haiku",
+                "Claude (Necessary) – Sonnet 3.5",
+                "Blaxel (Optional) – MCP Model",
+                "Local (Optional) – Tiny Model"
             ],
-            value="Claude – Haiku",
+            value="Claude (Necessary) – Haiku",
             interactive=True
         )
 
