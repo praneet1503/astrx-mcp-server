@@ -55,7 +55,13 @@ def load_data_list():
         path = DATA_DIR / cf
         if path.exists():
             try:
-                df = pd.read_csv(path)
+                # Try loading with utf-8 first, then fallback to latin-1
+                try:
+                    df = pd.read_csv(path, encoding="utf-8")
+                except UnicodeDecodeError:
+                    print(f"Warning: {cf} is not UTF-8. Retrying with latin-1.")
+                    df = pd.read_csv(path, encoding="latin-1")
+                
                 # Convert to list of dicts
                 records = df.where(pd.notnull(df), None).to_dict(orient="records")
                 print(f"Loaded {len(records)} records from {cf}")
@@ -207,7 +213,10 @@ async def lifespan(app: FastAPI):
                 f = data_files[0]
                 print(f"Loading data from {f}...")
                 if f.suffix == ".csv":
-                    _cached_df = pd.read_csv(f)
+                    try:
+                        _cached_df = pd.read_csv(f, encoding="utf-8")
+                    except UnicodeDecodeError:
+                        _cached_df = pd.read_csv(f, encoding="latin-1")
                 else:
                     try:
                         _cached_df = pd.read_json(f)
