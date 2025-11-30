@@ -1614,7 +1614,7 @@
     "name": "Star-nosed mole",
     "species": "Unknown",
     "description": "The star-nosed mole has the ability to sense both electrical fields and ground vibrations",
-    "traits": [],
+    "traits": {},
     "source_urls": [
       "https://a-z-animals.com/animals/star-nosed-mole/"
     ]
@@ -1695,7 +1695,7 @@
     "name": "Comb-crested Jacana",
     "species": "Unknown",
     "description": "The comb-crested jacana is a sizeable tropical wader from Asia and Australia. It inhabits permanent wetlands year-round with an abundance of aquatic vegetation. You will find it foraging for insects, using its enormous feet to walk across the water. Discover all the interesting facts about this jacana, including where to find it, what it eats, and how it reproduces.",
-    "traits": [],
+    "traits": {},
     "source_urls": [
       "https://a-z-animals.com/animals/comb-crested-jacana/"
     ]
@@ -6136,6 +6136,7 @@
       "https://nationalzoo.si.edu/animals/andean-bear",
       "https://nationalzoo.si.edu/animals/beaver",
       "https://nationalzoo.si.edu/animals/bald-eagle",
+      "https://nationalzoo.si.edu/animals/aquatic-caecilian",
       "https://nationalzoo.si.edu/animals/giant-panda",
       "https://nationalzoo.si.edu/animals/bearded-emperor-tamarin",
       "https://nationalzoo.si.edu/animals/american-avocet",
@@ -8710,9 +8711,15 @@
       "Subgenus": "Varanus",
       "Species": "V. komodoensis",
       "Binomial name": "Varanus komodoensis",
-      "": ""
+      "": "",
+      "Physical Description": "Komodo dragons are large lizards with long tails, strong and agile necks, and sturdy limbs. Their tongues are yellow and forked. Adults are an almost-uniform stone color with distinct, large scales, while juveniles may display a more vibrant color and pattern.The muscles of the Komodo's jaws and throat allow it to swallow huge chunks of meat with astonishing rapidity. Several movable joints, such as the intramandibular hinge opens the lower jaw unusually wide. The stomach expands easily, enabling an adult to consume up to 80 percent of its own body weight in a single meal, which most likely explains some exaggerated claims for immense weights in captured individuals. When threatened, Komodos can throw up the contents of their stomachs to lessen their weight in order to flee.Although males tend to grow larger and bulkier than females, no obvious morphological differences mark the sexes. One subtle clue does exist: a slight difference in the arrangement of scales just in front of the cloaca. Sexing Komodos remains a challenge for human researchers; the dragons themselves appear to have little trouble figuring out who is who.",
+      "Lifespan": "Komodo dragons live about 30 years in the wild, but scientists are still studying this.",
+      "Food/Eating Habits": "Komodo dragons eat almost any kind of meat, scavenging for carcasses or stalking animals that range in size from small rodents to large water buffalo. Young feed primarily on small lizards and insects, as well as snakes and birds. If they live to be 5 years old, they move onto larger prey, such as rodents, monkeys, goats, wild boars and deer (the most popular meal). These reptiles are tertiary predators at the top of their food chain and are also cannibalistic.Although the Komodo dragon can briefly reach speeds of 10 to 13 mph (16 to 20 kph), its hunting strategy is based on stealth and power. It can spend hours in one spot along a game trail — waiting for a deer or other sizable and nutritious prey to cross its path — before launching an attack.Most of the monitor's attempts at bringing down prey are unsuccessful. However, if it is able to bite its prey, bacteria and venom in its saliva will kill the prey within a few days. After the animal dies, which can take up to four days, the Komodo uses its powerful sense of smell to locate the body. A kill is often shared between many Komodo dragons.Monitors can see objects as far away as 985 feet (300 meters), so vision does play a role in hunting, especially as their eyes are better at picking up movement than at discerning stationary objects. Their retinas possess only cones, so they may be able to distinguish color but have poor vision in dim light. They have a much smaller hearing range than humans and, as a result, cannot hear sounds like low-pitched voices or high-pitched screams.The Komodo dragon's sense of smell is its primary food detector. It uses its long, yellow, forked tongue to sample the air. It then moves the forked tip of its tongue to the roof of its mouth, where it makes contact with the Jacobson's organs. These chemical analyzers \"smell\" prey, such as a deer, by recognizing airborne molecules. If the concentration of molecules present on the left tip of the tongue is greater than that sample from the right, the Komodo dragon knows that the deer is approaching from the left.This system, along with an undulatory walk, in which the head swings from side to side, helps the dragon sense the existence and direction of food. At times, these reptiles can smell carrion, or rotting flesh, up to 2.5 miles (4 kilometers) away.This lizard's large, curved and serrated teeth are its deadliest weapon, tearing flesh with efficiency. The tooth serrations hold bits of meat from its most recent meal, and this protein-rich residue supports large numbers of bacteria. Some 50 different bacterial strains, at least seven of which are highly septic, have been found in the saliva. Researchers have also documented a venom gland in the dragon's lower jaw. In addition to the harmful bacteria, the venom prevents the blood from clotting, which causes massive blood loss and induces shock.The Komodo's bite may be deadly, but not to another Komodo dragon. Those wounded while sparring with each other appear to be unaffected by the bacteria and venom. Scientists are searching for antibodies in Komodo dragon blood that may be responsible.The lizard's throat and neck muscles allow it to rapidly swallow huge chunks of meat. Several movable joints, such as the intramandibular hinge, open its lower jaw unusually wide. The dragon's stomach also easily expands, enabling an adult to consume up to 80 percent of its own body weight in a single meal. When threatened, Komodo dragons can throw up the contents of their stomachs to lessen their weight in order to flee.Komodo dragons are efficient eaters, leaving behind only about 12 percent of their prey. They eat bones, hooves and sections of hide, as well as intestines (after swinging them to dislodge their contents).At the Smithsonian's National Zoo, the Komodo dragon eats rodents, chicks and rabbits. Occasionally, he consumes fish and carcass meals of beef.",
+      "Social Structure": "Because large Komodos cannibalize young ones, the young often roll in fecal material, thereby assuming a scent that the large dragons are programmed to avoid. Young dragons also undergo rituals of appeasement, with the smaller lizards pacing around a feeding circle in a stately ritualized walk. Their tail is stuck straight out and they throw their body from side to side with exaggerated convulsions.",
+      "Taxonomic Information": "Class:ReptiliaOrder:SquamataFamily:VaranidaeGenus and Species:Varanus komodoensis"
     },
     "source_urls": [
+      "https://nationalzoo.si.edu/animals/komodo-dragon",
       "https://animalcorner.org/animals/komodo-dragon/"
     ]
   },
@@ -14235,6 +14242,7 @@
     "description": "",
     "traits": {},
     "source_urls": [
+      "https://a-z-animals.com/animals/spongy-moth-2/",
       "https://a-z-animals.com/animals/spongy-moth/"
     ]
   },
@@ -17454,6 +17462,2103 @@
     "traits": {},
     "source_urls": [
       "https://a-z-animals.com/animals/sea-spider/"
+    ]
+  },
+  {
+    "name": "Australian Shepherd Mix",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/australian-shepherd-mix/"
+    ]
+  },
+  {
+    "name": "Uakari",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/uakari/"
+    ]
+  },
+  {
+    "name": "Boston Terrier",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/boston-terrier/"
+    ]
+  },
+  {
+    "name": "American Pit Bull Terrier",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/american-pit-bull-terrier/"
+    ]
+  },
+  {
+    "name": "Pugapoo",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pugapoo/"
+    ]
+  },
+  {
+    "name": "European Goldfinch",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/european-goldfinch/"
+    ]
+  },
+  {
+    "name": "Dumeril’s Boa",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/dumerils-boa/"
+    ]
+  },
+  {
+    "name": "Cheagle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cheagle/"
+    ]
+  },
+  {
+    "name": "Glen Of Imaal Terrier",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/glen-of-imaal-terrier/"
+    ]
+  },
+  {
+    "name": "Frenchton",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/frenchton/"
+    ]
+  },
+  {
+    "name": "Sidewinder",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sidewinder/"
+    ]
+  },
+  {
+    "name": "Monkfish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/monkfish/"
+    ]
+  },
+  {
+    "name": "Meagle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/meagle/"
+    ]
+  },
+  {
+    "name": "Fleckvieh Cattle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/fleckvieh-cattle/"
+    ]
+  },
+  {
+    "name": "Savannah Monitor",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/savannah-monitor/"
+    ]
+  },
+  {
+    "name": "Tufted Coquette",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/tufted-coquette/"
+    ]
+  },
+  {
+    "name": "Tamarin",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/tamarin/"
+    ]
+  },
+  {
+    "name": "John Dory",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/john-dory/"
+    ]
+  },
+  {
+    "name": "Gypsy Moth Caterpillar",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/gypsy-moth-caterpillar/"
+    ]
+  },
+  {
+    "name": "Dog Tick",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/dog-tick/"
+    ]
+  },
+  {
+    "name": "Taipan",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/taipan/"
+    ]
+  },
+  {
+    "name": "Diplodocus",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/diplodocus/"
+    ]
+  },
+  {
+    "name": "Harris’s Hawk",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/harris-hawk/"
+    ]
+  },
+  {
+    "name": "Ember Tetra",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/ember-tetra/"
+    ]
+  },
+  {
+    "name": "Nicobar pigeon",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/nicobar-pigeon/"
+    ]
+  },
+  {
+    "name": "Red Aphids",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/red-aphids/"
+    ]
+  },
+  {
+    "name": "Wolf",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/wolf/"
+    ]
+  },
+  {
+    "name": "Red-Headed Vulture",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/red-headed-vulture/"
+    ]
+  },
+  {
+    "name": "Egyptian Vulture",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/egyptian-vulture/"
+    ]
+  },
+  {
+    "name": "Parakeet: Species, Facts, Care, and Complete Guide to These Colorful Birds",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/parakeet/"
+    ]
+  },
+  {
+    "name": "Bea-Tzu",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/bea-tzu/"
+    ]
+  },
+  {
+    "name": "Orange Tanager (Orange-Headed Tanager)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/orange-tanager-orange-headed-tanager/"
+    ]
+  },
+  {
+    "name": "Darwin’s fox",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/darwins-fox/"
+    ]
+  },
+  {
+    "name": "Doberman Pinscher",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/doberman-pinscher/"
+    ]
+  },
+  {
+    "name": "Fox Snakes",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/fox-snakes/"
+    ]
+  },
+  {
+    "name": "White-shouldered House Moth",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/white-shouldered-house-moth/"
+    ]
+  },
+  {
+    "name": "Underwing Moth",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/underwing-moth/"
+    ]
+  },
+  {
+    "name": "Boer Goat",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/boer-goat/"
+    ]
+  },
+  {
+    "name": "Blue Lacy Dog",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/blue-lacy-dog/"
+    ]
+  },
+  {
+    "name": "Cuttlefish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cuttlefish/"
+    ]
+  },
+  {
+    "name": "Viper Shark (dogfish)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/viper-shark-dogfish/"
+    ]
+  },
+  {
+    "name": "Rhino Beetle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/rhino-beetle/"
+    ]
+  },
+  {
+    "name": "Amargasaurus",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/amargasaurus/"
+    ]
+  },
+  {
+    "name": "American Hairless Terrier",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/american-hairless-terrier/"
+    ]
+  },
+  {
+    "name": "Podenco Canario",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/podenco-canario/"
+    ]
+  },
+  {
+    "name": "Macrauchenia",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/macrauchenia/"
+    ]
+  },
+  {
+    "name": "Crab",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/crab/"
+    ]
+  },
+  {
+    "name": "Siberian Ibex",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/siberian-ibex/"
+    ]
+  },
+  {
+    "name": "Père David’s Deer",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pere-davids-deer/"
+    ]
+  },
+  {
+    "name": "Parti Schnauzer",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/parti-schnauzer/"
+    ]
+  },
+  {
+    "name": "Tussock Moth Caterpillar",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/tussock-moth-caterpillar/"
+    ]
+  },
+  {
+    "name": "Golden Masked Owl",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/golden-masked-owl/"
+    ]
+  },
+  {
+    "name": "Butterfly Fish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/butterfly-fish/"
+    ]
+  },
+  {
+    "name": "Chicken",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/chicken/"
+    ]
+  },
+  {
+    "name": "Sixgill shark",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sixgill-shark/"
+    ]
+  },
+  {
+    "name": "Yakutian Laika",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/yakutian-laika/"
+    ]
+  },
+  {
+    "name": "De Kay’s Brown Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/de-kays-brown-snake/"
+    ]
+  },
+  {
+    "name": "Amazon River Dolphin (Pink Dolphin)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pink-dolphin/"
+    ]
+  },
+  {
+    "name": "Bamboo Rat",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/bamboo-rat/"
+    ]
+  },
+  {
+    "name": "Parson Russell Terrier",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/parson-russell-terrier/"
+    ]
+  },
+  {
+    "name": "Lesser Scaup",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/lesser-scaup/"
+    ]
+  },
+  {
+    "name": "Mammals!",
+    "species": "",
+    "description": "Advertisement",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/mammals/"
+    ]
+  },
+  {
+    "name": "Brazilian Black Tarantula",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/brazilian-black-tarantula/"
+    ]
+  },
+  {
+    "name": "Northern Potoo",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/northern-potoo/"
+    ]
+  },
+  {
+    "name": "Imperial Moth",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/imperial-moth/"
+    ]
+  },
+  {
+    "name": "Sparrowhawk",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sparrowhawk/"
+    ]
+  },
+  {
+    "name": "Baird’s Rat Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/bairds-rat-snake/"
+    ]
+  },
+  {
+    "name": "Egyptian Tortoise",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/egyptian-tortoise/"
+    ]
+  },
+  {
+    "name": "Asian Longhorn Beetle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/asian-longhorn-beetle/"
+    ]
+  },
+  {
+    "name": "Brown Bear",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/brown-bear/"
+    ]
+  },
+  {
+    "name": "Cecropia Moth",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cecropia-moth/"
+    ]
+  },
+  {
+    "name": "Black Pastel Ball Python",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/black-pastel-ball-python/"
+    ]
+  },
+  {
+    "name": "White Rhinoceros",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/white-rhinoceros/"
+    ]
+  },
+  {
+    "name": "Mosasaurus",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/mosasaurus/"
+    ]
+  },
+  {
+    "name": "Blue Tang",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/blue-tang/"
+    ]
+  },
+  {
+    "name": "Angelfish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/angelfish/"
+    ]
+  },
+  {
+    "name": "Oyster Toadfish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/oyster-toadfish/"
+    ]
+  },
+  {
+    "name": "Green Aphids",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/green-aphids/"
+    ]
+  },
+  {
+    "name": "Cave Lion",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cave-lion/"
+    ]
+  },
+  {
+    "name": "Blue Shark",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/blue-shark/"
+    ]
+  },
+  {
+    "name": "Tamaskan",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/tamaskan/"
+    ]
+  },
+  {
+    "name": "Comfort Retriever",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/comfort-retriever/"
+    ]
+  },
+  {
+    "name": "Painted Turtle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/painted-turtle/"
+    ]
+  },
+  {
+    "name": "Pygora Goat",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pygora-goat/"
+    ]
+  },
+  {
+    "name": "Pine Siskin",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pine-siskin/"
+    ]
+  },
+  {
+    "name": "Sumatran Tiger",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sumatran-tiger/"
+    ]
+  },
+  {
+    "name": "Blacknose Shark",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/blacknose-shark/"
+    ]
+  },
+  {
+    "name": "Pyjama Shark",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pyjama-shark/"
+    ]
+  },
+  {
+    "name": "Cinnamon Ferret",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cinnamon-ferret/"
+    ]
+  },
+  {
+    "name": "White-tail deer",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/white-tail-deer/"
+    ]
+  },
+  {
+    "name": "Siberian",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/siberian/"
+    ]
+  },
+  {
+    "name": "Sivatherium",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sivatherium/"
+    ]
+  },
+  {
+    "name": "Wood Turtle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/wood-turtle/"
+    ]
+  },
+  {
+    "name": "Owlfly (Ascalaphidae)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/owlfly-ascalaphidae/"
+    ]
+  },
+  {
+    "name": "Kouprey",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/kouprey/"
+    ]
+  },
+  {
+    "name": "Northern Flicker: Identification, Facts & Guide",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/northern-flicker/"
+    ]
+  },
+  {
+    "name": "Pipe Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pipe-snake/"
+    ]
+  },
+  {
+    "name": "Siberian Retriever",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/siberian-retriever/"
+    ]
+  },
+  {
+    "name": "Mudpuppy",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/mudpuppy/"
+    ]
+  },
+  {
+    "name": "Antarctic Scale Worm",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/antarctic-scale-worm/"
+    ]
+  },
+  {
+    "name": "Collie",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/collie/"
+    ]
+  },
+  {
+    "name": "Khapra Beetle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/khapra-beetle/"
+    ]
+  },
+  {
+    "name": "Panther",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/panther/"
+    ]
+  },
+  {
+    "name": "Piebald Dachshund",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/piebald-dachshund/"
+    ]
+  },
+  {
+    "name": "Decorator Crab",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/decorator-crab/"
+    ]
+  },
+  {
+    "name": "Nelore Cattle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/nelore-cattle/"
+    ]
+  },
+  {
+    "name": "Golden Shiner",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/golden-shiner/"
+    ]
+  },
+  {
+    "name": "Basenji Mix",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/basenji-mix/"
+    ]
+  },
+  {
+    "name": "Rhombic Egg-Eater Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/rhombic-egg-eater-snake/"
+    ]
+  },
+  {
+    "name": "Arctic Char",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/arctic-char/"
+    ]
+  },
+  {
+    "name": "Hagfish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hagfish/"
+    ]
+  },
+  {
+    "name": "Bearded Fireworm",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/bearded-fireworm/"
+    ]
+  },
+  {
+    "name": "Hokkaido",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hokkaido/"
+    ]
+  },
+  {
+    "name": "Neptune Grouper",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/neptune-grouper/"
+    ]
+  },
+  {
+    "name": "Hammerhead Worm",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hammerhead-worm/"
+    ]
+  },
+  {
+    "name": "Sea Slug",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sea-slug/"
+    ]
+  },
+  {
+    "name": "Westiepoo",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/westiepoo/"
+    ]
+  },
+  {
+    "name": "Pika",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pika/"
+    ]
+  },
+  {
+    "name": "Uintatherium",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/uintatherium/"
+    ]
+  },
+  {
+    "name": "Brown Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/brown-snake/"
+    ]
+  },
+  {
+    "name": "Eastern Green Mamba",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/eastern-green-mamba/"
+    ]
+  },
+  {
+    "name": "Rottle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/rottle/"
+    ]
+  },
+  {
+    "name": "Pointer Mix",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pointer-mix/"
+    ]
+  },
+  {
+    "name": "Alusky",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/alusky/"
+    ]
+  },
+  {
+    "name": "Killifish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/killifish/"
+    ]
+  },
+  {
+    "name": "Enchi Ball Python",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/enchi-ball-python/"
+    ]
+  },
+  {
+    "name": "White Butterfly",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/white-butterfly/"
+    ]
+  },
+  {
+    "name": "Barb",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/barb/"
+    ]
+  },
+  {
+    "name": "Alaskan Shepherd",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/alaskan-shepherd/"
+    ]
+  },
+  {
+    "name": "Asiatic Black Bear",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/asiatic-black-bear/"
+    ]
+  },
+  {
+    "name": "Box Turtle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/box-turtle/"
+    ]
+  },
+  {
+    "name": "Egyptian Cobra (Egyptian Asp)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/egyptian-cobra/"
+    ]
+  },
+  {
+    "name": "Ruby-Crowned Kinglet",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/ruby-crowned-kinglet/"
+    ]
+  },
+  {
+    "name": "Leghorn Chicken",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/leghorn-chicken/"
+    ]
+  },
+  {
+    "name": "Horned Viper",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/horned-viper/"
+    ]
+  },
+  {
+    "name": "Ground Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/ground-snake/"
+    ]
+  },
+  {
+    "name": "Gerbil",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/gerbil/"
+    ]
+  },
+  {
+    "name": "Dried Fruit Moth",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/dried-fruit-moth/"
+    ]
+  },
+  {
+    "name": "Sarus Crane",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sarus-crane/"
+    ]
+  },
+  {
+    "name": "Green June Beetle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/green-june-beetle/"
+    ]
+  },
+  {
+    "name": "Giant Golden Mole",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/giant-golden-mole/"
+    ]
+  },
+  {
+    "name": "Cephalaspis",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cephalaspis/"
+    ]
+  },
+  {
+    "name": "Lazarus Lizard",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/lazarus-lizard/"
+    ]
+  },
+  {
+    "name": "Brookesia Micra",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/brookesia-micra/"
+    ]
+  },
+  {
+    "name": "Bernedoodle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/bernedoodle/"
+    ]
+  },
+  {
+    "name": "Mountain Beaver",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/mountain-beaver/"
+    ]
+  },
+  {
+    "name": "Otterhound",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/otterhound/"
+    ]
+  },
+  {
+    "name": "Yellow Bass",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/yellow-bass/"
+    ]
+  },
+  {
+    "name": "Monarch Butterfly",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/monarch-butterfly/"
+    ]
+  },
+  {
+    "name": "Amazonian Royal Flycatcher",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/amazonian-royal-flycatcher/"
+    ]
+  },
+  {
+    "name": "Hooded Seal",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hooded-seal/"
+    ]
+  },
+  {
+    "name": "Carp Facts, Types, and Why They’re Both Beloved and Reviled",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/carp/"
+    ]
+  },
+  {
+    "name": "Kea",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/kea/"
+    ]
+  },
+  {
+    "name": "Puma",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/puma/"
+    ]
+  },
+  {
+    "name": "Bluefish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/bluefish/"
+    ]
+  },
+  {
+    "name": "Schapendoes",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/schapendoes/"
+    ]
+  },
+  {
+    "name": "Borkie",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/borkie/"
+    ]
+  },
+  {
+    "name": "Patterdale Terrier",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/patterdale-terrier/"
+    ]
+  },
+  {
+    "name": "Tiktaalik",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/tiktaalik/"
+    ]
+  },
+  {
+    "name": "Labrabull",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/labrabull/"
+    ]
+  },
+  {
+    "name": "Mole",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/mole/"
+    ]
+  },
+  {
+    "name": "Christmas Island Red Crab",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/christmas-island-red-crab/"
+    ]
+  },
+  {
+    "name": "Golden Retriever Mix",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/golden-retriever-mix/"
+    ]
+  },
+  {
+    "name": "Maremma Sheepdog",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/maremma-sheepdog/"
+    ]
+  },
+  {
+    "name": "Draco Volans Lizard",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/draco-volans/"
+    ]
+  },
+  {
+    "name": "White Shark",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/white-shark/"
+    ]
+  },
+  {
+    "name": "Mudi",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/mudi/"
+    ]
+  },
+  {
+    "name": "Banjo Catfish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/banjo-catfish/"
+    ]
+  },
+  {
+    "name": "Keagle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/keagle/"
+    ]
+  },
+  {
+    "name": "Hooded Oriole",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hooded-oriole/"
+    ]
+  },
+  {
+    "name": "Chimaera",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/chimaera/"
+    ]
+  },
+  {
+    "name": "Amberjack",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/amberjack/"
+    ]
+  },
+  {
+    "name": "Gila Monster",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/gila-monster/"
+    ]
+  },
+  {
+    "name": "Massasauga",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/massasauga/"
+    ]
+  },
+  {
+    "name": "Red Knee Tarantula",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/red-knee-tarantula/"
+    ]
+  },
+  {
+    "name": "Sun Bear",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sun-bear/"
+    ]
+  },
+  {
+    "name": "Black-Bellied Whistling Duck",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/black-bellied-whistling-duck/"
+    ]
+  },
+  {
+    "name": "Walleye Fish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/walleye-fish/"
+    ]
+  },
+  {
+    "name": "Goliath Grouper",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/goliath-grouper/"
+    ]
+  },
+  {
+    "name": "Warbler",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/warbler/"
+    ]
+  },
+  {
+    "name": "Berger Blanc Suisse",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/berger-blanc-suisse/"
+    ]
+  },
+  {
+    "name": "Bottlenose Dolphin",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/bottlenose-dolphin/"
+    ]
+  },
+  {
+    "name": "Kiwi",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/kiwi/"
+    ]
+  },
+  {
+    "name": "Hairy Woodpecker",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hairy-woodpecker/"
+    ]
+  },
+  {
+    "name": "Ceratosaurus",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/ceratosaurus/"
+    ]
+  },
+  {
+    "name": "Pembroke Welsh Corgi",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pembroke-welsh-corgi/"
+    ]
+  },
+  {
+    "name": "Chinese Geese",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/chinese-geese/"
+    ]
+  },
+  {
+    "name": "Southern House Spider",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/southern-house-spider/"
+    ]
+  },
+  {
+    "name": "Javan Leopard",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/javan-leopard/"
+    ]
+  },
+  {
+    "name": "Eyelash Viper",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/eyelash-viper/"
+    ]
+  },
+  {
+    "name": "Netherland Dwarf Rabbit",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/netherland-dwarf-rabbit/"
+    ]
+  },
+  {
+    "name": "Killer Whale",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/killer-whale/"
+    ]
+  },
+  {
+    "name": "Khao Manee",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/khao-manee/"
+    ]
+  },
+  {
+    "name": "Hippopotamus gorgops",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hippopotamus-gorgops/"
+    ]
+  },
+  {
+    "name": "Brown Headed Cowbird",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/brown-headed-cowbird/"
+    ]
+  },
+  {
+    "name": "Great Egret",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/great-egret/"
+    ]
+  },
+  {
+    "name": "Sandpiper",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/sandpiper/"
+    ]
+  },
+  {
+    "name": "Coral Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/coral-snake/"
+    ]
+  },
+  {
+    "name": "Caribou",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/caribou/"
+    ]
+  },
+  {
+    "name": "House Sparrow (English Sparrow)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/house-sparrow/"
+    ]
+  },
+  {
+    "name": "Collie Mix",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/collie-mix/"
+    ]
+  },
+  {
+    "name": "Masked Angelfish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/masked-angelfish/"
+    ]
+  },
+  {
+    "name": "Griffon Vulture",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/griffon-vulture/"
+    ]
+  },
+  {
+    "name": "Pyrosome",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pyrosome/"
+    ]
+  },
+  {
+    "name": "Spanish Mastiff",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/spanish-mastiff/"
+    ]
+  },
+  {
+    "name": "Irish Elk",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/irish-elk/"
+    ]
+  },
+  {
+    "name": "Elasmotherium",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/elasmotherium/"
+    ]
+  },
+  {
+    "name": "Rough Earth Snake",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/rough-earth-snake/"
+    ]
+  },
+  {
+    "name": "Pug Mix",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pug-mix/"
+    ]
+  },
+  {
+    "name": "Vampire Squid",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/vampire-squid/"
+    ]
+  },
+  {
+    "name": "Crocodylomorph",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/crocodylomorph/"
+    ]
+  },
+  {
+    "name": "Saiga",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/saiga/"
+    ]
+  },
+  {
+    "name": "Goberian",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/goberian/"
+    ]
+  },
+  {
+    "name": "Jaguarundi Cat",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/jaguarundi-cat/"
+    ]
+  },
+  {
+    "name": "Pelycosaurs",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pelycosaurs/"
+    ]
+  },
+  {
+    "name": "Rottsky",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/rottsky/"
+    ]
+  },
+  {
+    "name": "Oarfish",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/oarfish/"
+    ]
+  },
+  {
+    "name": "Musk Deer",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/musk-deer/"
+    ]
+  },
+  {
+    "name": "Goose",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/goose/"
+    ]
+  },
+  {
+    "name": "Doedicurus",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/doedicurus/"
+    ]
+  },
+  {
+    "name": "Pocket Beagle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/pocket-beagle/"
+    ]
+  },
+  {
+    "name": "Southern Flannel Moth",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/southern-flannel-moth/"
+    ]
+  },
+  {
+    "name": "Dalmadoodle",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/dalmadoodle/"
+    ]
+  },
+  {
+    "name": "Hawaiian Goose (Nene)",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/hawaiian-goose/"
+    ]
+  },
+  {
+    "name": "Northern Inuit Dog",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/northern-inuit-dog/"
+    ]
+  },
+  {
+    "name": "Spinosaurus",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/spinosaurus/"
+    ]
+  },
+  {
+    "name": "Kishu",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/kishu/"
+    ]
+  },
+  {
+    "name": "Chain Pickerel",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/chain-pickerel/"
+    ]
+  },
+  {
+    "name": "Nuralagus",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/nuralagus/"
+    ]
+  },
+  {
+    "name": "Tangerine Leopard Gecko",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/tangerine-leopard-gecko/"
+    ]
+  },
+  {
+    "name": "Kodkod",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/kodkod/"
+    ]
+  },
+  {
+    "name": "Mongrel",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/mongrel/"
+    ]
+  },
+  {
+    "name": "Cavalier King Charles Spaniel",
+    "species": "",
+    "description": "",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/cavalier-king-charles-spaniel/"
     ]
   }
 ]
