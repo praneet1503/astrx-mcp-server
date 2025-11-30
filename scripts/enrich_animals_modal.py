@@ -45,7 +45,7 @@ async def enrich_animal(animal: dict):
     # Add a small delay to avoid hitting rate limits immediately
     await asyncio.sleep(1.0)
 
-    model_id = "Meta-Llama-3.3-70B-Instruct"
+    model_id = "DeepSeek-R1-Distill-Llama-70B"
     
     prompt = f"""
     You are an expert zoologist. 
@@ -122,7 +122,12 @@ async def enrich_animal(animal: dict):
 
 @app.local_entrypoint()
 def main(limit: int = 0, test: bool = False):
-    input_file = "data/animals.json"
+    # Use the enriched file as input to preserve CSV merges
+    input_file = "data/animals_enriched.json"
+    if not os.path.exists(input_file):
+        print(f"Warning: {input_file} not found. Falling back to data/animals.json")
+        input_file = "data/animals.json"
+        
     output_file = "data/animals_enriched.json"
     
     if not os.path.exists(input_file):

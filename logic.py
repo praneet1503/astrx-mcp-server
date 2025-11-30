@@ -158,11 +158,36 @@ def set_animals_data(data: List[Dict[str, Any]]):
 
     print(f"Computing embeddings for {len(data)} records...")
     # Create a text representation for each animal for embedding
-    # Format: "Name: [name]. Description: [description]"
-    texts = [
-        f"Name: {animal.get('name', '')}. Description: {animal.get('description', '')}" 
-        for animal in data
-    ]
+    # Format: "Name: [name]. Description: [description]. Traits: [traits]"
+    texts = []
+    for animal in data:
+        text = f"Name: {animal.get('name', '')}. Description: {animal.get('description', '')}"
+        
+        # Add traits if available
+        traits = animal.get('traits', [])
+        if isinstance(traits, list) and traits:
+            text += f". Traits: {', '.join(str(t) for t in traits)}"
+        elif isinstance(traits, dict) and traits:
+            text += f". Traits: {', '.join(f'{k}: {v}' for k, v in traits.items())}"
+            
+        # Add classification if available as top-level fields
+        classification_fields = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus']
+        class_parts = []
+        for field in classification_fields:
+            if animal.get(field):
+                class_parts.append(f"{field.capitalize()}: {animal.get(field)}")
+        if class_parts:
+            text += f". Classification: {', '.join(class_parts)}"
+
+        # Add physiological traits if available
+        if animal.get('body_mass'):
+            text += f". Body Mass: {animal.get('body_mass')}"
+        if animal.get('metabolic_rate'):
+            text += f". Metabolic Rate: {animal.get('metabolic_rate')}"
+        if animal.get('brain_size'):
+            text += f". Brain Size: {animal.get('brain_size')}"
+            
+        texts.append(text)
     
     try:
         ANIMAL_EMBEDDINGS = RETRIEVER_MODEL.encode(texts, convert_to_numpy=True, normalize_embeddings=True)
