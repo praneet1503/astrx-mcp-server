@@ -277,6 +277,10 @@ async def run_claude(prompt: str, model_version: str) -> str:
     # 4. Execute Async Call
     async with httpx.AsyncClient(timeout=30.0) as client:
         response = await client.post(url, headers=headers, json=payload)
+        # Check for 400 error specifically to handle credit balance issues gracefully
+        if response.status_code == 400 and "credit balance is too low" in response.text:
+             raise ValueError("Anthropic API Credit Balance Too Low. Please top up your account.")
+             
         response.raise_for_status()
         text = response.json()["content"][0]["text"]
         
