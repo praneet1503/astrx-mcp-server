@@ -28,6 +28,27 @@ SESSION_KEYS = {
     "gemini": None
 }
 
+# --- SambaNova Model Catalog ---
+DEFAULT_SAMBANOVA_MODEL = "Meta-Llama-3.3-70B-Instruct"
+SAMBANOVA_MODEL_IDS = {
+    "Meta-Llama-3.3-70B-Instruct": "Meta-Llama-3.3-70B-Instruct",
+    "Meta-Llama-3.1-8B-Instruct": "Meta-Llama-3.1-8B-Instruct",
+    "DeepSeek-R1-0528": "DeepSeek-R1-0528",
+    "DeepSeek-R1-Distill-Llama-70B": "DeepSeek-R1-Distill-Llama-70B",
+    "DeepSeek-V3-0324": "DeepSeek-V3-0324",
+    "DeepSeek-V3.1": "DeepSeek-V3.1"
+}
+
+# Map legacy or human-friendly labels to the exact model IDs above.
+SAMBANOVA_ALIAS_MAP = {
+    "Llama 3.3 70B": "Meta-Llama-3.3-70B-Instruct",
+    "Llama 3.1 8B": "Meta-Llama-3.1-8B-Instruct",
+    "DeepSeek R1": "DeepSeek-R1-0528",
+    "DeepSeek R1 Distill": "DeepSeek-R1-Distill-Llama-70B",
+    "DeepSeek V3": "DeepSeek-V3-0324",
+    "DeepSeek V3.1": "DeepSeek-V3.1"
+}
+
 def save_keys(samba_key: str, claude_key: str, modal_key: str, blaxel_key: str, gemini_key: str) -> str:
     """
     Saves the provided API keys to the session storage.
@@ -215,47 +236,32 @@ async def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
 
 # --- Model Runners (Stubs) ---
 
-async def run_samba(prompt: str, model_version: str) -> str:
-    """
-    Executes the prompt using SambaNova's API via httpx.
-    Raises exceptions on failure so the caller can handle fallbacks.
-    """
-    # 1. Get Key (will raise ValueError if missing)
+async def run_samba(prompt: str, model_choice: Optional[str]) -> str:
+    """Call SambaNova's OpenAI-compatible endpoint using httpx."""
+    # Resolve model selection with sane defaults.
+    selected_key = (model_choice or "").strip() or DEFAULT_SAMBANOVA_MODEL
+    model_id = SAMBANOVA_MODEL_IDS.get(selected_key) or SAMBANOVA_ALIAS_MAP.get(selected_key)
+    if not model_id:
+        raise ValueError(f"Invalid SambaNova model selection: {selected_key}")
+
+    # Fetch the API key (raises ValueError if missing to align with UX).
     api_key = get_samba_key()
-    
-    # 2. Map Model ID
-    # Default to Llama 3.3 70B if not specified or unknown
-    model = "Meta-Llama-3.3-70B-Instruct"
-    
-    if "DeepSeek R1 Distill" in model_version:
-        model = "DeepSeek-R1-Distill-Llama-70B"
-    elif "DeepSeek R1" in model_version:
-        model = "DeepSeek-R1-0528"
-    elif "DeepSeek V3.1" in model_version:
-        model = "DeepSeek-V3.1"
-    elif "DeepSeek V3" in model_version:
-        model = "DeepSeek-V3-0324"
-    elif "Llama 3.1 8B" in model_version:
-        model = "Meta-Llama-3.1-8B-Instruct"
-    elif "Llama 3.3 70B" in model_version:
-        model = "Meta-Llama-3.3-70B-Instruct"
-        
-    # 3. Prepare Request
+
     url = "https://api.sambanova.ai/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
     }
-    
-    # Enhanced system prompt for "advanced tasks"
+
+    # Use a concise system prompt so responses stay focused on the animal data.
     system_prompt = (
         "You are an expert biologist and data analyst. "
-        "Provide a detailed answer based on the context. "
-        "If the user asks for reasoning or summary, provide a structured response."
+        "Provide a detailed answer based strictly on the supplied context. "
+        "Offer structured reasoning when the user asks for it."
     )
-    
+
     payload = {
-        "model": model,
+        "model": model_id,
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
@@ -263,16 +269,28 @@ async def run_samba(prompt: str, model_version: str) -> str:
         "temperature": 0.1,
         "top_p": 0.1
     }
-    
-    # 4. Execute Async Call
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        response = await client.post(url, headers=headers, json=payload)
-        response.raise_for_status()
-        data = response.json()
-        text = data['choices'][0]['message']['content']
-        
-    # 5. Format Output
-    return f"### ⚡ Powered by SambaNova ({model})\n\n{text}"
+
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+    except httpx.HTTPStatusError as e:
+        error_text = e.response.text if e.response else str(e)
+        raise RuntimeError(f"SambaNova API Error ({e.response.status_code}): {error_text}") from e
+    except httpx.RequestError as e:
+        raise RuntimeError(f"SambaNova network error: {str(e)}") from e
+
+    data = response.json()
+    choices = data.get("choices", [])
+    if not choices:
+        raise RuntimeError("SambaNova API returned no choices.")
+
+    message = choices[0].get("message", {})
+    text = message.get("content") or choices[0].get("text", "")
+    if not text:
+        raise RuntimeError("SambaNova API returned empty content.")
+
+    return f"Powered by SambaNova ({model_id})\n\n{text.strip()}"
 
 async def run_claude(prompt: str, model_version: str) -> str:
     """
@@ -405,7 +423,7 @@ def run_local(prompt: str) -> str:
     """
     return f"[Local Dummy Model] You said: {prompt[:200]}"
 
-async def get_random_animal_fact(provider: str) -> str:
+async def get_random_animal_fact(provider: str, samba_model: Optional[str] = None) -> str:
     """
     Generates a random animal fact using the selected provider.
     """
@@ -427,29 +445,33 @@ async def get_random_animal_fact(provider: str) -> str:
 
         # Route to provider (simplified)
         if "SambaNova" in provider:
-             badge = "### ⚡ Powered by SambaNova Cloud"
-             response_text = await run_samba(prompt, "Llama 3.1 70B")
+            return await run_samba(prompt, samba_model or DEFAULT_SAMBANOVA_MODEL)
         elif "Gemini" in provider:
-             badge = "### 💎 Powered by Google Gemini"
-             response_text = await run_gemini(prompt, "1.5 Flash")
+            badge = "### 💎 Powered by Google Gemini"
+            response_text = await run_gemini(prompt, "1.5 Flash")
         elif "Claude" in provider:
-             badge = "### 🧠 Powered by Anthropic Claude"
-             response_text = await run_claude(prompt, "Haiku")
+            badge = "### 🧠 Powered by Anthropic Claude"
+            response_text = await run_claude(prompt, "Haiku")
         elif "Blaxel" in provider:
-             badge = "### 🚀 Powered by Blaxel"
-             response_text = await run_blaxel(prompt)
+            badge = "### 🚀 Powered by Blaxel"
+            response_text = await run_blaxel(prompt)
         else:
-             # Fallback to local description
-             badge = "### 📂 Local Data"
-             desc = animal.get('description', 'No description available.')
-             response_text = f"**Random Fact about {name}:** {desc[:200]}..."
-        
+            # Fallback to local description for offline use.
+            badge = "### 📂 Local Data"
+            desc = animal.get('description', 'No description available.')
+            response_text = f"**Random Fact about {name}:** {desc[:200]}..."
+
         return f"{badge}\n\n{response_text}"
              
     except Exception as e:
         return f"❌ Failed to generate fact: {str(e)}"
 
-async def run_model(provider: str, user_input: str, use_blaxel: bool = False) -> str:
+async def run_model(
+    provider: str,
+    user_input: str,
+    use_blaxel: bool = False,
+    samba_model: Optional[str] = None
+) -> str:
     """
     Unified routing function to dispatch requests to the selected provider.
     """
@@ -506,32 +528,28 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
 
     # 4. Route to Main Provider
     main_response = ""
-    badge = ""
+    badge: Optional[str] = ""
     print(f"DEBUG: Routing to provider: {provider}")
     
     try:
         if provider.startswith("SambaNova"):
-            badge = "### ⚡ Powered by SambaNova Cloud"
-            # Extract version if needed, e.g., "SambaNova – Samba-1" -> "Samba-1"
-            version = provider.split("–")[-1].strip()
+            badge = None
+            # Extract version for backwards compatibility, but prefer explicit selection.
+            version = provider.split("–")[-1].strip() if "–" in provider else provider
+            model_choice = samba_model or SAMBANOVA_ALIAS_MAP.get(version) or version
             try:
-                main_response = await run_samba(full_prompt, version)
-                # Update badge with specific model from response if possible, 
-                # but run_samba returns formatted string so we can just use that.
-                # Actually run_samba returns "### ⚡ Powered by SambaNova (MODEL)\n\nText"
-                # So we should probably just use the response directly and clear the badge here 
-                # or let the badge be overwritten.
-                # The current logic appends badge + response. 
-                # run_samba returns the full string with header.
-                # Let's adjust run_samba to return just text OR adjust here.
-                # Adjusting here to use the returned string as is.
-                badge = "" 
+                main_response = await run_samba(full_prompt, model_choice)
             except Exception as e:
                 # Fallback for SambaNova
                 print(f"SambaNova API failed: {e}")
-                badge = "### ⚡ Powered by SambaNova Cloud (Unavailable)"
+                resolved_label = (
+                    SAMBANOVA_MODEL_IDS.get(model_choice)
+                    or SAMBANOVA_ALIAS_MAP.get(model_choice)
+                    or DEFAULT_SAMBANOVA_MODEL
+                )
+                badge = f"### ⚡ Powered by SambaNova ({resolved_label})"
                 main_response = (
-                    f"\n\nSambaNova is unavailable: {str(e)}\n\n"
+                    f"SambaNova is unavailable: {str(e)}\n\n"
                     f"Showing keyword search result instead:\n\n{context_str}"
                 )
         
@@ -545,11 +563,11 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
                 print(f"Claude API failed: {e}. Attempting fallback to SambaNova...")
                 try:
                     # Fallback to a capable SambaNova model (Llama 3.3 70B)
-                    fallback_result = await run_samba(full_prompt, "Llama 3.3 70B")
+                    fallback_result = await run_samba(full_prompt, DEFAULT_SAMBANOVA_MODEL)
                     badge = "### ⚡ Powered by SambaNova Cloud (Fallback from Claude)"
                     main_response = (
                         f"> *(Claude unavailable: {str(e)})*\n\n"
-                        f"{fallback_result.replace('### ⚡ Powered by SambaNova Cloud', '').strip()}"
+                        f"{fallback_result.replace('Powered by SambaNova', '').strip()}"
                     )
                 except Exception as samba_e:
                     # If fallback also fails, show keyword search
@@ -584,7 +602,12 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
         main_response = f"Routing Error: {str(e)}"
 
     # 5. Combine Results
-    final_output = f"{badge}\n\n{main_response}"
+    output_parts = []
+    if badge:
+        output_parts.append(badge)
+    if main_response:
+        output_parts.append(main_response)
+    final_output = "\n\n".join(output_parts)
 
     if blaxel_task:
         try:

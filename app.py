@@ -8,7 +8,15 @@ import json
 from dotenv import load_dotenv
 
 # Import logic
-from logic import run_model, set_animals_data, search_animals, initialize_retriever, save_keys, get_random_animal_fact
+from logic import (
+    run_model,
+    set_animals_data,
+    search_animals,
+    initialize_retriever,
+    save_keys,
+    get_random_animal_fact,
+    DEFAULT_SAMBANOVA_MODEL,
+)
 
 # Load environment variables
 load_dotenv()
@@ -89,6 +97,21 @@ def create_gradio_app():
             interactive=True
         )
 
+        samba_model = gr.Dropdown(
+            label="Select SambaNova Model",
+            choices=[
+                "Meta-Llama-3.3-70B-Instruct",
+                "Meta-Llama-3.1-8B-Instruct",
+                "DeepSeek-R1-0528",
+                "DeepSeek-R1-Distill-Llama-70B",
+                "DeepSeek-V3-0324",
+                "DeepSeek-V3.1"
+            ],
+            value=DEFAULT_SAMBANOVA_MODEL,
+            interactive=True,
+            info="Used when a SambaNova provider is selected."
+        )
+
         use_blaxel = gr.Checkbox(
             label="Enable Blaxel Suggestions (Sponsor)",
             value=False,
@@ -111,24 +134,24 @@ def create_gradio_app():
         # --- Event Handlers ---
         submit_btn.click(
             fn=run_model,
-            inputs=[model_provider, user_input, use_blaxel],
+            inputs=[model_provider, user_input, use_blaxel, samba_model],
             outputs=output_box
         )
         
         random_fact_btn.click(
             fn=get_random_animal_fact,
-            inputs=[model_provider],
+            inputs=[model_provider, samba_model],
             outputs=output_box
         )
         
         gr.Examples(
             examples=[
-                ["SambaNova – Llama 3.3 70B", "Tell me about the tiger.", True],
-                ["Google Gemini – 1.5 Flash", "Which animals are canine?", True],
-                ["Blaxel – MCP Model", "Is a dolphin a cat?", False],
-                ["SambaNova – DeepSeek R1", "rare feline", True]
+                ["SambaNova – Llama 3.3 70B", "Tell me about the tiger.", True, "Meta-Llama-3.3-70B-Instruct"],
+                ["Google Gemini – 1.5 Flash", "Which animals are canine?", True, "Meta-Llama-3.3-70B-Instruct"],
+                ["Blaxel – MCP Model", "Is a dolphin a cat?", False, "Meta-Llama-3.3-70B-Instruct"],
+                ["SambaNova – DeepSeek R1", "rare feline", True, "DeepSeek-R1-0528"]
             ],
-            inputs=[model_provider, user_input, use_blaxel],
+            inputs=[model_provider, user_input, use_blaxel, samba_model],
             label="Example Queries"
         )
         
