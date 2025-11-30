@@ -314,7 +314,13 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
         model_id = "gemini-1.5-flash-latest"
         if "3.0" in model_version:
             model_id = "gemini-3-pro-preview"
-        elif "Pro" in model_version:
+        elif "2.5 Pro" in model_version:
+            model_id = "gemini-2.5-pro"
+        elif "2.5 Flash-Lite" in model_version:
+            model_id = "gemini-2.5-flash-lite"
+        elif "2.5 Flash" in model_version:
+            model_id = "gemini-2.5-flash"
+        elif "1.5 Pro" in model_version:
             model_id = "gemini-1.5-pro-latest"
             
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
@@ -327,6 +333,20 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
         
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.post(url, headers=headers, json=payload)
+            
+            # Handle 429 Resource Exhausted (Quota Limit)
+            if response.status_code == 429:
+                print(f"Gemini 429 Error for {model_id}: {response.text}")
+                # If it's a high-end model, try falling back to Flash
+                if model_id != "gemini-1.5-flash-latest":
+                    print("Falling back to Gemini 1.5 Flash...")
+                    fallback_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={api_key}"
+                    response = await client.post(fallback_url, headers=headers, json=payload)
+                    if response.status_code == 200:
+                        result = response.json()
+                        text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response text found.")
+                        return f"### 💎 Powered by Google Gemini (Fallback to 1.5 Flash)\n> *(Original model {model_version} quota exceeded)*\n\n{text}"
+            
             response.raise_for_status()
             result = response.json()
             # Extract text from Gemini response structure
