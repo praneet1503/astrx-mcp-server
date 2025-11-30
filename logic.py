@@ -227,8 +227,14 @@ async def run_samba(prompt: str, model_version: str) -> str:
     model = "Meta-Llama-3.1-8B-Instruct"
     if "405B" in model_version:
         model = "Meta-Llama-3.1-405B-Instruct"
-    elif "70B" in model_version:
+    elif "3.3 70B" in model_version:
+        model = "Meta-Llama-3.3-70B-Instruct"
+    elif "3.1 70B" in model_version:
         model = "Meta-Llama-3.1-70B-Instruct"
+    elif "DeepSeek R1" in model_version:
+        model = "DeepSeek-R1"
+    elif "DeepSeek R1 Distill" in model_version:
+        model = "DeepSeek-R1-Distill-Llama-70B"
         
     # 3. Initialize OpenAI Client with SambaNova Base URL
     client = AsyncOpenAI(
@@ -298,15 +304,18 @@ async def run_claude(prompt: str, model_version: str) -> str:
     # 5. Format Output
     return f"### 🧠 Powered by Anthropic Claude\n\n{text}"
 
-async def run_gemini(prompt: str) -> str:
+async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
     """
     Executes the prompt using Google's Gemini API via httpx.
     """
     try:
         api_key = get_gemini_key()
         
-        # Updated to use gemini-1.5-flash as gemini-pro might be deprecated or unavailable
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+        model_id = "gemini-1.5-flash"
+        if "Pro" in model_version:
+            model_id = "gemini-1.5-pro"
+            
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
         headers = {"Content-Type": "application/json"}
         payload = {
             "contents": [{
@@ -440,8 +449,8 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
                 # Fallback Logic: Try SambaNova if Claude fails
                 print(f"Claude API failed: {e}. Attempting fallback to SambaNova...")
                 try:
-                    # Fallback to a capable SambaNova model (Llama 3.1 70B)
-                    fallback_result = await run_samba(full_prompt, "Llama 3.1 70B")
+                    # Fallback to a capable SambaNova model (Llama 3.3 70B)
+                    fallback_result = await run_samba(full_prompt, "Llama 3.3 70B")
                     main_response = (
                         f"### ⚡ Powered by SambaNova Cloud (Fallback from Claude)\n"
                         f"> *(Claude unavailable: {str(e)})*\n\n"
@@ -459,7 +468,8 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
         
         elif provider.startswith("Google Gemini"):
             print("DEBUG: Calling Gemini...")
-            main_response = await run_gemini(full_prompt)
+            version = provider.split("–")[-1].strip()
+            main_response = await run_gemini(full_prompt, version)
         
         elif provider.startswith("Blaxel"):
             print("DEBUG: Calling Blaxel (Main)...")

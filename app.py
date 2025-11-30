@@ -70,16 +70,17 @@ def create_gradio_app():
         model_provider = gr.Dropdown(
             label="Choose Model Provider",
             choices=[
-                "SambaNova (Optional) – Llama 3.1 8B",
-                "SambaNova (Optional) – Llama 3.1 70B",
-                "SambaNova (Optional) – Llama 3.1 405B",
-                "Claude (Necessary) – Haiku",
-                "Claude (Necessary) – Sonnet 3.5",
-                "Google Gemini (Optional) – 1.5 Flash",
-                "Blaxel (Optional) – MCP Model",
-                "Local (Optional) – Tiny Model"
+                "SambaNova – Llama 3.3 70B",
+                "SambaNova – Llama 3.1 405B",
+                "SambaNova – Llama 3.1 70B",
+                "SambaNova – Llama 3.1 8B",
+                "SambaNova – DeepSeek R1",
+                "Google Gemini – 1.5 Pro",
+                "Google Gemini – 1.5 Flash",
+                "Blaxel – MCP Model",
+                "Local – Tiny Model"
             ],
-            value="Claude (Necessary) – Haiku",
+            value="SambaNova – Llama 3.3 70B",
             interactive=True
         )
 
@@ -102,10 +103,10 @@ def create_gradio_app():
         
         gr.Examples(
             examples=[
-                ["Claude (Necessary) – Haiku", "Tell me about the tiger.", True],
-                ["Claude (Necessary) – Haiku", "Which animals are canine?", True],
-                ["Claude (Necessary) – Haiku", "Is a dolphin a cat?", False],
-                ["SambaNova (Optional) – Llama 3.1 70B", "rare feline", True]
+                ["SambaNova – Llama 3.3 70B", "Tell me about the tiger.", True],
+                ["Google Gemini – 1.5 Flash", "Which animals are canine?", True],
+                ["Blaxel – MCP Model", "Is a dolphin a cat?", False],
+                ["SambaNova – DeepSeek R1", "rare feline", True]
             ],
             inputs=[model_provider, user_input, use_blaxel],
             label="Example Queries"
