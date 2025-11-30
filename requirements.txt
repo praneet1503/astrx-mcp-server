@@ -4,3 +4,7 @@ pandas
 python-multipart
 gradio
 requests
+sentence-transformers
+numpy
+python-dotenv
+httpx
