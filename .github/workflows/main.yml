@@ -27,11 +27,10 @@ jobs:
         pip install -r local_scraper/requirements-scraper.txt
         pip install huggingface_hub
 
-    - name: Setup Modal
-      run: |
-        modal token set --token-id ${{ secrets.MODAL_TOKEN_ID }} --token-secret ${{ secrets.MODAL_TOKEN_SECRET }}
-
     - name: Run Scraper
+      env:
+        MODAL_TOKEN_ID: ${{ secrets.MODAL_TOKEN_ID }}
+        MODAL_TOKEN_SECRET: ${{ secrets.MODAL_TOKEN_SECRET }}
       run: |
         modal run local_scraper/scraper.py
 
