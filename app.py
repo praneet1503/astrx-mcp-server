@@ -89,6 +89,16 @@ def create_gradio_app():
         submit_btn = gr.Button("Ask AI", variant="primary")
         output_box = gr.Textbox(label="AI Answer", lines=10)
         
+        gr.Examples(
+            examples=[
+                ["Claude (Necessary) – Haiku", "Tell me about the tiger."],
+                ["Claude (Necessary) – Haiku", "Which animals are canine?"],
+                ["Claude (Necessary) – Haiku", "Is a dolphin a cat?"]
+            ],
+            inputs=[model_provider, user_input],
+            label="Example Queries"
+        )
+        
         # Gradio supports async functions natively
         submit_btn.click(
             fn=run_model,

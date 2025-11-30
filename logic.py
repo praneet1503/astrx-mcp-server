@@ -205,38 +205,37 @@ async def run_samba(prompt: str, model_version: str) -> str:
 async def run_claude(prompt: str, model_version: str) -> str:
     """
     Executes the prompt using Anthropic's Claude API via httpx.
+    Raises exceptions on failure so the caller can handle fallbacks.
     """
-    try:
-        api_key = get_claude_key()
+    # 1. Get Key (will raise ValueError if missing)
+    api_key = get_claude_key()
+    
+    # 2. Map Model ID
+    model = "claude-3-haiku-20240307"
+    if "Sonnet" in model_version:
+        model = "claude-3-5-sonnet-20240620"
         
-        # Map UI names to Anthropic model IDs
-        model = "claude-3-haiku-20240307"
-        if "Sonnet" in model_version:
-            model = "claude-3-5-sonnet-20240620"
-            
-        url = "https://api.anthropic.com/v1/messages"
-        headers = {
-            "x-api-key": api_key,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json"
-        }
-        payload = {
-            "model": model,
-            "max_tokens": 1024,
-            "messages": [{"role": "user", "content": prompt}]
-        }
+    # 3. Prepare Request
+    url = "https://api.anthropic.com/v1/messages"
+    headers = {
+        "x-api-key": api_key,
+        "anthropic-version": "2023-06-01",
+        "content-type": "application/json"
+    }
+    payload = {
+        "model": model,
+        "max_tokens": 1024,
+        "messages": [{"role": "user", "content": prompt}]
+    }
+    
+    # 4. Execute Async Call
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        text = response.json()["content"][0]["text"]
         
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.post(url, headers=headers, json=payload)
-            response.raise_for_status()
-            return response.json()["content"][0]["text"]
-            
-    except ValueError as e:
-        return f"Configuration Error: {str(e)}"
-    except httpx.HTTPStatusError as e:
-        return f"Claude API Error: {e.response.text}"
-    except Exception as e:
-        return f"Claude Error: {str(e)}"
+    # 5. Format Output
+    return f"**Powered by Claude**\n\n{text}"
 
 async def run_blaxel(prompt: str) -> str:
     """
@@ -306,7 +305,16 @@ async def run_model(provider: str, user_input: str) -> str:
         
         elif provider.startswith("Claude"):
             version = provider.split("–")[-1].strip()
-            return await run_claude(full_prompt, version)
+            try:
+                return await run_claude(full_prompt, version)
+            except Exception as e:
+                # Fallback for Claude
+                print(f"Claude API failed: {e}")
+                return (
+                    f"**Powered by Claude** (Unavailable)\n\n"
+                    f"Claude is unavailable: {str(e)}\n\n"
+                    f"Showing keyword search result instead:\n\n{context_str}"
+                )
         
         elif provider.startswith("Blaxel"):
             return await run_blaxel(full_prompt)
