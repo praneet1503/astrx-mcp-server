@@ -469,17 +469,20 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
     try:
         api_key, is_demo = get_gemini_key()
         
-        model_id = "gemini-1.5-flash-latest"
+        # Default to stable model
+        model_id = "gemini-1.5-flash"
+        
+        # Map versions to actual API IDs
         if "3.0" in model_version:
-            model_id = "gemini-3-pro-preview"
-        elif "2.5 Pro" in model_version:
-            model_id = "gemini-2.5-pro"
-        elif "2.5 Flash-Lite" in model_version:
-            model_id = "gemini-2.5-flash-lite"
-        elif "2.5 Flash" in model_version:
-            model_id = "gemini-2.5-flash"
+            # Map "3.0" to the latest experimental model (often considered the preview for next gen)
+            model_id = "gemini-exp-1121"
+        elif "2.5" in model_version:
+            # Fallback for non-existent 2.5 to 1.5 Pro
+            model_id = "gemini-1.5-pro"
         elif "1.5 Pro" in model_version:
-            model_id = "gemini-1.5-pro-latest"
+            model_id = "gemini-1.5-pro"
+        elif "1.5 Flash" in model_version:
+            model_id = "gemini-1.5-flash"
             
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
         headers = {"Content-Type": "application/json"}
@@ -499,9 +502,9 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
 
                 print(f"Gemini 429 Error for {model_id}: {response.text}")
                 # If it's a high-end model, try falling back to Flash
-                if model_id != "gemini-1.5-flash-latest":
+                if model_id != "gemini-1.5-flash":
                     print("Falling back to Gemini 1.5 Flash...")
-                    fallback_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={api_key}"
+                    fallback_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
                     response = await client.post(fallback_url, headers=headers, json=payload)
                     if response.status_code == 200:
                         result = response.json()
@@ -564,7 +567,7 @@ def run_local(prompt: str) -> str:
     """
     return f"[Local Dummy Model] You said: {prompt[:200]}"
 
-async def get_random_animal_fact(provider: str, samba_model: Optional[str] = None) -> str:
+async def get_random_animal_fact(provider: str) -> str:
     """
     Generates a random animal fact using the selected provider.
     """
@@ -586,7 +589,10 @@ async def get_random_animal_fact(provider: str, samba_model: Optional[str] = Non
 
         # Route to provider (simplified)
         if "SambaNova" in provider:
-            return await run_samba(prompt, samba_model or DEFAULT_SAMBANOVA_MODEL)
+            # Extract version from provider string
+            version = provider.split("–")[-1].strip() if "–" in provider else provider
+            model_choice = SAMBANOVA_ALIAS_MAP.get(version) or version
+            return await run_samba(prompt, model_choice)
         elif "Gemini" in provider:
             badge = "### 💎 Powered by Google Gemini"
             response_text = await run_gemini(prompt, "1.5 Flash")
@@ -610,8 +616,7 @@ async def get_random_animal_fact(provider: str, samba_model: Optional[str] = Non
 async def run_model(
     provider: str,
     user_input: str,
-    use_blaxel: bool = False,
-    samba_model: Optional[str] = None
+    use_blaxel: bool = False
 ) -> str:
     """
     Unified routing function to dispatch requests to the selected provider.
@@ -696,7 +701,7 @@ async def run_model(
             badge = None
             # Extract version for backwards compatibility, but prefer explicit selection.
             version = provider.split("–")[-1].strip() if "–" in provider else provider
-            model_choice = samba_model or SAMBANOVA_ALIAS_MAP.get(version) or version
+            model_choice = SAMBANOVA_ALIAS_MAP.get(version) or version
             try:
                 main_response = await run_samba(full_prompt, model_choice)
             except Exception as e:
@@ -741,7 +746,13 @@ async def run_model(
         elif provider.startswith("Google Gemini"):
             badge = "### 💎 Powered by Google Gemini"
             print("DEBUG: Calling Gemini...")
-            version = provider.split("–")[-1].strip()
+            # Robust split for version
+            if "–" in provider:
+                version = provider.split("–")[-1].strip()
+            elif "-" in provider:
+                version = provider.split("-")[-1].strip()
+            else:
+                version = provider
             main_response = await run_gemini(full_prompt, version)
         
         elif provider.startswith("Blaxel"):
