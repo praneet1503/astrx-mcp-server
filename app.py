@@ -96,7 +96,9 @@ def create_gradio_app():
             )
             
         submit_btn = gr.Button("Ask AI", variant="primary")
-        output_box = gr.Textbox(label="AI Answer", lines=10)
+        
+        gr.Markdown("### 🤖 AI Answer")
+        output_box = gr.Markdown(value="*Ask a question to see the answer here...*")
         
         gr.Examples(
             examples=[

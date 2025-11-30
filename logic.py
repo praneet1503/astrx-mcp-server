@@ -257,7 +257,7 @@ async def run_samba(prompt: str, model_version: str) -> str:
     text = response.choices[0].message.content
         
     # 5. Format Output
-    return f"**Powered by SambaNova Cloud**\n\n{text}"
+    return f"### ⚡ Powered by SambaNova Cloud\n\n{text}"
 
 async def run_claude(prompt: str, model_version: str) -> str:
     """
@@ -296,7 +296,7 @@ async def run_claude(prompt: str, model_version: str) -> str:
         text = response.json()["content"][0]["text"]
         
     # 5. Format Output
-    return f"**Powered by Claude**\n\n{text}"
+    return f"### 🧠 Powered by Anthropic Claude\n\n{text}"
 
 async def run_gemini(prompt: str) -> str:
     """
@@ -321,7 +321,7 @@ async def run_gemini(prompt: str) -> str:
             # Extract text from Gemini response structure
             text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response text found.")
             
-        return f"**Powered by Google Gemini**\n\n{text}"
+        return f"### 💎 Powered by Google Gemini\n\n{text}"
             
     except ValueError as e:
         return f"Configuration Error: {str(e)}"
@@ -439,15 +439,15 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
                     # Fallback to a capable SambaNova model (Llama 3.1 70B)
                     fallback_result = await run_samba(full_prompt, "Llama 3.1 70B")
                     main_response = (
-                        f"**Powered by SambaNova Cloud** (Fallback from Claude)\n"
-                        f"*(Claude unavailable: {str(e)})*\n\n"
-                        f"{fallback_result.replace('**Powered by SambaNova Cloud**', '').strip()}"
+                        f"### ⚡ Powered by SambaNova Cloud (Fallback from Claude)\n"
+                        f"> *(Claude unavailable: {str(e)})*\n\n"
+                        f"{fallback_result.replace('### ⚡ Powered by SambaNova Cloud', '').strip()}"
                     )
                 except Exception as samba_e:
                     # If fallback also fails, show keyword search
                     main_response = (
-                        f"**Powered by Claude** (Unavailable)\n"
-                        f"**Fallback to SambaNova** (Unavailable)\n\n"
+                        f"### ❌ Powered by Claude (Unavailable)\n"
+                        f"### ❌ Fallback to SambaNova (Unavailable)\n\n"
                         f"Claude Error: {str(e)}\n"
                         f"SambaNova Error: {str(samba_e)}\n\n"
                         f"Showing keyword search result instead:\n\n{context_str}"
@@ -474,7 +474,7 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
             blaxel_result = await blaxel_task
             # Check if blaxel_result is an error message
             if "Error" not in blaxel_result and "Configuration Error" not in blaxel_result:
-                main_response += f"\n\n---\n\n**✨ Suggested by Blaxel (Sponsor)**\n\n{blaxel_result}"
+                main_response += f"\n\n---\n\n### ✨ Suggested by Blaxel (Sponsor)\n\n{blaxel_result}"
             else:
                 print(f"Blaxel task returned error: {blaxel_result}")
         except Exception as e:
