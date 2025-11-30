@@ -1,10 +1,12 @@
 import json
 import os
 import httpx
+import asyncio
 import numpy as np
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
+from openai import AsyncOpenAI
 import modal_ops  # Import the Modal app definition
 
 # --- Configuration ---
@@ -215,7 +217,7 @@ async def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
 
 async def run_samba(prompt: str, model_version: str) -> str:
     """
-    Executes the prompt using SambaNova's API via httpx.
+    Executes the prompt using SambaNova's API via OpenAI client.
     Raises exceptions on failure so the caller can handle fallbacks.
     """
     # 1. Get Key (will raise ValueError if missing)
@@ -228,34 +230,31 @@ async def run_samba(prompt: str, model_version: str) -> str:
     elif "70B" in model_version:
         model = "Meta-Llama-3.1-70B-Instruct"
         
-    # 3. Prepare Request
-    # Updated endpoint to fast-api.snova.ai as api.sambanova.ai might be returning 410
-    url = "https://fast-api.snova.ai/v1/chat/completions"
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
+    # 3. Initialize OpenAI Client with SambaNova Base URL
+    client = AsyncOpenAI(
+        api_key=api_key,
+        base_url="https://api.sambanova.ai/v1",
+    )
+    
     # Enhanced system prompt for "advanced tasks"
     system_prompt = (
         "You are an expert biologist and data analyst. "
         "Provide a detailed answer based on the context. "
         "If the user asks for reasoning or summary, provide a structured response."
     )
-    payload = {
-        "model": model,
-        "messages": [
+    
+    # 4. Execute Async Call
+    response = await client.chat.completions.create(
+        model=model,
+        messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
         ],
-        "temperature": 0.1,
-        "top_p": 0.1
-    }
+        temperature=0.1,
+        top_p=0.1
+    )
     
-    # 4. Execute Async Call
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        response = await client.post(url, headers=headers, json=payload)
-        response.raise_for_status()
-        text = response.json()["choices"][0]["message"]["content"]
+    text = response.choices[0].message.content
         
     # 5. Format Output
     return f"**Powered by SambaNova Cloud**\n\n{text}"
