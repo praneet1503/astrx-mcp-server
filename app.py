@@ -8,7 +8,7 @@ import json
 from dotenv import load_dotenv
 
 # Import logic
-from logic import query_claude, set_animals_data, search_animals, initialize_retriever
+from logic import query_claude, set_animals_data, search_animals, initialize_retriever, save_keys
 
 # Load environment variables
 load_dotenv()
@@ -39,6 +39,26 @@ def load_data_list():
 def create_gradio_app():
     with gr.Blocks(title="Astrx MCP Server") as demo:
         gr.Markdown("# 🚀 Astrx MCP Server")
+        
+        # --- Sponsor API Keys Panel ---
+        with gr.Accordion("🔑 Sponsor API Keys (Session Only)", open=True):
+            gr.Markdown("Enter your API keys below. They are stored in memory for this session only and are **not** saved to disk.")
+            with gr.Row():
+                samba_key = gr.Textbox(label="SambaNova Cloud API Key", type="password", placeholder="Enter key...")
+                claude_key = gr.Textbox(label="Anthropic Claude API Key", type="password", placeholder="Enter key...")
+            with gr.Row():
+                modal_key = gr.Textbox(label="Modal API Token", type="password", placeholder="Enter token...")
+                blaxel_key = gr.Textbox(label="Blaxel API Key", type="password", placeholder="Enter key...")
+            
+            save_keys_btn = gr.Button("Save Keys", variant="secondary")
+            key_status = gr.Markdown("")
+
+            save_keys_btn.click(
+                fn=save_keys,
+                inputs=[samba_key, claude_key, modal_key, blaxel_key],
+                outputs=[key_status]
+            )
+
         gr.Markdown(
             "Ask questions about the animal dataset! "
             "This tool uses **Claude 3** to reason over the `animals.json` file."

@@ -3,7 +3,7 @@ import os
 import httpx
 import numpy as np
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
 
 # --- Configuration ---
@@ -15,6 +15,75 @@ EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 ANIMALS_DATA: List[Dict[str, Any]] = []
 ANIMAL_EMBEDDINGS = None
 RETRIEVER_MODEL = None
+
+# --- Session Keys ---
+SESSION_KEYS = {
+    "samba": None,
+    "claude": None,
+    "modal": None,
+    "blaxel": None
+}
+
+def save_keys(samba_key: str, claude_key: str, modal_key: str, blaxel_key: str) -> str:
+    """
+    Saves the provided API keys to the session storage.
+    """
+    global SESSION_KEYS
+    SESSION_KEYS["samba"] = samba_key if samba_key and samba_key.strip() else None
+    SESSION_KEYS["claude"] = claude_key if claude_key and claude_key.strip() else None
+    SESSION_KEYS["modal"] = modal_key if modal_key and modal_key.strip() else None
+    SESSION_KEYS["blaxel"] = blaxel_key if blaxel_key and blaxel_key.strip() else None
+    
+    return "Keys Saved Securely (Session Only)"
+
+def validate_keys() -> Dict[str, bool]:
+    """
+    Returns a dictionary indicating which keys are present.
+    """
+    return {k: v is not None for k, v in SESSION_KEYS.items()}
+
+def get_samba_client():
+    """
+    Returns a SambaNova client if the key is present.
+    """
+    key = SESSION_KEYS.get("samba")
+    if not key:
+        raise ValueError("SambaNova API Key is missing.")
+    # Placeholder for actual SDK initialization
+    # from openai import OpenAI
+    # return OpenAI(api_key=key, base_url="https://api.sambanova.ai/v1")
+    return {"client": "samba_placeholder", "key_present": True}
+
+def get_claude_client():
+    """
+    Returns an Anthropic client if the key is present.
+    """
+    key = SESSION_KEYS.get("claude") or os.getenv("CLAUDE_API_KEY")
+    if not key:
+        raise ValueError("Claude API Key is missing.")
+    # Placeholder or actual SDK
+    # import anthropic
+    # return anthropic.AsyncAnthropic(api_key=key)
+    return {"client": "claude_placeholder", "key_present": True, "key": key}
+
+def get_modal_client():
+    """
+    Returns a Modal client if the key is present.
+    """
+    key = SESSION_KEYS.get("modal")
+    if not key:
+        raise ValueError("Modal API Token is missing.")
+    # Modal usually uses config/env vars, but we can return the token for manual usage
+    return {"client": "modal_placeholder", "key_present": True}
+
+def get_blaxel_client():
+    """
+    Returns a Blaxel client if the key is present.
+    """
+    key = SESSION_KEYS.get("blaxel")
+    if not key:
+        raise ValueError("Blaxel API Key is missing.")
+    return {"client": "blaxel_placeholder", "key_present": True}
 
 def initialize_retriever():
     """
@@ -116,9 +185,11 @@ async def query_claude(user_input: str) -> str:
     if not user_input or not user_input.strip():
         return "Please enter a valid question."
 
-    api_key = os.getenv("CLAUDE_API_KEY")
+    # Try to get key from session first, then env var
+    api_key = SESSION_KEYS.get("claude") or os.getenv("CLAUDE_API_KEY")
+    
     if not api_key:
-        return "Error: CLAUDE_API_KEY not found in environment variables."
+        return "Error: CLAUDE_API_KEY not found. Please enter it in the Sponsor Keys panel or set it as an environment variable."
     
     if not ANIMALS_DATA:
         return "Error: No animal data loaded. Please check the server logs."
