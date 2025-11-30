@@ -71,10 +71,11 @@ def create_gradio_app():
             label="Choose Model Provider",
             choices=[
                 "SambaNova – Llama 3.3 70B",
-                "SambaNova – Llama 3.1 405B",
-                "SambaNova – Llama 3.1 70B",
                 "SambaNova – Llama 3.1 8B",
                 "SambaNova – DeepSeek R1",
+                "SambaNova – DeepSeek R1 Distill",
+                "SambaNova – DeepSeek V3",
+                "SambaNova – DeepSeek V3.1",
                 "Google Gemini – 3.0 Pro Preview",
                 "Google Gemini – 2.5 Pro",
                 "Google Gemini – 2.5 Flash",

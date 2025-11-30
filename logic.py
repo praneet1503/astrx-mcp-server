@@ -7,7 +7,6 @@ import random
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
-from openai import AsyncOpenAI
 import modal_ops  # Import the Modal app definition
 
 # --- Configuration ---
@@ -218,30 +217,35 @@ async def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
 
 async def run_samba(prompt: str, model_version: str) -> str:
     """
-    Executes the prompt using SambaNova's API via OpenAI client.
+    Executes the prompt using SambaNova's API via httpx.
     Raises exceptions on failure so the caller can handle fallbacks.
     """
     # 1. Get Key (will raise ValueError if missing)
     api_key = get_samba_key()
     
     # 2. Map Model ID
-    model = "Meta-Llama-3.1-8B-Instruct"
-    if "405B" in model_version:
-        model = "Meta-Llama-3.1-405B-Instruct"
-    elif "3.3 70B" in model_version:
-        model = "Meta-Llama-3.3-70B-Instruct"
-    elif "3.1 70B" in model_version:
-        model = "Meta-Llama-3.1-70B-Instruct"
-    elif "DeepSeek R1" in model_version:
-        model = "DeepSeek-R1"
-    elif "DeepSeek R1 Distill" in model_version:
+    # Default to Llama 3.3 70B if not specified or unknown
+    model = "Meta-Llama-3.3-70B-Instruct"
+    
+    if "DeepSeek R1 Distill" in model_version:
         model = "DeepSeek-R1-Distill-Llama-70B"
+    elif "DeepSeek R1" in model_version:
+        model = "DeepSeek-R1-0528"
+    elif "DeepSeek V3.1" in model_version:
+        model = "DeepSeek-V3.1"
+    elif "DeepSeek V3" in model_version:
+        model = "DeepSeek-V3-0324"
+    elif "Llama 3.1 8B" in model_version:
+        model = "Meta-Llama-3.1-8B-Instruct"
+    elif "Llama 3.3 70B" in model_version:
+        model = "Meta-Llama-3.3-70B-Instruct"
         
-    # 3. Initialize OpenAI Client with SambaNova Base URL
-    client = AsyncOpenAI(
-        api_key=api_key,
-        base_url="https://api.sambanova.ai/v1",
-    )
+    # 3. Prepare Request
+    url = "https://api.sambanova.ai/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
     
     # Enhanced system prompt for "advanced tasks"
     system_prompt = (
@@ -250,21 +254,25 @@ async def run_samba(prompt: str, model_version: str) -> str:
         "If the user asks for reasoning or summary, provide a structured response."
     )
     
-    # 4. Execute Async Call
-    response = await client.chat.completions.create(
-        model=model,
-        messages=[
+    payload = {
+        "model": model,
+        "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
         ],
-        temperature=0.1,
-        top_p=0.1
-    )
+        "temperature": 0.1,
+        "top_p": 0.1
+    }
     
-    text = response.choices[0].message.content
+    # 4. Execute Async Call
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
+        text = data['choices'][0]['message']['content']
         
     # 5. Format Output
-    return f"### ⚡ Powered by SambaNova Cloud\n\n{text}"
+    return f"### ⚡ Powered by SambaNova ({model})\n\n{text}"
 
 async def run_claude(prompt: str, model_version: str) -> str:
     """
@@ -508,12 +516,22 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
             version = provider.split("–")[-1].strip()
             try:
                 main_response = await run_samba(full_prompt, version)
+                # Update badge with specific model from response if possible, 
+                # but run_samba returns formatted string so we can just use that.
+                # Actually run_samba returns "### ⚡ Powered by SambaNova (MODEL)\n\nText"
+                # So we should probably just use the response directly and clear the badge here 
+                # or let the badge be overwritten.
+                # The current logic appends badge + response. 
+                # run_samba returns the full string with header.
+                # Let's adjust run_samba to return just text OR adjust here.
+                # Adjusting here to use the returned string as is.
+                badge = "" 
             except Exception as e:
                 # Fallback for SambaNova
                 print(f"SambaNova API failed: {e}")
+                badge = "### ⚡ Powered by SambaNova Cloud (Unavailable)"
                 main_response = (
-                    f"(Unavailable)\n\n"
-                    f"SambaNova is unavailable: {str(e)}\n\n"
+                    f"\n\nSambaNova is unavailable: {str(e)}\n\n"
                     f"Showing keyword search result instead:\n\n{context_str}"
                 )
         
