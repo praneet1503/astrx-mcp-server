@@ -75,7 +75,7 @@ def create_gradio_app():
                 "SambaNova (Optional) – Llama 3.1 405B",
                 "Claude (Necessary) – Haiku",
                 "Claude (Necessary) – Sonnet 3.5",
-                "Google Gemini (Optional) – Pro",
+                "Google Gemini (Optional) – 1.5 Flash",
                 "Blaxel (Optional) – MCP Model",
                 "Local (Optional) – Tiny Model"
             ],

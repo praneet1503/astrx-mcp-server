@@ -305,7 +305,8 @@ async def run_gemini(prompt: str) -> str:
     try:
         api_key = get_gemini_key()
         
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}"
+        # Updated to use gemini-1.5-flash as gemini-pro might be deprecated or unavailable
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
         headers = {"Content-Type": "application/json"}
         payload = {
             "contents": [{
