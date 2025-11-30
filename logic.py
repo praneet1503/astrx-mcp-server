@@ -393,10 +393,12 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
 
     # 3. Prepare Blaxel Task (if enabled)
     blaxel_task = None
+    print(f"DEBUG: use_blaxel={use_blaxel}")
     if use_blaxel:
         try:
             # Check if key exists
             get_blaxel_key()
+            print("DEBUG: Blaxel key found, starting task.")
             # Create a specific prompt for suggestions
             blaxel_prompt = (
                 f"User Query: {user_input}\n"
@@ -407,12 +409,14 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
             blaxel_task = asyncio.create_task(run_blaxel(blaxel_prompt))
         except ValueError:
             # Key missing, ignore Blaxel
+            print("DEBUG: Blaxel key missing, skipping.")
             pass
         except Exception as e:
             print(f"Failed to start Blaxel task: {e}")
 
     # 4. Route to Main Provider
     main_response = ""
+    print(f"DEBUG: Routing to provider: {provider}")
     try:
         if provider.startswith("SambaNova"):
             # Extract version if needed, e.g., "SambaNova – Samba-1" -> "Samba-1"
@@ -454,9 +458,11 @@ async def run_model(provider: str, user_input: str, use_blaxel: bool = False) ->
                     )
         
         elif provider.startswith("Google Gemini"):
+            print("DEBUG: Calling Gemini...")
             main_response = await run_gemini(full_prompt)
         
         elif provider.startswith("Blaxel"):
+            print("DEBUG: Calling Blaxel (Main)...")
             main_response = await run_blaxel(full_prompt)
         
         elif provider.startswith("Local"):
