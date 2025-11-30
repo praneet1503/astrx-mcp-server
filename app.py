@@ -83,6 +83,12 @@ def create_gradio_app():
             interactive=True
         )
 
+        use_blaxel = gr.Checkbox(
+            label="Enable Blaxel Suggestions (Sponsor)",
+            value=False,
+            info="Get additional insights and fun facts powered by Blaxel."
+        )
+
         with gr.Row():
             user_input = gr.Textbox(
                 label="Your Question", 
@@ -94,18 +100,19 @@ def create_gradio_app():
         
         gr.Examples(
             examples=[
-                ["Claude (Necessary) – Haiku", "Tell me about the tiger."],
-                ["Claude (Necessary) – Haiku", "Which animals are canine?"],
-                ["Claude (Necessary) – Haiku", "Is a dolphin a cat?"]
+                ["Claude (Necessary) – Haiku", "Tell me about the tiger.", True],
+                ["Claude (Necessary) – Haiku", "Which animals are canine?", True],
+                ["Claude (Necessary) – Haiku", "Is a dolphin a cat?", False],
+                ["SambaNova (Optional) – Llama 3.1 70B", "rare feline", True]
             ],
-            inputs=[model_provider, user_input],
+            inputs=[model_provider, user_input, use_blaxel],
             label="Example Queries"
         )
         
         # Gradio supports async functions natively
         submit_btn.click(
             fn=run_model,
-            inputs=[model_provider, user_input],
+            inputs=[model_provider, user_input, use_blaxel],
             outputs=output_box
         )
         

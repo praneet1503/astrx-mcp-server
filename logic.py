@@ -365,7 +365,7 @@ def run_local(prompt: str) -> str:
     """
     return f"[Local Dummy Model] You said: {prompt[:200]}"
 
-async def run_model(provider: str, user_input: str) -> str:
+async def run_model(provider: str, user_input: str, use_blaxel: bool = False) -> str:
     """
     Unified routing function to dispatch requests to the selected provider.
     """
@@ -391,17 +391,38 @@ async def run_model(provider: str, user_input: str) -> str:
         "Answer based on the context provided."
     )
 
-    # 3. Route to Provider
+    # 3. Prepare Blaxel Task (if enabled)
+    blaxel_task = None
+    if use_blaxel:
+        try:
+            # Check if key exists
+            get_blaxel_key()
+            # Create a specific prompt for suggestions
+            blaxel_prompt = (
+                f"User Query: {user_input}\n"
+                f"Context Summary: {context_str[:1000]}\n\n"
+                "Provide 3 short, fascinating 'Did You Know?' facts or insights related to this animal/topic. "
+                "Format as a bulleted list."
+            )
+            blaxel_task = asyncio.create_task(run_blaxel(blaxel_prompt))
+        except ValueError:
+            # Key missing, ignore Blaxel
+            pass
+        except Exception as e:
+            print(f"Failed to start Blaxel task: {e}")
+
+    # 4. Route to Main Provider
+    main_response = ""
     try:
         if provider.startswith("SambaNova"):
             # Extract version if needed, e.g., "SambaNova – Samba-1" -> "Samba-1"
             version = provider.split("–")[-1].strip()
             try:
-                return await run_samba(full_prompt, version)
+                main_response = await run_samba(full_prompt, version)
             except Exception as e:
                 # Fallback for SambaNova
                 print(f"SambaNova API failed: {e}")
-                return (
+                main_response = (
                     f"**Powered by SambaNova Cloud** (Unavailable)\n\n"
                     f"SambaNova is unavailable: {str(e)}\n\n"
                     f"Showing keyword search result instead:\n\n{context_str}"
@@ -410,21 +431,21 @@ async def run_model(provider: str, user_input: str) -> str:
         elif provider.startswith("Claude"):
             version = provider.split("–")[-1].strip()
             try:
-                return await run_claude(full_prompt, version)
+                main_response = await run_claude(full_prompt, version)
             except Exception as e:
                 # Fallback Logic: Try SambaNova if Claude fails
                 print(f"Claude API failed: {e}. Attempting fallback to SambaNova...")
                 try:
                     # Fallback to a capable SambaNova model (Llama 3.1 70B)
                     fallback_result = await run_samba(full_prompt, "Llama 3.1 70B")
-                    return (
+                    main_response = (
                         f"**Powered by SambaNova Cloud** (Fallback from Claude)\n"
                         f"*(Claude unavailable: {str(e)})*\n\n"
                         f"{fallback_result.replace('**Powered by SambaNova Cloud**', '').strip()}"
                     )
                 except Exception as samba_e:
                     # If fallback also fails, show keyword search
-                    return (
+                    main_response = (
                         f"**Powered by Claude** (Unavailable)\n"
                         f"**Fallback to SambaNova** (Unavailable)\n\n"
                         f"Claude Error: {str(e)}\n"
@@ -433,21 +454,35 @@ async def run_model(provider: str, user_input: str) -> str:
                     )
         
         elif provider.startswith("Google Gemini"):
-            return await run_gemini(full_prompt)
+            main_response = await run_gemini(full_prompt)
         
         elif provider.startswith("Blaxel"):
-            return await run_blaxel(full_prompt)
+            main_response = await run_blaxel(full_prompt)
         
         elif provider.startswith("Local"):
-            return run_local(full_prompt)
+            main_response = run_local(full_prompt)
         
         else:
-            return f"Error: Unknown provider '{provider}'"
+            main_response = f"Error: Unknown provider '{provider}'"
             
     except Exception as e:
-        return f"Routing Error: {str(e)}"
+        main_response = f"Routing Error: {str(e)}"
+
+    # 5. Combine Results
+    if blaxel_task:
+        try:
+            blaxel_result = await blaxel_task
+            # Check if blaxel_result is an error message
+            if "Error" not in blaxel_result and "Configuration Error" not in blaxel_result:
+                main_response += f"\n\n---\n\n**✨ Suggested by Blaxel (Sponsor)**\n\n{blaxel_result}"
+            else:
+                print(f"Blaxel task returned error: {blaxel_result}")
+        except Exception as e:
+            print(f"Blaxel task failed: {e}")
+
+    return main_response
 
 # Deprecated: Kept for backward compatibility if needed, but run_model should be used.
 async def query_claude(user_input: str) -> str:
-    return await run_model("Claude – Haiku", user_input)
+    return await run_model("Claude – Haiku", user_input, False)
 
