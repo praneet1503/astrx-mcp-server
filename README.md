@@ -25,6 +25,8 @@ tags:
 
 **Astrx MCP Server** is a high-performance, production-ready Model Context Protocol (MCP) server designed to provide accurate, scientifically backed, and AI-enriched information about the animal kingdom. It combines a massive local dataset (19,000+ records) with advanced Large Language Models (LLMs) to deliver instant, reliable answers.
 
+🎥 **[Watch the Demo Video](https://drive.google.com/file/d/1OYoQpFaaLm8U5TRkCWrPp7kfGbTltG2p/view?usp=drive_link)**
+
 ---
 
 ## 🚀 Features
