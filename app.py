@@ -23,7 +23,7 @@ load_dotenv()
 
 BASE = Path(__file__).parent
 DATA_DIR = BASE / "data"
-DATA_FILE = DATA_DIR / "animals.json"
+DATA_FILE = DATA_DIR / "animals_enriched.json"
 
 # --- Global State ---
 _cached_df = None
@@ -31,13 +31,23 @@ _cached_df = None
 # --- Helper Functions ---
 def load_data_list():
     """Loads the animals dataset from the JSON file as a list of dicts."""
-    if not DATA_FILE.exists():
-        print(f"Error: {DATA_FILE} not found.")
-        return []
+    # Local variable to avoid UnboundLocalError if we reassign DATA_FILE
+    current_data_file = DATA_FILE
+    
+    if not current_data_file.exists():
+        # Fallback to original if enriched doesn't exist
+        fallback = DATA_DIR / "animals.json"
+        if fallback.exists():
+            print(f"Warning: {current_data_file} not found. Falling back to {fallback}")
+            current_data_file = fallback
+        else:
+            print(f"Error: No data file found.")
+            return []
+            
     try:
-        with open(DATA_FILE, "r", encoding="utf-8") as f:
+        with open(current_data_file, "r", encoding="utf-8") as f:
             data = json.load(f)
-        print(f"Loaded {len(data)} records from {DATA_FILE}")
+        print(f"Loaded {len(data)} records from {current_data_file}")
         return data
     except Exception as e:
         print(f"Error loading data: {e}")

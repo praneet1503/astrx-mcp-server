@@ -20,57 +20,43 @@ tags:
 
 **A high-performance, multi-model RAG system for animal knowledge.**
 
-This project combines a massive dataset of 19,000+ animals with cutting-edge LLMs to provide accurate, cited answers. It features a custom parallel web scraper and an AI-powered data enrichment pipeline.
+This project integrates external scientific datasets with a massive scraped database (19,000+ animals) to provide accurate, normalized, and AI-enriched answers.
 
-## 🚀 Key Features
+## 🧬 External Data Integration
 
-*   **⚡ SambaNova Cloud Integration**: Blazing fast inference using **Llama 3.3 70B**, **DeepSeek R1**, and **DeepSeek V3**.
-*   **🕷️ Parallel Scraping Engine**: Built on **Modal** to scrape thousands of pages concurrently from A-Z Animals and other sources.
-*   **🧠 Multi-Provider Support**: Seamlessly switch between **SambaNova**, **Anthropic (Claude)**, **Google (Gemini)**, and **Blaxel**.
-*   **🔍 Hybrid RAG**: Combines semantic search (SentenceTransformers) with keyword fallback for precise retrieval.
-*   **💎 AI-Enriched Data**: Dataset automatically enriched with diet, lifespan, and threat status using Llama 3.1.
+We combine raw scraped data with high-quality external sources to ensure accuracy:
 
-## 🎮 How to Use
-
-1.  **Enter API Key**: Input your **SambaNova API Key** (recommended for best performance) or keys for other providers.
-2.  **Select Model**: Choose a specific model (e.g., `DeepSeek-R1-Distill-Llama-70B` or `Meta-Llama-3.3-70B`).
-3.  **Ask Anything**: Query the system (e.g., *"What is the diet of a Snow Leopard?"*).
-4.  **View Context**: See exactly which database entries were used to generate the answer.
-
-## 🛠️ Environment Variables
-
-To run locally or deploy, set these in your `.env` or Space secrets:
-
-*   `SAMBANOVA_API_KEY`: Primary inference provider.
-*   `CLAUDE_API_KEY`: For Anthropic models.
-*   `GEMINI_API_KEY`: For Google models.
-*   `BLAXEL_API_KEY`: For Blaxel serverless agents.
-*   `MODAL_TOKEN_ID` / `MODAL_TOKEN_SECRET`: Required for running the scraper or remote embeddings.
+1.  **Animalia Kingdom Classification**: Adds scientific taxonomy (Phylum, Class, Order, Family, Genus).
+2.  **Animal Lifestyle & Traits**: Normalizes diet, habitat, and behavioral patterns.
 
 ## 🧩 Architecture
 
-*   **Frontend**: Built with **Gradio** for a responsive chat interface.
-*   **Logic Core (`logic.py`)**: Handles request routing, RAG retrieval, and prompt engineering.
-*   **Data Pipeline**:
-    *   `local_scraper/`: Async Playwright scraper running on Modal.
-    *   `scripts/enrich_animals_modal.py`: Massively parallel data enrichment script.
-    *   `data/animals.json`: The source of truth (19k+ records).
+*   **`data/animals.json`**: Raw output from the parallel web scraper.
+*   **`data/external/`**: Contains scientific CSV datasets (`classification.csv`, `traits.csv`).
+*   **`scripts/merge_external_datasets.py`**: The ETL pipeline that:
+    *   Normalizes field names (`scientific_name` → `name`).
+    *   Merges external traits into the main dataset.
+    *   Generates the production-ready `data/animals_enriched.json`.
+*   **`scripts/enrich_animals_modal.py`**: Fallback LLM pipeline (SambaNova Llama 3.3) to fill any remaining gaps.
+*   **`app.py`**: Gradio frontend serving the enriched dataset.
 
-## 👩‍💻 Developer Usage
+## 🛠️ How to Rebuild the Dataset
 
-Run the RAG logic programmatically:
+To regenerate `animals_enriched.json` locally:
 
-```python
-from logic import search_animals, run_samba
+1.  **Place Datasets**: Ensure `classification.csv` and `traits.csv` are in `data/external/`.
+2.  **Run Merge Script**:
+    ```bash
+    python scripts/merge_external_datasets.py
+    ```
+3.  **Run AI Enrichment (Optional)**:
+    If fields are still missing, use the Modal pipeline:
+    ```bash
+    modal run scripts/enrich_animals_modal.py
+    ```
 
-# 1. Retrieve Context
-context_docs = await search_animals("Tiger diet", top_k=3)
+## 🚀 Usage
 
-# 2. Generate Answer
-context_str = "\n".join([str(d) for d in context_docs])
-prompt = f"Context: {context_str}\n\nQuestion: What do tigers eat?"
-response = await run_samba(prompt, model_choice="Meta-Llama-3.3-70B-Instruct")
-
-print(response)
-```
+The Space automatically loads `data/animals_enriched.json`.
+Simply enter your API key (SambaNova, Claude, or Gemini) and ask questions like *"What is the scientific classification of a Tiger?"* to see the merged data in action.
 
