@@ -58,7 +58,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Sync to Hugging Face Space (Optional)
-      if: env.HF_TOKEN != ''
+      if: ${{ secrets.HF_TOKEN != '' }}
       env:
         HF_TOKEN: ${{ secrets.HF_TOKEN }}
         HF_SPACE_REPO: ${{ secrets.HF_SPACE_REPO }} # e.g., username/space-name
