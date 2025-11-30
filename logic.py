@@ -205,40 +205,48 @@ async def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
 async def run_samba(prompt: str, model_version: str) -> str:
     """
     Executes the prompt using SambaNova's API via httpx.
+    Raises exceptions on failure so the caller can handle fallbacks.
     """
-    try:
-        api_key = get_samba_key()
+    # 1. Get Key (will raise ValueError if missing)
+    api_key = get_samba_key()
+    
+    # 2. Map Model ID
+    model = "Meta-Llama-3.1-8B-Instruct"
+    if "405B" in model_version:
+        model = "Meta-Llama-3.1-405B-Instruct"
+    elif "70B" in model_version:
+        model = "Meta-Llama-3.1-70B-Instruct"
         
-        # Map UI names to actual model IDs
-        model = "Meta-Llama-3.1-8B-Instruct"
-        if "405B" in model_version:
-            model = "Meta-Llama-3.1-405B-Instruct"
-        elif "70B" in model_version:
-            model = "Meta-Llama-3.1-70B-Instruct"
-            
-        url = "https://api.sambanova.ai/v1/chat/completions"
-        headers = {
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json"
-        }
-        payload = {
-            "model": model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.1,
-            "top_p": 0.1
-        }
+    # 3. Prepare Request
+    url = "https://api.sambanova.ai/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+    # Enhanced system prompt for "advanced tasks"
+    system_prompt = (
+        "You are an expert biologist and data analyst. "
+        "Provide a detailed answer based on the context. "
+        "If the user asks for reasoning or summary, provide a structured response."
+    )
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.1,
+        "top_p": 0.1
+    }
+    
+    # 4. Execute Async Call
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        response = await client.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        text = response.json()["choices"][0]["message"]["content"]
         
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.post(url, headers=headers, json=payload)
-            response.raise_for_status()
-            return response.json()["choices"][0]["message"]["content"]
-            
-    except ValueError as e:
-        return f"Configuration Error: {str(e)}"
-    except httpx.HTTPStatusError as e:
-        return f"SambaNova API Error: {e.response.text}"
-    except Exception as e:
-        return f"SambaNova Error: {str(e)}"
+    # 5. Format Output
+    return f"**Powered by SambaNova Cloud**\n\n{text}"
 
 async def run_claude(prompt: str, model_version: str) -> str:
     """
@@ -341,7 +349,16 @@ async def run_model(provider: str, user_input: str) -> str:
         if provider.startswith("SambaNova"):
             # Extract version if needed, e.g., "SambaNova – Samba-1" -> "Samba-1"
             version = provider.split("–")[-1].strip()
-            return await run_samba(full_prompt, version)
+            try:
+                return await run_samba(full_prompt, version)
+            except Exception as e:
+                # Fallback for SambaNova
+                print(f"SambaNova API failed: {e}")
+                return (
+                    f"**Powered by SambaNova Cloud** (Unavailable)\n\n"
+                    f"SambaNova is unavailable: {str(e)}\n\n"
+                    f"Showing keyword search result instead:\n\n{context_str}"
+                )
         
         elif provider.startswith("Claude"):
             version = provider.split("–")[-1].strip()
