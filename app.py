@@ -47,7 +47,7 @@ def create_gradio_app():
                 samba_key = gr.Textbox(label="SambaNova Cloud API Key (Optional)", type="password", placeholder="Enter key...")
                 claude_key = gr.Textbox(label="Anthropic Claude API Key (Necessary)", type="password", placeholder="Enter key...")
             with gr.Row():
-                modal_key = gr.Textbox(label="Modal API Token (Optional)", type="password", placeholder="Enter token...")
+                modal_key = gr.Textbox(label="Modal Token (ID:Secret) (Optional)", type="password", placeholder="e.g., ak-123:as-456")
                 blaxel_key = gr.Textbox(label="Blaxel API Key (Optional)", type="password", placeholder="Enter key...")
             
             save_keys_btn = gr.Button("Save Keys", variant="secondary")

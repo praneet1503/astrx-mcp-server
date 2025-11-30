@@ -5,6 +5,7 @@ import numpy as np
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 from sentence_transformers import SentenceTransformer
+import modal_ops  # Import the Modal app definition
 
 # --- Configuration ---
 CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
@@ -113,16 +114,29 @@ def set_animals_data(data: List[Dict[str, Any]]):
         print(f"Error computing embeddings: {e}")
         ANIMAL_EMBEDDINGS = None
 
-def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
+async def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
     """
     Semantic search using vector embeddings.
-    Falls back to keyword search if model is not available.
+    Uses Modal if configured, otherwise falls back to local SentenceTransformer.
     """
     if not query:
         return []
 
-    # Fallback to keyword search if semantic search is not ready
-    if RETRIEVER_MODEL is None or ANIMAL_EMBEDDINGS is None:
+    # Check for Modal Token
+    modal_token = SESSION_KEYS.get("modal")
+    use_modal = False
+    
+    if modal_token and ":" in modal_token:
+        try:
+            token_id, token_secret = modal_token.split(":", 1)
+            os.environ["MODAL_TOKEN_ID"] = token_id.strip()
+            os.environ["MODAL_TOKEN_SECRET"] = token_secret.strip()
+            use_modal = True
+        except Exception as e:
+            print(f"Invalid Modal token format: {e}")
+
+    # Fallback to keyword search if semantic search is not ready AND Modal is not used
+    if not use_modal and (RETRIEVER_MODEL is None or ANIMAL_EMBEDDINGS is None):
         print("Using fallback keyword search.")
         query_words = query.lower().split()
         matches = []
@@ -136,9 +150,28 @@ def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
 
     # Semantic Search
     try:
-        # Encode query
-        query_embedding = RETRIEVER_MODEL.encode(query, convert_to_numpy=True, normalize_embeddings=True)
+        query_embedding = None
         
+        if use_modal:
+            print("Using Modal for embedding generation...")
+            try:
+                # Run the Modal function ephemerally
+                with modal_ops.app.run():
+                    query_embedding = modal_ops.generate_embeddings.remote([query])[0]
+                print("Modal embedding generated successfully.")
+            except Exception as e:
+                print(f"Modal execution failed: {e}")
+                # Fallback to local if Modal fails
+                if RETRIEVER_MODEL:
+                    query_embedding = RETRIEVER_MODEL.encode(query, convert_to_numpy=True, normalize_embeddings=True)
+        
+        # If Modal wasn't used or failed, use local model
+        if query_embedding is None and RETRIEVER_MODEL:
+             query_embedding = RETRIEVER_MODEL.encode(query, convert_to_numpy=True, normalize_embeddings=True)
+
+        if query_embedding is None:
+             return [] # Should have fallen back to keyword search earlier if local model was missing
+
         # Calculate Cosine Similarity
         # (1, D) @ (N, D).T -> (1, N)
         similarities = np.dot(ANIMAL_EMBEDDINGS, query_embedding)
@@ -154,6 +187,11 @@ def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
                 # Create a copy to avoid mutating the global list
                 item = ANIMALS_DATA[idx].copy()
                 item['_score'] = score
+                # Mark if Modal was used (for UI display)
+                if use_modal:
+                    item['_source'] = "Modal Semantic Search"
+                else:
+                    item['_source'] = "Local Semantic Search"
                 results.append(item)
                 
         return results
@@ -283,11 +321,13 @@ async def run_model(provider: str, user_input: str) -> str:
     if not ANIMALS_DATA:
         return "Error: No animal data loaded."
 
-    relevant_animals = search_animals(user_input)
+    relevant_animals = await search_animals(user_input)
     if not relevant_animals:
         context_str = "No specific animals found matching the query."
     else:
-        context_str = json.dumps(relevant_animals, ensure_ascii=False)
+        # Add source info to context
+        source_label = relevant_animals[0].get('_source', 'Unknown Source')
+        context_str = f"[Search Source: {source_label}]\n" + json.dumps(relevant_animals, ensure_ascii=False)
 
     # 2. Construct Prompt with Context
     full_prompt = (
