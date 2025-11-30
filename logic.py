@@ -470,8 +470,10 @@ GOOGLE_MODEL_MAP = {
     "Gemini 2.5 Flash": "gemini-2.5-flash",
     "Gemini 2.5 Flash-Lite": "gemini-2.5-flash-lite",
     "Gemini 2.5 Flash Image": "gemini-2.5-flash-image",
-    "Gemini 2.0 Flash": "gemini-2.0-flash",
-    "Gemini 2.0 Flash-Lite": "gemini-2.0-flash-lite"
+    "Gemma 3": "gemma-3",
+    "Gemma 3n": "gemma-3n",
+    "Gemma 2 27B": "gemma-2-27b",
+    "Gemma 2 9B": "gemma-2-9b"
 }
 
 async def run_gemini(prompt: str, model_version: str) -> str:
@@ -510,8 +512,6 @@ async def run_gemini(prompt: str, model_version: str) -> str:
                          f"Please try again later or enter your own Google API key in the sidebar for stable testing."
                      )
 
-                print(f"Gemini 429 Error for {model_id}: {response.text}")
-                
                 # Fallback Strategy: Try gemini-2.5-flash-lite (Cheapest/Fastest)
                 if model_id != "gemini-2.5-flash-lite":
                     print("Falling back to Gemini 2.5 Flash-Lite...")
@@ -530,8 +530,8 @@ async def run_gemini(prompt: str, model_version: str) -> str:
                          f"The demo key failed for **{model_version}** (Error {response.status_code}). "
                          f"Please provide your own Google API key."
                      )
-                # Return the raw error for debugging if not demo
-                return f"Gemini API Error ({response.status_code}): {response.text}"
+                # Return structured error
+                return json.dumps({"error": "MODEL_FAILED_OR_RATE_LIMIT", "details": response.text})
 
             response.raise_for_status()
             result = response.json()
@@ -811,8 +811,4 @@ async def run_model(
             print(f"Blaxel task failed: {e}")
 
     return final_output
-
-# Deprecated: Kept for backward compatibility if needed, but run_model should be used.
-async def query_claude(user_input: str) -> str:
-    return await run_model("Claude – Haiku", user_input, False)
 

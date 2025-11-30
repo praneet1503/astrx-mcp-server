@@ -30,28 +30,41 @@ _cached_df = None
 
 # --- Helper Functions ---
 def load_data_list():
-    """Loads the animals dataset from the JSON file as a list of dicts."""
-    # Local variable to avoid UnboundLocalError if we reassign DATA_FILE
-    current_data_file = DATA_FILE
+    """Loads and merges all animal datasets from the data directory."""
+    all_data = []
     
-    if not current_data_file.exists():
-        # Fallback to original if enriched doesn't exist
-        fallback = DATA_DIR / "animals.json"
-        if fallback.exists():
-            print(f"Warning: {current_data_file} not found. Falling back to {fallback}")
-            current_data_file = fallback
-        else:
-            print(f"Error: No data file found.")
-            return []
-            
-    try:
-        with open(current_data_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        print(f"Loaded {len(data)} records from {current_data_file}")
-        return data
-    except Exception as e:
-        print(f"Error loading data: {e}")
-        return []
+    # 1. Load JSON files
+    json_files = ["animals_enriched.json", "animals.json"]
+    for jf in json_files:
+        path = DATA_DIR / jf
+        if path.exists():
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    if isinstance(data, list):
+                        print(f"Loaded {len(data)} records from {jf}")
+                        all_data.extend(data)
+                    else:
+                        print(f"Warning: {jf} content is not a list.")
+            except Exception as e:
+                print(f"Error loading {jf}: {e}")
+
+    # 2. Load CSV files
+    csv_files = ["animals-external.csv", "Animal Traits Observations.csv"]
+    for cf in csv_files:
+        path = DATA_DIR / cf
+        if path.exists():
+            try:
+                df = pd.read_csv(path)
+                # Convert to list of dicts
+                records = df.where(pd.notnull(df), None).to_dict(orient="records")
+                print(f"Loaded {len(records)} records from {cf}")
+                all_data.extend(records)
+            except Exception as e:
+                print(f"Error loading {cf}: {e}")
+    
+    print(f"Total records loaded: {len(all_data)}")
+    return all_data
 
 # --- Gradio UI ---
 def create_gradio_app():
@@ -104,15 +117,24 @@ def create_gradio_app():
                 # Google - High-Speed
                 "Google – Gemini 2.5 Flash",
                 "Google – Gemini 2.5 Flash-Lite",
-                "Google – Gemini 2.0 Flash",
-                "Google – Gemini 2.0 Flash-Lite",
                 # Google - Specialized
                 "Google – Gemini 2.5 Flash Image",
+                # Google - Open Models
+                "Google – Gemma 3",
+                "Google – Gemma 3n",
+                "Google – Gemma 2 27B",
+                "Google – Gemma 2 9B",
+                # Others
                 "Blaxel – MCP Model",
                 "Local – Tiny Model"
             ],
             value="SambaNova – Llama 3.3 70B",
             interactive=True
+        )
+        
+        gr.Markdown(
+            "⚠️ **Note:** Some advanced models require your own API key. "
+            "If the response fails or hits rate limits, please add your key in the section above."
         )
 
         use_blaxel = gr.Checkbox(
