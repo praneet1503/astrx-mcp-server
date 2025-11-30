@@ -42,3 +42,15 @@ The workflow runs automatically every Sunday at midnight or can be triggered man
 3. Archives the data to `data/versions/`.
 4. Commits and pushes the changes to the repository.
 5. (Optional) Uploads the data to the configured HF Space.
+
+## 🧠 Data Enrichment
+
+To enrich the dataset with missing fields (diet, lifespan, fun_fact, threat_status), use the provided Modal script.
+
+```bash
+export SAMBANOVA_API_KEY="your_api_key_here"
+modal run scripts/enrich_animals_modal.py
+```
+
+This script uses SambaNova's Llama 3.1 8B model to efficiently process thousands of records in parallel.
+
