@@ -60,15 +60,19 @@ def create_gradio_app():
         
         # --- Sponsor API Keys Panel ---
         with gr.Accordion("🔑 Sponsor API Keys (Session Only)", open=True):
-            gr.Markdown("Enter your API keys below. They are stored in memory for this session only and are **not** saved to disk.")
+            gr.Markdown(
+                "Enter your API keys below. They are stored in memory for this session only and are **not** saved to disk.\n\n"
+                "**Note:** If you leave a field blank, the system will attempt to use a **Demo Key** (if available). "
+                "Demo keys have strict rate limits and may fail if overused."
+            )
             with gr.Row():
-                samba_key = gr.Textbox(label="SambaNova Cloud API Key (Optional)", type="password", placeholder="Enter key...")
-                claude_key = gr.Textbox(label="Anthropic Claude API Key (Necessary)", type="password", placeholder="Enter key...")
+                samba_key = gr.Textbox(label="SambaNova Cloud API Key (Optional - Demo Available)", type="password", placeholder="Leave blank to use Demo Key")
+                claude_key = gr.Textbox(label="Anthropic Claude API Key (Optional - Demo Available)", type="password", placeholder="Leave blank to use Demo Key")
             with gr.Row():
                 modal_key = gr.Textbox(label="Modal Token (ID:Secret) (Optional)", type="password", placeholder="e.g., ak-123:as-456")
-                blaxel_key = gr.Textbox(label="Blaxel API Key (Optional)", type="password", placeholder="Enter key...")
+                blaxel_key = gr.Textbox(label="Blaxel API Key (Optional - Demo Available)", type="password", placeholder="Leave blank to use Demo Key")
             with gr.Row():
-                gemini_key = gr.Textbox(label="Google Gemini API Key (Optional)", type="password", placeholder="Enter key...")
+                gemini_key = gr.Textbox(label="Google Gemini API Key (Optional - Demo Available)", type="password", placeholder="Leave blank to use Demo Key")
             
             save_keys_btn = gr.Button("Save Keys", variant="secondary")
             key_status = gr.Markdown("")

@@ -28,6 +28,16 @@ SESSION_KEYS = {
     "gemini": None
 }
 
+# --- Demo Keys ---
+# These allow users to try the app without their own keys, subject to rate limits.
+DEMO_KEYS = {
+    "samba": os.getenv("DEMO_SAMBANOVA_KEY"),
+    "claude": os.getenv("DEMO_CLAUDE_KEY"),
+    "modal": os.getenv("DEMO_MODAL_KEY"),
+    "blaxel": os.getenv("DEMO_BLAXEL_KEY"),
+    "gemini": os.getenv("DEMO_GEMINI_KEY")
+}
+
 # --- SambaNova Model Catalog ---
 DEFAULT_SAMBANOVA_MODEL = "Meta-Llama-3.3-70B-Instruct"
 SAMBANOVA_MODEL_IDS = {
@@ -94,38 +104,62 @@ def validate_keys() -> Dict[str, bool]:
 def get_samba_key():
     """
     Returns the SambaNova API key if present.
+    Returns: (key, is_demo)
     """
     key = SESSION_KEYS.get("samba") or os.getenv("SAMBANOVA_API_KEY")
-    if not key:
-        raise ValueError("SambaNova API Key is missing.")
-    return key
+    if key:
+        return key, False
+        
+    demo_key = DEMO_KEYS.get("samba")
+    if demo_key:
+        return demo_key, True
+        
+    raise ValueError("SambaNova API Key is missing.")
 
 def get_claude_key():
     """
     Returns the Claude API key if present.
+    Returns: (key, is_demo)
     """
     key = SESSION_KEYS.get("claude") or os.getenv("CLAUDE_API_KEY")
-    if not key:
-        raise ValueError("Claude API Key is missing.")
-    return key
+    if key:
+        return key, False
+        
+    demo_key = DEMO_KEYS.get("claude")
+    if demo_key:
+        return demo_key, True
+        
+    raise ValueError("Claude API Key is missing.")
 
 def get_blaxel_key():
     """
     Returns the Blaxel API key if present.
+    Returns: (key, is_demo)
     """
     key = SESSION_KEYS.get("blaxel") or os.getenv("BLAXEL_API_KEY")
-    if not key:
-        raise ValueError("Blaxel API Key is missing.")
-    return key
+    if key:
+        return key, False
+        
+    demo_key = DEMO_KEYS.get("blaxel")
+    if demo_key:
+        return demo_key, True
+        
+    raise ValueError("Blaxel API Key is missing.")
 
 def get_gemini_key():
     """
     Returns the Google Gemini API key if present.
+    Returns: (key, is_demo)
     """
     key = SESSION_KEYS.get("gemini") or os.getenv("GEMINI_API_KEY")
-    if not key:
-        raise ValueError("Google Gemini API Key is missing.")
-    return key
+    if key:
+        return key, False
+        
+    demo_key = DEMO_KEYS.get("gemini")
+    if demo_key:
+        return demo_key, True
+        
+    raise ValueError("Google Gemini API Key is missing.")
 
 def initialize_retriever():
     """
@@ -216,6 +250,16 @@ async def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
             use_modal = True
         except Exception as e:
             print(f"Invalid Modal token format: {e}")
+    elif DEMO_KEYS.get("modal"):
+        # Try demo key
+        try:
+            token_id, token_secret = DEMO_KEYS["modal"].split(":", 1)
+            os.environ["MODAL_TOKEN_ID"] = token_id.strip()
+            os.environ["MODAL_TOKEN_SECRET"] = token_secret.strip()
+            use_modal = True
+            print("Using Demo Modal Token.")
+        except Exception as e:
+            print(f"Invalid Demo Modal token format: {e}")
 
     # Fallback to keyword search if semantic search is not ready AND Modal is not used
     if not use_modal and (RETRIEVER_MODEL is None or ANIMAL_EMBEDDINGS is None):
@@ -310,7 +354,7 @@ async def run_samba(prompt: str, model_choice: Optional[str]) -> str:
         raise ValueError(f"Invalid SambaNova model selection: {selected_key}")
 
     # Fetch the API key (raises ValueError if missing to align with UX).
-    api_key = get_samba_key()
+    api_key, is_demo = get_samba_key()
 
     url = "https://api.sambanova.ai/v1/chat/completions"
     headers = {
@@ -340,6 +384,8 @@ async def run_samba(prompt: str, model_choice: Optional[str]) -> str:
             response = await client.post(url, headers=headers, json=payload)
             response.raise_for_status()
     except httpx.HTTPStatusError as e:
+        if is_demo:
+            raise RuntimeError(f"Demo key for SambaNova failed. Please provide your own API key to use this model reliably. (Error: {e.response.status_code})")
         error_text = e.response.text if e.response else str(e)
         raise RuntimeError(f"SambaNova API Error ({e.response.status_code}): {error_text}") from e
     except httpx.RequestError as e:
@@ -366,7 +412,7 @@ async def run_claude(prompt: str, model_version: str) -> str:
     Raises exceptions on failure so the caller can handle fallbacks.
     """
     # 1. Get Key (will raise ValueError if missing)
-    api_key = get_claude_key()
+    api_key, is_demo = get_claude_key()
     
     # 2. Map Model ID
     model = "claude-3-haiku-20240307"
@@ -387,14 +433,19 @@ async def run_claude(prompt: str, model_version: str) -> str:
     }
     
     # 4. Execute Async Call
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        response = await client.post(url, headers=headers, json=payload)
-        # Check for 400 error specifically to handle credit balance issues gracefully
-        if response.status_code == 400 and "credit balance is too low" in response.text:
-             raise ValueError("Anthropic API Credit Balance Too Low. Please top up your account.")
-             
-        response.raise_for_status()
-        text = response.json()["content"][0]["text"]
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(url, headers=headers, json=payload)
+            # Check for 400 error specifically to handle credit balance issues gracefully
+            if response.status_code == 400 and "credit balance is too low" in response.text:
+                 raise ValueError("Anthropic API Credit Balance Too Low. Please top up your account.")
+                 
+            response.raise_for_status()
+            text = response.json()["content"][0]["text"]
+    except httpx.HTTPStatusError as e:
+        if is_demo:
+            raise RuntimeError(f"Demo key for Claude failed. Please provide your own API key to use this model reliably. (Error: {e.response.status_code})")
+        raise e
         
     # 5. Format Output
     return f"### 🧠 Powered by Anthropic Claude\n\n{text}"
@@ -404,7 +455,7 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
     Executes the prompt using Google's Gemini API via httpx.
     """
     try:
-        api_key = get_gemini_key()
+        api_key, is_demo = get_gemini_key()
         
         model_id = "gemini-1.5-flash-latest"
         if "3.0" in model_version:
@@ -431,6 +482,9 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
             
             # Handle 429 Resource Exhausted (Quota Limit)
             if response.status_code == 429:
+                if is_demo:
+                     raise RuntimeError(f"Demo key for Gemini failed (Quota Exceeded). Please provide your own API key.")
+
                 print(f"Gemini 429 Error for {model_id}: {response.text}")
                 # If it's a high-end model, try falling back to Flash
                 if model_id != "gemini-1.5-flash-latest":
@@ -442,6 +496,9 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
                         text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response text found.")
                         return f"### 💎 Powered by Google Gemini (Fallback to 1.5 Flash)\n> *(Original model {model_version} quota exceeded)*\n\n{text}"
             
+            if response.status_code != 200 and is_demo:
+                 raise RuntimeError(f"Demo key for Gemini failed. Please provide your own API key. (Error: {response.status_code})")
+
             response.raise_for_status()
             result = response.json()
             # Extract text from Gemini response structure
@@ -461,7 +518,7 @@ async def run_blaxel(prompt: str) -> str:
     Executes the prompt using Blaxel's API via httpx.
     """
     try:
-        api_key = get_blaxel_key()
+        api_key, is_demo = get_blaxel_key()
         
         url = "https://api.blaxel.ai/v1/generate"
         headers = {
@@ -475,6 +532,10 @@ async def run_blaxel(prompt: str) -> str:
         
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.post(url, headers=headers, json=payload)
+            
+            if response.status_code != 200 and is_demo:
+                 raise RuntimeError(f"Demo key for Blaxel failed. Please provide your own API key. (Error: {response.status_code})")
+
             response.raise_for_status()
             return response.json()["output"]
             
