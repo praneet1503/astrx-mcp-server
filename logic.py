@@ -364,6 +364,16 @@ async def run_model(provider: str, user_input: str) -> str:
             version = provider.split("–")[-1].strip()
             try:
                 return await run_claude(full_prompt, version)
+            except httpx.HTTPStatusError as e:
+                # Specific handling for HTTP errors to show response body
+                error_detail = e.response.text
+                print(f"Claude API failed: {e} - {error_detail}")
+                return (
+                    f"**Powered by Claude** (Unavailable)\n\n"
+                    f"Claude is unavailable: {str(e)}\n"
+                    f"Details: {error_detail}\n\n"
+                    f"Showing keyword search result instead:\n\n{context_str}"
+                )
             except Exception as e:
                 # Fallback for Claude
                 print(f"Claude API failed: {e}")
