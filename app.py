@@ -98,12 +98,19 @@ def create_gradio_app():
                 "SambaNova – DeepSeek R1 Distill",
                 "SambaNova – DeepSeek V3",
                 "SambaNova – DeepSeek V3.1",
-                "Google Gemini – 3.0 Pro Preview",
-                "Google Gemini – 2.5 Pro",
-                "Google Gemini – 2.5 Flash",
-                "Google Gemini – 2.5 Flash-Lite",
-                "Google Gemini – 1.5 Pro",
-                "Google Gemini – 1.5 Flash",
+                # Google - Frontier & Reasoning
+                "Google – Gemini 3.0 Pro Preview",
+                "Google – Gemini 2.5 Pro",
+                # Google - High-Speed
+                "Google – Gemini 2.5 Flash",
+                "Google – Gemini 2.5 Flash-Lite",
+                # Google - Specialized
+                "Google – Gemini 2.5 Flash Image",
+                # Google - Open Hosted
+                "Google – Gemma 3",
+                "Google – Gemma 3n",
+                "Google – Gemma 2 27b",
+                "Google – Gemma 2 9b",
                 "Blaxel – MCP Model",
                 "Local – Tiny Model"
             ],
@@ -146,7 +153,7 @@ def create_gradio_app():
         gr.Examples(
             examples=[
                 ["SambaNova – Llama 3.3 70B", "Tell me about the tiger.", True],
-                ["Google Gemini – 1.5 Flash", "Which animals are canine?", True],
+                ["Google – Gemini 2.5 Flash", "Which animals are canine?", True],
                 ["Blaxel – MCP Model", "Is a dolphin a cat?", False],
                 ["SambaNova – DeepSeek R1", "rare feline", True]
             ],

@@ -462,27 +462,34 @@ async def run_claude(prompt: str, model_version: str) -> str:
     # 5. Format Output
     return f"### 🧠 Powered by Anthropic Claude\n\n{text}"
 
-async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
+# --- Google Model Mapping ---
+# Maps UI labels to the exact API IDs provided by the user.
+GOOGLE_MODEL_MAP = {
+    "Gemini 3.0 Pro Preview": "gemini-3-pro-preview",
+    "Gemini 2.5 Pro": "gemini-2.5-pro",
+    "Gemini 2.5 Flash": "gemini-2.5-flash",
+    "Gemini 2.5 Flash-Lite": "gemini-2.5-flash-lite",
+    "Gemini 2.5 Flash Image": "gemini-2.5-flash-image",
+    "Gemma 3": "gemma-3",
+    "Gemma 3n": "gemma-3n",
+    "Gemma 2 27b": "gemma-2-27b",
+    "Gemma 2 9b": "gemma-2-9b"
+}
+
+async def run_gemini(prompt: str, model_version: str) -> str:
     """
     Executes the prompt using Google's Gemini API via httpx.
+    Supports the new Gemini 2.5/3.0 and Gemma models.
     """
     try:
         api_key, is_demo = get_gemini_key()
         
-        # Default to stable model
-        model_id = "gemini-1.5-flash"
+        # Resolve Model ID from the map
+        model_id = GOOGLE_MODEL_MAP.get(model_version)
         
-        # Map versions to actual API IDs
-        if "3.0" in model_version:
-            # Map "3.0" to the latest experimental model (often considered the preview for next gen)
-            model_id = "gemini-exp-1121"
-        elif "2.5" in model_version:
-            # Fallback for non-existent 2.5 to 1.5 Pro
-            model_id = "gemini-1.5-pro"
-        elif "1.5 Pro" in model_version:
-            model_id = "gemini-1.5-pro"
-        elif "1.5 Flash" in model_version:
-            model_id = "gemini-1.5-flash"
+        # Fallback if mapping fails (should not happen if UI is synced)
+        if not model_id:
+            model_id = "gemini-2.5-flash" # Default to stable flash
             
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
         headers = {"Content-Type": "application/json"}
@@ -498,28 +505,42 @@ async def run_gemini(prompt: str, model_version: str = "1.5 Flash") -> str:
             # Handle 429 Resource Exhausted (Quota Limit)
             if response.status_code == 429:
                 if is_demo:
-                     raise RuntimeError(f"Demo key for Gemini failed (Quota Exceeded). Please provide your own API key.")
+                     # If demo key is exhausted, suggest using own key
+                     return (
+                         f"### ⚠️ Demo Key Limit Reached\n"
+                         f"The shared demo key for **{model_version}** is currently rate-limited. "
+                         f"Please try again later or enter your own Google API key in the sidebar for stable testing."
+                     )
 
                 print(f"Gemini 429 Error for {model_id}: {response.text}")
-                # If it's a high-end model, try falling back to Flash
-                if model_id != "gemini-1.5-flash":
-                    print("Falling back to Gemini 1.5 Flash...")
-                    fallback_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
+                
+                # Fallback Strategy: Try gemini-2.5-flash-lite (Cheapest/Fastest)
+                if model_id != "gemini-2.5-flash-lite":
+                    print("Falling back to Gemini 2.5 Flash-Lite...")
+                    fallback_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={api_key}"
                     response = await client.post(fallback_url, headers=headers, json=payload)
+                    
                     if response.status_code == 200:
                         result = response.json()
                         text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response text found.")
-                        return f"### 💎 Powered by Google Gemini (Fallback to 1.5 Flash)\n> *(Original model {model_version} quota exceeded)*\n\n{text}"
+                        return f"### 💎 Powered by Google Gemini (Fallback to Flash-Lite)\n> *(Original model {model_version} quota exceeded)*\n\n{text}"
             
-            if response.status_code != 200 and is_demo:
-                 raise RuntimeError(f"Demo key for Gemini failed. Please provide your own API key. (Error: {response.status_code})")
+            if response.status_code != 200:
+                if is_demo:
+                     return (
+                         f"### ⚠️ Demo Key Error\n"
+                         f"The demo key failed for **{model_version}** (Error {response.status_code}). "
+                         f"Please provide your own Google API key."
+                     )
+                # Return the raw error for debugging if not demo
+                return f"Gemini API Error ({response.status_code}): {response.text}"
 
             response.raise_for_status()
             result = response.json()
             # Extract text from Gemini response structure
             text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response text found.")
             
-        return f"### 💎 Powered by Google Gemini\n\n{text}"
+        return f"### 💎 Powered by Google ({model_version})\n\n{text}"
             
     except ValueError as e:
         return f"Configuration Error: {str(e)}"
@@ -743,9 +764,9 @@ async def run_model(
                         f"Showing keyword search result instead:\n\n{context_str}"
                     )
         
-        elif provider.startswith("Google Gemini"):
-            badge = "### 💎 Powered by Google Gemini"
-            print("DEBUG: Calling Gemini...")
+        elif provider.startswith("Google"):
+            badge = "### 💎 Powered by Google"
+            print("DEBUG: Calling Google Model...")
             # Robust split for version
             if "–" in provider:
                 version = provider.split("–")[-1].strip()
