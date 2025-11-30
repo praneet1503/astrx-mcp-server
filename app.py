@@ -44,11 +44,11 @@ def create_gradio_app():
         with gr.Accordion("🔑 Sponsor API Keys (Session Only)", open=True):
             gr.Markdown("Enter your API keys below. They are stored in memory for this session only and are **not** saved to disk.")
             with gr.Row():
-                samba_key = gr.Textbox(label="SambaNova Cloud API Key", type="password", placeholder="Enter key...")
-                claude_key = gr.Textbox(label="Anthropic Claude API Key", type="password", placeholder="Enter key...")
+                samba_key = gr.Textbox(label="SambaNova Cloud API Key (Optional)", type="password", placeholder="Enter key...")
+                claude_key = gr.Textbox(label="Anthropic Claude API Key (Necessary)", type="password", placeholder="Enter key...")
             with gr.Row():
-                modal_key = gr.Textbox(label="Modal API Token", type="password", placeholder="Enter token...")
-                blaxel_key = gr.Textbox(label="Blaxel API Key", type="password", placeholder="Enter key...")
+                modal_key = gr.Textbox(label="Modal API Token (Optional)", type="password", placeholder="Enter token...")
+                blaxel_key = gr.Textbox(label="Blaxel API Key (Optional)", type="password", placeholder="Enter key...")
             
             save_keys_btn = gr.Button("Save Keys", variant="secondary")
             key_status = gr.Markdown("")
