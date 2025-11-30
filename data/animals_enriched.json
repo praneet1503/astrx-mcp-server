@@ -1,0 +1,1085 @@
+[
+  {
+    "name": "Golden Retriever",
+    "species": "Unknown",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/golden-retriever/"
+    ],
+    "diet": "Omnivore, eats dog food and table scraps",
+    "lifespan": "10-12 years",
+    "fun_fact": "Golden Retrievers are naturally great swimmers due to their water-resistant coat and webbed feet",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Labrador Retriever",
+    "species": "Unknown",
+    "description": "Labrador Retrievers are a gun dog breed that was bred from Canadian fishing dogs found in the Labrador Territory, northwest of Newfoundland, and in Newfoundland itself. These ancestors of today\u2019s Labrador were also known as St. John\u2019s Water dogs, after the capital of Newfoundland.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/labrador-retriever/"
+    ],
+    "diet": "Omnivore, eats dog food and occasionally fruits and vegetables",
+    "lifespan": "10-12 years",
+    "fun_fact": "Labrador Retrievers are highly intelligent and are often used as guide dogs for the blind",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "German Shepherd",
+    "species": "Dog",
+    "description": "The German Shepherd,[a] also known in Britain as an Alsatian, is a German breed of working dog of medium to large size. It is characterized by its intelligent and obedient nature.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/German_Shepherd"
+    ],
+    "diet": "Omnivore, eats meat and plants",
+    "lifespan": "9-13 years",
+    "fun_fact": "German Shepherds are highly intelligent and often used as police and military dogs",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Bulldog",
+    "species": "Dog",
+    "description": "",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bulldog"
+    ],
+    "diet": "Omnivore, eats commercial dog food",
+    "lifespan": "8-12 years",
+    "fun_fact": "Bulldogs are known for their unique breathing difficulties due to their brachycephalic skull structure",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Poodle",
+    "species": "Dog",
+    "description": "",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Poodle"
+    ],
+    "diet": "Omnivore, eats dog food and occasionally fruits and vegetables",
+    "lifespan": "12-15 years",
+    "fun_fact": "Poodles are known for their intelligence and are often considered one of the smartest dog breeds",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Beagle",
+    "species": "Dog",
+    "description": "The Beagle is a small breed of scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting rabbit or hare, known as beagling. Possessing a great sense of smell and superior tracking instincts, the beagle is the primary breed used as a detection dog for prohibited agricultural imports and foodstuffs in quarantine around the world. The beagle is a popular pet due to its size and amiable temperament.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Beagle"
+    ],
+    "diet": "Omnivore, eats fruits, vegetables, and small animals",
+    "lifespan": "12-15 years",
+    "fun_fact": "Beagles have a unique baying howl that they use to communicate with their human companions and other beagles",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Rottweiler",
+    "species": "Dog",
+    "description": "The Rottweiler (/\u02c8r\u0252twa\u026al\u0259r/, UK also /-va\u026al\u0259r/, German: [\u02c8\u0281\u0254tva\u026a\u032fl\u0250] \u24d8) is a breed of domestic mastiff type dog, regarded as medium-to-large or large. The dogs were known in German as Rottweiler Metzgerhund, meaning Rottweil butchers' dogs, because their main use was to herd livestock and pull carts laden with butchered meat to market. This continued until the mid-19th century when railways replaced droving. Although still used to herd stock in many parts of the world, Rottweilers are now also used as search and rescue dogs, guard dogs, and police dogs.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Rottweiler"
+    ],
+    "diet": "Carnivore, eats meat",
+    "lifespan": "8-11 years",
+    "fun_fact": "Rottweilers are often used as police and guard dogs due to their loyalty and strength",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Dachshund",
+    "species": "Dog",
+    "description": "",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Dachshund"
+    ],
+    "diet": "Omnivore, eats dog food and table scraps",
+    "lifespan": "12-16 years",
+    "fun_fact": "Dachshunds were originally bred to hunt badgers",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Siberian Husky",
+    "species": "Dog",
+    "description": "The Siberian Husky is a breed of medium-sized working sled dog. The breed belongs to the Spitz genetic family. It is recognizable by its thickly furred double coat, erect triangular ears, and distinctive markings, and is smaller than the similar-looking Alaskan Malamute.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Siberian_Husky"
+    ],
+    "diet": "Omnivore, eats fish and meat",
+    "lifespan": "12-15 years",
+    "fun_fact": "Siberian Huskies have a unique howl that can be heard for miles",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Great Dane",
+    "species": "Dog",
+    "description": "The Great Dane is a German breed of large mastiff-sighthound, which descends from hunting dogs of the Middle Ages used to hunt bears, wild boar, and deer. They were also used as guardian dogs of German nobility. It is one of the two largest dog breeds in the world, along with the Irish Wolfhound.",
+    "traits": [
+      "Loyal",
+      "Companion",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Great_Dane"
+    ],
+    "diet": "Carnivore, eats dog food and meat",
+    "lifespan": "6-8 years",
+    "fun_fact": "Despite their large size, Great Danes are often referred to as gentle giants",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Siamese cat",
+    "species": "Cat",
+    "description": "The Siamese cat (Thai: \u0e41\u0e21\u0e27\u0e44\u0e17\u0e22, Maeo Thai; \u0e41\u0e21\u0e27\u0e2a\u0e22\u0e32\u0e21, Maeo Sayam; \u0e41\u0e21\u0e27\u0e27\u0e34\u0e40\u0e0a\u0e35\u0e22\u0e23\u0e21\u0e32\u0e28, Maeo Wichien Maat) is one of the first distinctly recognised breeds of Asian cat. It derives from the Wichianmat landrace. The Siamese cat is one of several varieties of cats native to Thailand (known as Siam before 1939). The original Siamese became one of the most popular breeds in Europe and North America in the 19th century. Siamese cats have a distinctive colourpoint coat, resulting from a temperature-sensitive type of albinism.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Siamese_cat"
+    ],
+    "diet": "Carnivore, eats small mammals and birds",
+    "lifespan": "15-20 years",
+    "fun_fact": "Siamese cats are naturally extroverted and known for their vocal nature",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Persian cat",
+    "species": "Cat",
+    "description": "The Persian cat, also known as the Persian Longhair or simply Persian, is a long-haired traditional breed of cat characterised by a round face and petite, but not flat and not smashed in, muzzle. The short flat nose was created in the US from in-breeding and causes breathing difficulties in the breed, whereas, the traditional Persian breed has a petite nose which enables them to breathe without difficulties.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Persian_cat"
+    ],
+    "diet": "Carnivore, eats commercial cat food and small prey",
+    "lifespan": "12-17 years",
+    "fun_fact": "Persian cats have a unique flat face due to their brachycephalic skull structure",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Maine Coon",
+    "species": "Cat",
+    "description": "The Maine Coon is a large domesticated cat breed. One of the oldest natural breeds in North America, it originated in the U.S. state of Maine, where it is the official state cat. The Maine Coon is a large and social cat, commonly referred to as \"the gentle giant.\" The Maine Coon is predominantly known for its size and dense coat of fur which helps it survive in the harsh climate of Maine. The Maine Coon is often cited as having \"dog-like\" characteristics.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Maine_Coon"
+    ],
+    "diet": "Omnivore, eats commercial cat food",
+    "lifespan": "12-15 years",
+    "fun_fact": "Maine Coon is the largest domesticated breed of cat",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Ragdoll",
+    "species": "Cat",
+    "description": "The Ragdoll is a breed of cat with a distinct colorpoint coat and blue eyes. Its morphology is large and weighty, and it has a semi-long and silky soft coat. American breeder Ann Baker developed Ragdolls in the 1960s. They are best known for their docile, placid temperament and affectionate nature. The name Ragdoll is derived from the tendency of individuals from the original breeding stock to go limp and relaxed when picked up. The breed is particularly popular in both the United Kingdom and the United States.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Ragdoll"
+    ],
+    "diet": "Omnivore, eats commercial cat food",
+    "lifespan": "12-17 years",
+    "fun_fact": "Ragdolls are known for their tendency to go limp when picked up, hence the name Ragdoll",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Bengal cat",
+    "species": "Cat",
+    "description": "",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Bengal_cat"
+    ],
+    "diet": "Carnivore, eats small mammals and birds",
+    "lifespan": "12-16 years",
+    "fun_fact": "Bengal cats are known for their distinctive physical appearance and energetic personalities, and are often described as having dog-like behavior",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Sphynx cat",
+    "species": "Cat",
+    "description": "The Sphynx cat (pronounced SFINKS, /\u02c8sf\u026a\u014bks/ \u24d8) also known as the Canadian Sphynx, is a breed of cat known for its lack of fur. Hairlessness in cats is a naturally occurring genetic mutation, and the Sphynx was developed through selective breeding of these animals, starting in the 1960s.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Sphynx_cat"
+    ],
+    "diet": "Carnivore, eats commercial cat food",
+    "lifespan": "12-15 years",
+    "fun_fact": "Sphynx cats have a higher metabolism than other cats and need to eat more frequently",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "British Shorthair",
+    "species": "Cat",
+    "description": "The British Shorthair is the pedigree version of the traditional British domestic cat, with a distinctively stocky body, thick coat, and broad face. The most familiar colour variant is the \"British Blue\", with a solid grey-blue coat, copper-coloured eyes, and a medium-sized tail. The breed has also been bred in a wide range of other colours and patterns, including tabby and colourpoint.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/British_Shorthair"
+    ],
+    "diet": "Omnivore, eats commercial cat food",
+    "lifespan": "12-17 years",
+    "fun_fact": "The British Shorthair is one of the oldest natural cat breeds",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Abyssinian cat",
+    "species": "Cat",
+    "description": "The Abyssinian /\u00e6b\u026a\u02c8s\u026ani\u0259n/ is a breed of cat with a distinctive \"ticked\" tabby coat, in which individual hairs are banded with different colours. They are also known simply as Abys.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Abyssinian_cat"
+    ],
+    "diet": "Carnivore, eats small mammals and birds",
+    "lifespan": "12-17 years",
+    "fun_fact": "Abyssinian cats are known for their intelligence and playful personalities, and are often described as \"dog-like\" in their behavior",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Scottish Fold",
+    "species": "Cat",
+    "description": "The Scottish Fold is a distinctive breed of domestic cat characterised by a natural dominant gene mutation associated with osteochondrodysplasia. This genetic anomaly affects cartilage throughout the body, causing the ears to \"fold\", bending forward and down towards the front of the head. While this trait contributes to the breed's unique appearance, often described as \"owl-like\", it also causes health problems.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Scottish_Fold"
+    ],
+    "diet": "Omnivore, eats commercial cat food",
+    "lifespan": "12-15 years",
+    "fun_fact": "The Scottish Fold's ears fold forward due to a natural mutation",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Burmese cat",
+    "species": "Cat",
+    "description": "The Burmese cat (Burmese: \u1017\u1019\u102c\u1000\u103c\u1031\u102c\u1004\u103a, B\u0103ma kyaung, Thai: \u0e41\u0e21\u0e27\u0e1e\u0e21\u0e48\u0e32 or Suphalak, RTGS: Thongdaeng or Supphalak, meaning copper colour) is a breed of domestic cat, originating in Burma, believed to have its roots near the Thai\u2013Burma border and developed in the United States and Britain.",
+    "traits": [
+      "Independent",
+      "Agile",
+      "Domesticated"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Burmese_cat"
+    ],
+    "diet": "Carnivore, eats small mammals and birds",
+    "lifespan": "12-17 years",
+    "fun_fact": "Burmese cats are known for their intelligence and can learn to open doors and drawers",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Bald Eagle",
+    "species": "Unknown",
+    "description": "Bald eagles have 20/5 vision, which is much sharper than a human's.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Accipitriformes",
+      "Family": "Accipitridae",
+      "Genus": "Haliaeetus",
+      "Species": "H. leucocephalus",
+      "Binomial name": "Haliaeetus leucocephalus",
+      "": "",
+      "Physical Description": "The bodies of mature bald eagles, both males and females, are mostly brown with a distinctive snowy white head, neck, and tail. They have pale yellow irises and yellow feet and beaks. Juvenile birds are a mottled brown with white blotches and do not obtain the full distinctive plumage of the adults until they are 4 or 5 years old.",
+      "Lifespan": "Bald eagles can live up to 50 years.",
+      "Food/Eating Habits": "Bald eagles are well adapted to their lifestyle. They possess sharp, pointed beaks designed for ripping and tearing prey into bite-sized pieces. They have powerful legs and feet that are equipped with large talons used for killing their prey.Bald eagles are opportunistic foragers but prefer fish as their primary food and are found in great densities where fish are abundant. They also eat sea birds and ducks or hunt over grasslands and marshes for small mammals such as rabbits, squirrels, prairie dogs and muskrats. Bald eagles eat carrion willingly and are notorious for robbing osprey of their catches. Eagles wait on a favorite perch for an osprey to return to its nest with a fish in its talons for its own young, and then harass the smaller raptor until it is forced to drop its prey for the eagle to retrieve. When hunting for fishes, it does not usually dive into the water like the osprey but instead searches for fish near the surface.The bald eagle's diet at the Smithsonian's National Zoo consists of rats, fish, chicken leg quarters and quail.",
+      "Social Structure": "Bald eagles mate for life and they reinforce their pair bond through often-spectacular flight displays. In winter, bald eagles sometimes collect in large groups close to where salmon come to spawn.",
+      "Taxonomic Information": "Class:AvesOrder:FalconiformesFamily:AccipitridaeGenus and Species:Haliaeetus leucocephalus"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/bald-eagle/",
+      "https://nationalzoo.si.edu/animals/bald-eagle",
+      "https://animalcorner.org/animals/bald-eagle/"
+    ],
+    "diet": "Carnivore, eats fish and small mammals",
+    "lifespan": "20-30 years",
+    "fun_fact": "Bald Eagles are skilled thieves and have been known to steal food from other birds",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Peregrine Falcon",
+    "species": "Unknown",
+    "description": "\u201cThe Peregrine Falcon is a small, deadly, and powerful aerial diver.\u201d",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Order": "Falconiformes",
+      "Family": "Falconidae",
+      "Genus": "Falco",
+      "Species": "F. peregrinus"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/peregrine-falcon/",
+      "https://a-z-animals.com/animals/peregrine-falcon/"
+    ],
+    "diet": "Carnivore, eats medium-sized birds",
+    "lifespan": "12-15 years",
+    "fun_fact": "Peregrine Falcons are the fastest member of the animal kingdom, reaching speeds of up to 242 mph during dives",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Hummingbird",
+    "species": "Bird",
+    "description": "Hummingbirds are birds native to the Americas and comprise the biological family Trochilidae. With approximately 375 species and 113 genera, they occur from Alaska to Tierra del Fuego, but most species are found in Central and South America. As of 2025, 21 hummingbird species are listed as endangered or critically endangered, with about 191 species declining in population.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Hummingbird"
+    ],
+    "diet": "Omnivore, eats nectar and insects",
+    "lifespan": "3-5 years",
+    "fun_fact": "Hummingbirds beat their wings up to 80 times per second",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Peafowl",
+    "species": "Bird",
+    "description": "Peafowl is a common name for two bird species of the genus Pavo and one species of the closely related genus Afropavo within the tribe Pavonini of the family Phasianidae (the pheasants and their allies). Male peafowl are referred to as peacocks, and female peafowl are referred to as peahens. Despite this, peacock is usually used to refer to both sexes, in common language.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Peafowl"
+    ],
+    "diet": "Omnivore, eats seeds, insects, and small reptiles",
+    "lifespan": "20-30 years",
+    "fun_fact": "The peafowl's distinctive call sounds like loud laughter",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Penguin",
+    "species": "Bird",
+    "description": "When one thinks of Antarctic wildlife, penguins are often the first animals that come to mind.Penguinsare birds with black and white feathers and a funny waddle. However, unlike most birds, penguins are unable to fly. Penguins spend as much as 75% of their time underwater, searching for food in the ocean. When they are in the water, they dive and flap their wings as if they are flying under water.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Aves",
+      "Clade": "Austrodyptornithes",
+      "Order": "Sphenisciformes",
+      "Family": "Spheniscidae"
+    },
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Penguin",
+      "https://animalcorner.org/animals/penguin/"
+    ],
+    "diet": "Carnivore, eats fish and krill",
+    "lifespan": "15-20 years",
+    "fun_fact": "Penguins can drink saltwater because they have a special gland above their eyes that filters out excess salt",
+    "threat_status": "Vulnerable",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Owl",
+    "species": "Bird",
+    "description": "Owls are birds from the order Strigiformes (/\u02c8str\u026ad\u0292\u0259f\u0254\u02d0rmi\u02d0z/), which includes over 200 species of mostly solitary and nocturnal birds of prey typified by an upright stance, a large, broad head, binocular vision, binaural hearing, sharp talons, and feathers adapted for silent flight. Exceptions include the diurnal northern hawk-owl and the gregarious burrowing owl.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Owl"
+    ],
+    "diet": "Carnivore, eats small mammals and birds",
+    "lifespan": "2-12 years",
+    "fun_fact": "Owls can turn their heads up to 270 degrees",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Parrot",
+    "species": "Bird",
+    "description": "Parrots (Psittaciformes), also known as psittacines (/\u02c8s\u026at\u0259sa\u026anz/), are birds with a strong curved beak, upright stance, and clawed feet.[a] They are classified in four families that contain roughly 410 species in 101 genera, found mostly in tropical and subtropical regions. The four families are the Psittaculidae (Old World parrots), Psittacidae (African and New World parrots), Cacatuidae (cockatoos), and Strigopidae (New Zealand parrots). One-third of all parrot species are threatened by extinction, with a higher aggregate extinction risk (IUCN Red List Index) than any other comparable bird group. Parrots have a generally pantropical distribution with several species inhabiting temperate regions as well. The greatest diversity of parrots is in South America and Australasia.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Parrot"
+    ],
+    "diet": "Herbivore, eats seeds and fruits",
+    "lifespan": "50-80 years",
+    "fun_fact": "Parrots can mimic human speech and other sounds",
+    "threat_status": "Vulnerable",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Flamingo",
+    "species": "Unknown",
+    "description": "\u201cA flamingo\u2019s feathers don\u2019t turn pink until it reaches 2 or 3 years old\u201d",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/flamingo/"
+    ],
+    "diet": "Filter feeder, eats brine shrimp and algae",
+    "lifespan": "20-30 years",
+    "fun_fact": "Flamingos are born with gray feathers and only turn pink after they start eating foods with beta-carotene",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Swan",
+    "species": "Bird",
+    "description": "",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Swan"
+    ],
+    "diet": "Herbivore, eats aquatic plants and grains",
+    "lifespan": "20-30 years",
+    "fun_fact": "Swans are known for their monogamous relationships, with some pairs staying together for over 20 years",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Woodpecker",
+    "species": "Bird",
+    "description": "Woodpeckers are part of the bird family Picidae, which also includes the piculets, wrynecks and sapsuckers. Members of this family are found worldwide, except for Australia, New Guinea, New Zealand, Madagascar and the extreme polar regions. Most species live in forests or woodland habitats, although a few species are known that live in treeless areas, such as rocky hillsides and deserts, and the Gila woodpecker specializes in exploiting cacti.",
+    "traits": [
+      "Feathered",
+      "Egg-laying",
+      "Winged"
+    ],
+    "source_urls": [
+      "https://en.wikipedia.org/wiki/Woodpecker"
+    ],
+    "diet": "Insectivore, eats insects and sap",
+    "lifespan": "5-10 years",
+    "fun_fact": "Woodpeckers have a special skull structure that helps absorb shock and prevents brain damage from repeated pecking",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Cedar Waxwing",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Their feathers have red, waxy tips that can be hard to identify unless you\u2019re up close.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/cedar-waxwing/"
+    ],
+    "diet": "Frugivore, eats berries and insects",
+    "lifespan": "5-7 years",
+    "fun_fact": "Cedar Waxwings are known for their unique habit of eating fermented berries, which can cause them to become intoxicated",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Ground Squirrel",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Ground squirrels are adept excavators and can dig colonial burrows larger than football fields!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/ground-squirrel/"
+    ],
+    "diet": "Herbivore, eats seeds and nuts",
+    "lifespan": "5-7 years",
+    "fun_fact": "Ground squirrels can survive for long periods without water by getting moisture from the seeds they eat",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Thylacoleo carnifex",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Thylacoleo carnifex was the largest carnivorous mammal in Australia",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/thylacoleo-carnifex/"
+    ],
+    "diet": "Carnivore, eats large prey like diprotodons and wombats",
+    "lifespan": "10-20 years",
+    "fun_fact": "Thylacoleo carnifex had the strongest bite force of any known mammal",
+    "threat_status": "Extinct",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Western Blind Snake",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The western blind snake is a member of one of the oldest snake families. They are so ancient that they still have remnants of pelvic girdles that you can see as tiny spurs if you flip the snake over. Harmless to humans but murder on colonies of ants and termites, these exceedingly slender snakes spend much of their lives underground and out of sight.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/western-blind-snake/"
+    ],
+    "diet": "Insectivore, eats ants and termites",
+    "lifespan": "5-7 years",
+    "fun_fact": "It can fit its entire body through a hole the size of a coin",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Schipperke",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Schipperkes are sometimes called Belgium barge dogs because they hunted rodents on barges.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/schipperke/"
+    ],
+    "diet": "Omnivore, eats small animals and plants",
+    "lifespan": "12-18 years",
+    "fun_fact": "Schipperkes are known for their mischievous and curious nature",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Swedish Lapphund",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "This post may contain affiliate links to our partners like Chewy, Amazon, and others. Purchasing through these helps us further the A-Z Animals mission to educate about the world's species.",
+    "traits": [
+      "Swedish Lapphund"
+    ],
+    "source_urls": [
+      "https://a-z-animals.com/animals/swedish-lapphund/"
+    ],
+    "diet": "Omnivore, eats small mammals and plants",
+    "lifespan": "12-14 years",
+    "fun_fact": "The Swedish Lapphund is one of the oldest dog breeds, with origins dating back over 7000 years",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Moonglow Boa",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "\u201cMoonglow boa constrictors are designer boa morphs that are white or nearly white.\u201c",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/moonglow-boa/"
+    ],
+    "diet": "Carnivore, eats small mammals",
+    "lifespan": "15-20 years",
+    "fun_fact": "The Moonglow Boa has a unique ability to glow in the dark due to a special pigment in its scales",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Bombay",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The Bombay is a hybrid cat with a distinctive jet-black appearance.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/bombay/"
+    ],
+    "diet": "Omnivore, eats small mammals and plants",
+    "lifespan": "12-17 years",
+    "fun_fact": "The Bombay cat has a unique physical characteristic: its eyes and nose are typically black, which gives it a distinct appearance.",
+    "threat_status": "Not listed, domestic breed",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Madagascar Tree Boa",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The Madagascar tree boa is a beautiful nonvenomous snake that is born with a bright red base color that changes to green as it matures. This medium-sized boa sleeps in the trees and eats a variety of rodents, small mammals, birds, lizards, and eggs.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/madagascar-tree-boa/"
+    ],
+    "diet": "Carnivore, eats small mammals and birds",
+    "lifespan": "15-20 years",
+    "fun_fact": "It has a unique, heat-sensing pit between its eyes and nostrils",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Basset Fauve de Bretagne",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "A friendly and intelligent hunting dog that loves nothing more than to spend time with its owner.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/basset-fauve-de-bretagne/"
+    ],
+    "diet": "Omnivore, eats small game and plants",
+    "lifespan": "10-14 years",
+    "fun_fact": "The Basset Fauve de Bretagne is an ancient breed that originated in France and is known for its distinctive orange-red coat",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Pied Tamarin",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Pied tamarins are endangered primates in northwest Brazil. The Yoda-looking species, who enjoy strong social bonds, also go by Brazilian bare-faced tamarins.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/pied-tamarin/"
+    ],
+    "diet": "Omnivore, eats fruits, insects, and small vertebrates",
+    "lifespan": "10-15 years",
+    "fun_fact": "Pied Tamarins are social animals and live in groups of up to 15 individuals, led by a dominant female",
+    "threat_status": "Vulnerable",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Surgeonfish",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Paracanthurus hepatus, the palette surgeonfish or bluetang, is the only member of its genus",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/surgeonfish/"
+    ],
+    "diet": "Herbivore, eats algae",
+    "lifespan": "5-7 years",
+    "fun_fact": "Surgeonfish have a scalpel-like tail spine that they use for defense",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Repenomamus",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "One of the biggest mammals of the dinosaur age that used to eat other dinosaurs",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/repenomamus/"
+    ],
+    "diet": "Omnivore, eats small mammals and plants",
+    "lifespan": "Unknown, extinct species",
+    "fun_fact": "Repenomamus was one of the largest known mammals to coexist with dinosaurs",
+    "threat_status": "Extinct",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Prairie Dog",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The prairie dog sits at the center of the entire ecosystem of the American prairie.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Sciuridae",
+      "Genus": "Cynomys",
+      "Species": "Cynomys gunnisoni,Cynomys leucurus,Cynomys ludovicianus,Cynomys mexicanus,Cynomys parvidens"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/prairie-dog/",
+      "https://animalcorner.org/animals/prairie-dogs/"
+    ],
+    "diet": "Herbivore, eats grasses and seeds",
+    "lifespan": "3-5 years",
+    "fun_fact": "Prairie dogs are highly social and live in large colonies with complex communication systems",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Locust",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The word \u201clocust\u201d is given to certain types of grasshoppers with short horns.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/locust/"
+    ],
+    "diet": "Herbivore, eats plants and crops",
+    "lifespan": "2-6 months",
+    "fun_fact": "Locusts can form massive swarms with billions of individuals",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Aye-aye",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The aye-aye is a species of Lemur that is found inhabiting the rainforests of Madagascar. The aye-aye is not only the largest nocturnal primate in the world but is also one of the most unique.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/aye-aye/"
+    ],
+    "diet": "Omnivore, eats insects and fruits",
+    "lifespan": "20-30 years",
+    "fun_fact": "Aye-aye has a long middle finger to catch insects and grubs",
+    "threat_status": "Near Threatened",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Wolf Spider",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The wolf spider is a family of carnivorous\u00a0spiders that have adapted to most of the world\u2019s major ecosystems.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Arthropoda",
+      "Subphylum": "Chelicerata",
+      "Class": "Arachnida",
+      "Order": "Araneae",
+      "Infraorder": "Araneomorphae",
+      "Superfamily": "Lycosoidea",
+      "Family": "Lycosidae"
+    },
+    "source_urls": [
+      "https://a-z-animals.com/animals/wolf-spider/",
+      "https://animalcorner.org/animals/wolf-spider/"
+    ],
+    "diet": "Carnivore, eats insects and small arthropods",
+    "lifespan": "2-5 years",
+    "fun_fact": "Female wolf spiders carry their egg sacs with them, and when the eggs hatch, the spiderlings will ride on the mother's back",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Great Hammerhead Shark",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Great hammerhead sharks have a 360-degree view because their eyes are situated on the ends of their mallet-like heads.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/great-hammerhead-shark/"
+    ],
+    "diet": "Carnivore, eats fish, squid, and crustaceans",
+    "lifespan": "20-30 years",
+    "fun_fact": "Has the widest head of any shark species, which provides improved vision and maneuverability",
+    "threat_status": "Endangered",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Caterpillar",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "It is estimated that there are over 20,000 species of caterpillars in this animal group, and there may be many more left to be discovered.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/caterpillar/"
+    ],
+    "diet": "Herbivore, eats leaves and plants",
+    "lifespan": "2-4 weeks",
+    "fun_fact": "Caterpillars can eat up to 27,000 times their body weight in a single day",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Texas Heeler",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Though they are loyal to their family, these dogs can be shy around strangers.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/texas-heeler/"
+    ],
+    "diet": "Omnivore, eats livestock feed and table scraps",
+    "lifespan": "12-15 years",
+    "fun_fact": "Texas Heelers are highly intelligent and known for their strong herding instincts",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Fruit Fly",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Fruit flies are among the most common research animals in the world",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/fruit-fly/"
+    ],
+    "diet": "Omnivore, feeds on fruit and fermentation products",
+    "lifespan": "10-30 days",
+    "fun_fact": "Fruit flies can taste with their feet",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Shih Tzu Mix",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Despite having long, flowing hair, Shih Tzus and many of their hybrids are hypoallergenic.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/shih-tzu-mix/"
+    ],
+    "diet": "Omnivore, eats dog food and table scraps",
+    "lifespan": "10-16 years",
+    "fun_fact": "Shih Tzu Mix are well-known for their friendly and outgoing personalities",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Common Furniture Beetle",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "View all of our Common Furniture Beetle pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/common-furniture-beetle/"
+    ],
+    "diet": "Feeds on wood and other cellulose-based materials",
+    "lifespan": "2-5 years",
+    "fun_fact": "The Common Furniture Beetle can fly, but it is a poor flyer and usually only flies short distances",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Norwich Terrier",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Though Norwich terriers are small, they have a reputation for being feisty.",
+    "traits": {},
+    "source_urls": [
+      "https://a-z-animals.com/animals/norwichterrier/"
+    ],
+    "diet": "Omnivore, eats dog food and small animals",
+    "lifespan": "12-14 years",
+    "fun_fact": "One of the smallest working terriers, originally bred to hunt rodents",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Blackpoll Warbler",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "A Blackpoll Warbler is a songbird. It\u2019s an omnivore eating mosquitoes, spiders, flies, and fruit. They live in an evergreen forest habitat. One of the most interesting facts about this bird is it travels non-stop on a migration route that proceeds over water.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/blackpoll-warbler/"
+    ],
+    "diet": "Insectivore, eats insects and spiders",
+    "lifespan": "2-5 years",
+    "fun_fact": "Makes a non-stop flight over the Atlantic Ocean during migration",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "California Tarantula",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "View all of our California Tarantula pictures in the gallery.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/california-tarantula/"
+    ],
+    "diet": "Carnivore, eats insects and small arthropods",
+    "lifespan": "20-30 years",
+    "fun_fact": "California Tarantulas can live for up to a year without eating",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Vampire Crab",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Vampire crabs do not depend on saltwater for their development; instead, they live near freshwater rivers and in forests amongst rocks and dense vegetation.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/vampire-crab/"
+    ],
+    "diet": "Omnivore, eats algae and small invertebrates",
+    "lifespan": "5-7 years",
+    "fun_fact": "Vampire crabs have bright purple claws and can live on land for short periods",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "King Cobra",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "King cobras measure an average of 11 to 13 feet long. They live in southern China, India, and southeastern Asia. Their habitat includes streams, forests, bamboo thickets, and swamps. This snake is a carnivore eating other snakes, birds, and lizards. King cobras live about 20 years in the wild.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/king-cobra/"
+    ],
+    "diet": "Carnivore, eats small mammals and other snakes",
+    "lifespan": "20-30 years",
+    "fun_fact": "King Cobras are skilled hunters and can eat other venomous snakes",
+    "threat_status": "Vulnerable",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Great White Shark",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Sharks have lived on the earth longer than almost any other animal \u2014 450 million years \u2014 surviving mass extinctions and every other environmental hazard. 3,000 species have lived over a period of nearly half a billion years \u2014 making them an evolutionary success story.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Chondrichthyes",
+      "Superorder": "Selachimorpha",
+      "Order": "Lamniformes",
+      "Family": "Lamnidae",
+      "Genus": "Carcharodon",
+      "Species": "C. carcharias",
+      "Binomial name": "Carcharodon carcharias",
+      "": ""
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/great-white-shark/",
+      "https://a-z-animals.com/animals/great-white-shark/"
+    ],
+    "diet": "Carnivore, eats fish, seals, and other marine mammals",
+    "lifespan": "30-50 years",
+    "fun_fact": "Great White Sharks can breach the water's surface in pursuit of prey, reaching speeds of up to 35 miles per hour",
+    "threat_status": "Vulnerable",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Eider",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Eiders are sexually dimorphic, with males being larger and more colorful.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/eider/"
+    ],
+    "diet": "Omnivore, eats mollusks and crustaceans",
+    "lifespan": "15-20 years",
+    "fun_fact": "Eider down is highly valued for its insulating properties and is used to make warm clothing and bedding",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Aidi",
+    "species": "Unknown",
+    "description": "The Aidi's cheerful personality and relaxed temperament are just two reasons why this dog is a good choice for families with kids.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/aidi/"
+    ],
+    "diet": "Omnivore, eats fruits and insects",
+    "lifespan": "12-18 years",
+    "fun_fact": "The Aidi is a rare breed of dog that originated in Morocco",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Tyrannosaurus Rex",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "They had many air pockets in their skeleton which kept them light despite their tremendous size.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/tyrannosaurus-rex/"
+    ],
+    "diet": "Carnivore, eats large herbivorous dinosaurs",
+    "lifespan": "20-30 years",
+    "fun_fact": "Tyrannosaurus Rex had the strongest bite of any dinosaur",
+    "threat_status": "Extinct",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Brown Water Snake",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Has more scales than any other water snake on the continent: 27 to 33 rows of dorsal scales!",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/brown-water-snake/"
+    ],
+    "diet": "Carnivore, eats fish and amphibians",
+    "lifespan": "10-20 years",
+    "fun_fact": "The Brown Water Snake is often mistaken for the venomous Water Moccasin due to its similar appearance",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Beagle Mix",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "Reagles are the best students as they love to learn new tricks, so training them is a breeze.",
+    "traits": [],
+    "source_urls": [
+      "https://a-z-animals.com/animals/beagle-mix/"
+    ],
+    "diet": "Omnivore, eats dog food and table scraps",
+    "lifespan": "12-15 years",
+    "fun_fact": "Beagle mixes are known for their friendly and curious nature, making them great family pets",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  },
+  {
+    "name": "Muskrat",
+    "species": "Animals\n\nBy Starting Letter\nBy Scientific Name\nBy \nBy Location\nEndangered\nAmphibians\nBirds\nFish\nMammals\nReptiles\nReference\nSlideshows",
+    "description": "The muskrat is a feisty rodent that splits its time between water and land.",
+    "traits": {
+      "Kingdom": "Animalia",
+      "Phylum": "Chordata",
+      "Class": "Mammalia",
+      "Order": "Rodentia",
+      "Family": "Cricetidae",
+      "Genus": "Ondatra",
+      "Species": "O. zibethicus",
+      "Binomial name": "Ondatra zibethicus"
+    },
+    "source_urls": [
+      "https://animalcorner.org/animals/muskrat/",
+      "https://a-z-animals.com/animals/muskrat/"
+    ],
+    "diet": "Herbivore, eats aquatic plants and vegetation",
+    "lifespan": "2-3 years",
+    "fun_fact": "Muskrats are well-known for building complex homes out of vegetation and mud, often with underwater entrances",
+    "threat_status": "Least Concern",
+    "source": "AI-enriched"
+  }
+]
