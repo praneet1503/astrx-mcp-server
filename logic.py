@@ -67,7 +67,7 @@ def get_blaxel_key():
     """
     Returns the Blaxel API key if present.
     """
-    key = SESSION_KEYS.get("blaxel")
+    key = SESSION_KEYS.get("blaxel") or os.getenv("BLAXEL_API_KEY")
     if not key:
         raise ValueError("Blaxel API Key is missing.")
     return key
@@ -76,7 +76,7 @@ def get_gemini_key():
     """
     Returns the Google Gemini API key if present.
     """
-    key = SESSION_KEYS.get("gemini")
+    key = SESSION_KEYS.get("gemini") or os.getenv("GEMINI_API_KEY")
     if not key:
         raise ValueError("Google Gemini API Key is missing.")
     return key
