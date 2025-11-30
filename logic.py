@@ -178,80 +178,101 @@ def search_animals(query: str, top_k: int = 15) -> List[Dict[str, Any]]:
         print(f"Error during semantic search: {e}")
         return []
 
-async def query_claude(user_input: str) -> str:
+# --- Model Runners (Stubs) ---
+
+async def run_samba(prompt: str, model_version: str) -> str:
     """
-    Sends the user input and the dataset context to Claude asynchronously.
+    Stub for SambaNova inference.
+    """
+    try:
+        client_info = get_samba_client()
+        # In Phase A.3, we will use client_info['client'] to make the call
+        return f"[SambaNova] Routing successful! Model: {model_version}. (API call not implemented yet)"
+    except ValueError as e:
+        return f"Error: {str(e)}"
+    except Exception as e:
+        return f"SambaNova Error: {str(e)}"
+
+async def run_claude(prompt: str, model_version: str) -> str:
+    """
+    Stub for Anthropic Claude inference.
+    """
+    try:
+        client_info = get_claude_client()
+        # In Phase A.3, we will use client_info['client'] to make the call
+        return f"[Claude] Routing successful! Model: {model_version}. (API call not implemented yet)"
+    except ValueError as e:
+        return f"Error: {str(e)}"
+    except Exception as e:
+        return f"Claude Error: {str(e)}"
+
+async def run_blaxel(prompt: str) -> str:
+    """
+    Stub for Blaxel inference.
+    """
+    try:
+        client_info = get_blaxel_client()
+        # In Phase A.3, we will use client_info['client'] to make the call
+        return "[Blaxel] Routing successful! (API call not implemented yet)"
+    except ValueError as e:
+        return f"Error: {str(e)}"
+    except Exception as e:
+        return f"Blaxel Error: {str(e)}"
+
+def run_local(prompt: str) -> str:
+    """
+    Stub for Local inference.
+    """
+    return "[Local] Routing successful! Using tiny fallback model."
+
+async def run_model(provider: str, user_input: str) -> str:
+    """
+    Unified routing function to dispatch requests to the selected provider.
     """
     if not user_input or not user_input.strip():
         return "Please enter a valid question."
 
-    # Try to get key from session first, then env var
-    api_key = SESSION_KEYS.get("claude") or os.getenv("CLAUDE_API_KEY")
-    
-    if not api_key:
-        return "Error: CLAUDE_API_KEY not found. Please enter it in the Sponsor Keys panel or set it as an environment variable."
-    
+    # 1. Retrieve Context (RAG)
     if not ANIMALS_DATA:
-        return "Error: No animal data loaded. Please check the server logs."
+        return "Error: No animal data loaded."
 
-    # Retrieval Step
     relevant_animals = search_animals(user_input)
-    
     if not relevant_animals:
-        context_str = "No specific animals found matching the query in the dataset."
+        context_str = "No specific animals found matching the query."
     else:
-        # Minify JSON to save tokens
         context_str = json.dumps(relevant_animals, ensure_ascii=False)
 
-    system_prompt = (
-        "You are an expert zoologist assistant. "
-        "You have access to a subset of the animal dataset relevant to the user's query below. "
-        "Your task is to answer the user's question based strictly on this provided data. "
-        "If the answer is not in the data, say so. "
-        "Cite the 'name' of the animal when providing facts.\n\n"
-        f"RELEVANT DATA:\n{context_str}"
+    # 2. Construct Prompt with Context
+    full_prompt = (
+        f"Context:\n{context_str}\n\n"
+        f"User Question: {user_input}\n\n"
+        "Answer based on the context provided."
     )
 
-    headers = {
-        "x-api-key": api_key,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json"
-    }
-
-    payload = {
-        "model": CLAUDE_MODEL,
-        "max_tokens": 1024,
-        "system": system_prompt,
-        "messages": [
-            {"role": "user", "content": user_input}
-        ]
-    }
-
-    # Async HTTP Request
-    async with httpx.AsyncClient() as client:
-        try:
-            response = await client.post(
-                CLAUDE_API_URL, 
-                headers=headers, 
-                json=payload, 
-                timeout=30.0
-            )
+    # 3. Route to Provider
+    try:
+        if provider.startswith("SambaNova"):
+            # Extract version if needed, e.g., "SambaNova – Samba-1" -> "Samba-1"
+            version = provider.split("–")[-1].strip()
+            return await run_samba(full_prompt, version)
+        
+        elif provider.startswith("Claude"):
+            version = provider.split("–")[-1].strip()
+            return await run_claude(full_prompt, version)
+        
+        elif provider.startswith("Blaxel"):
+            return await run_blaxel(full_prompt)
+        
+        elif provider.startswith("Local"):
+            return run_local(full_prompt)
+        
+        else:
+            return f"Error: Unknown provider '{provider}'"
             
-            if response.status_code == 200:
-                result = response.json()
-                content = result.get("content", [])
-                if content and len(content) > 0:
-                    return content[0].get("text", "No text returned.")
-                else:
-                    return "Empty response from Claude."
-            elif response.status_code == 429:
-                return "Error: Rate limit exceeded. Please try again in a moment."
-            else:
-                return f"API Error {response.status_code}: {response.text}"
+    except Exception as e:
+        return f"Routing Error: {str(e)}"
 
-        except httpx.TimeoutException:
-            return "Error: Request timed out. Claude is taking too long to respond."
-        except httpx.RequestError as e:
-            return f"Network Error: {str(e)}"
-        except Exception as e:
-            return f"Unexpected Error: {str(e)}"
+# Deprecated: Kept for backward compatibility if needed, but run_model should be used.
+async def query_claude(user_input: str) -> str:
+    return await run_model("Claude – Haiku", user_input)
+

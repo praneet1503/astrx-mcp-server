@@ -8,7 +8,7 @@ import json
 from dotenv import load_dotenv
 
 # Import logic
-from logic import query_claude, set_animals_data, search_animals, initialize_retriever, save_keys
+from logic import run_model, set_animals_data, search_animals, initialize_retriever, save_keys
 
 # Load environment variables
 load_dotenv()
@@ -61,22 +61,37 @@ def create_gradio_app():
 
         gr.Markdown(
             "Ask questions about the animal dataset! "
-            "This tool uses **Claude 3** to reason over the `animals.json` file."
+            "Choose a model provider below to reason over the `animals.json` file."
         )
         
+        # --- Model Selection ---
+        model_provider = gr.Dropdown(
+            label="Choose Model Provider",
+            choices=[
+                "SambaNova – Samba-1",
+                "SambaNova – Samba-1.1",
+                "Claude – Haiku",
+                "Claude – Sonnet",
+                "Blaxel – MCP Model",
+                "Local – Tiny Model"
+            ],
+            value="Claude – Haiku",
+            interactive=True
+        )
+
         with gr.Row():
             user_input = gr.Textbox(
                 label="Your Question", 
                 placeholder="e.g., Which animals live in the desert? or Tell me about the Golden Retriever."
             )
             
-        submit_btn = gr.Button("Ask Claude", variant="primary")
-        output_box = gr.Textbox(label="Claude's Answer", lines=10)
+        submit_btn = gr.Button("Ask AI", variant="primary")
+        output_box = gr.Textbox(label="AI Answer", lines=10)
         
         # Gradio supports async functions natively
         submit_btn.click(
-            fn=query_claude,
-            inputs=[user_input],
+            fn=run_model,
+            inputs=[model_provider, user_input],
             outputs=output_box
         )
         
