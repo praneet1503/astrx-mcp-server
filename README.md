@@ -1,56 +1,76 @@
 ---
-title: Astrx Mcp Server - Hackathon Space Submission
-emoji: 🚀
-colorFrom: blue
-colorTo: green
-sdk: docker
+title: Astrx MCP Server
+emoji: 🦁
+colorFrom: indigo
+colorTo: purple
+sdk: gradio
+sdk_version: 4.19.2
+app_file: app.py
 pinned: false
 license: mit
-short_description: Sample space with tags for MCP 1st Birthday party
 tags:
-  - building-mcp-track-consumer
+  - mcp
+  - rag
+  - sambanova
+  - modal
+  - animals
 ---
-## 🤖 Automation Pipeline
 
-This repository includes a GitHub Action workflow to automate data scraping and deployment.
+# 🦁 Astrx MCP Server
 
-### Setup
+**A high-performance, multi-model RAG system for animal knowledge.**
 
-1. **Modal Secrets**:
-   - Go to your GitHub Repository Settings > Secrets and variables > Actions.
-   - Add the following secrets:
-     - `MODAL_TOKEN_ID`: Your Modal Token ID.
-     - `MODAL_TOKEN_SECRET`: Your Modal Token Secret.
+This project combines a massive dataset of 19,000+ animals with cutting-edge LLMs to provide accurate, cited answers. It features a custom parallel web scraper and an AI-powered data enrichment pipeline.
 
-2. **Hugging Face Sync (Optional)**:
-   - If you want to sync the data to a Hugging Face Space automatically:
-     - Add `HF_TOKEN`: Your Hugging Face Write Token.
-     - `HF_SPACE_REPO`: The repository ID of your Space (e.g., `username/space-name`).
+## 🚀 Key Features
 
-3. **Hugging Face Space Configuration**:
-   - Go to your Space's **Settings** tab.
-   - Scroll down to **Variables and secrets**.
-   - Click **New secret**.
-   - Name: `CLAUDE_API_KEY`
-   - Value: Your Anthropic API Key (starts with `sk-ant-...`).
+*   **⚡ SambaNova Cloud Integration**: Blazing fast inference using **Llama 3.3 70B**, **DeepSeek R1**, and **DeepSeek V3**.
+*   **🕷️ Parallel Scraping Engine**: Built on **Modal** to scrape thousands of pages concurrently from A-Z Animals and other sources.
+*   **🧠 Multi-Provider Support**: Seamlessly switch between **SambaNova**, **Anthropic (Claude)**, **Google (Gemini)**, and **Blaxel**.
+*   **🔍 Hybrid RAG**: Combines semantic search (SentenceTransformers) with keyword fallback for precise retrieval.
+*   **💎 AI-Enriched Data**: Dataset automatically enriched with diet, lifespan, and threat status using Llama 3.1.
 
-### Workflow
+## 🎮 How to Use
 
-The workflow runs automatically every Sunday at midnight or can be triggered manually.
-1. Runs the Modal scraper.
-2. Validates the generated `animals.json`.
-3. Archives the data to `data/versions/`.
-4. Commits and pushes the changes to the repository.
-5. (Optional) Uploads the data to the configured HF Space.
+1.  **Enter API Key**: Input your **SambaNova API Key** (recommended for best performance) or keys for other providers.
+2.  **Select Model**: Choose a specific model (e.g., `DeepSeek-R1-Distill-Llama-70B` or `Meta-Llama-3.3-70B`).
+3.  **Ask Anything**: Query the system (e.g., *"What is the diet of a Snow Leopard?"*).
+4.  **View Context**: See exactly which database entries were used to generate the answer.
 
-## 🧠 Data Enrichment
+## 🛠️ Environment Variables
 
-To enrich the dataset with missing fields (diet, lifespan, fun_fact, threat_status), use the provided Modal script.
+To run locally or deploy, set these in your `.env` or Space secrets:
 
-```bash
-export SAMBANOVA_API_KEY="your_api_key_here"
-modal run scripts/enrich_animals_modal.py
+*   `SAMBANOVA_API_KEY`: Primary inference provider.
+*   `CLAUDE_API_KEY`: For Anthropic models.
+*   `GEMINI_API_KEY`: For Google models.
+*   `BLAXEL_API_KEY`: For Blaxel serverless agents.
+*   `MODAL_TOKEN_ID` / `MODAL_TOKEN_SECRET`: Required for running the scraper or remote embeddings.
+
+## 🧩 Architecture
+
+*   **Frontend**: Built with **Gradio** for a responsive chat interface.
+*   **Logic Core (`logic.py`)**: Handles request routing, RAG retrieval, and prompt engineering.
+*   **Data Pipeline**:
+    *   `local_scraper/`: Async Playwright scraper running on Modal.
+    *   `scripts/enrich_animals_modal.py`: Massively parallel data enrichment script.
+    *   `data/animals.json`: The source of truth (19k+ records).
+
+## 👩‍💻 Developer Usage
+
+Run the RAG logic programmatically:
+
+```python
+from logic import search_animals, run_samba
+
+# 1. Retrieve Context
+context_docs = await search_animals("Tiger diet", top_k=3)
+
+# 2. Generate Answer
+context_str = "\n".join([str(d) for d in context_docs])
+prompt = f"Context: {context_str}\n\nQuestion: What do tigers eat?"
+response = await run_samba(prompt, model_choice="Meta-Llama-3.3-70B-Instruct")
+
+print(response)
 ```
-
-This script uses SambaNova's Llama 3.1 8B model to efficiently process thousands of records in parallel.
 
