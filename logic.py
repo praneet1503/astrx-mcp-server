@@ -229,7 +229,8 @@ async def run_samba(prompt: str, model_version: str) -> str:
         model = "Meta-Llama-3.1-70B-Instruct"
         
     # 3. Prepare Request
-    url = "https://api.sambanova.ai/v1/chat/completions"
+    # Updated endpoint to fast-api.snova.ai as api.sambanova.ai might be returning 410
+    url = "https://fast-api.snova.ai/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
