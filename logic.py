@@ -14,6 +14,18 @@ CLAUDE_API_URL = "https://api.anthropic.com/v1/messages"
 CLAUDE_MODEL = "claude-3-haiku-20240307"
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 
+SYSTEM_PROMPT = """
+You are a knowledgeable AI assistant specialized in animals. 
+When answering user queries, follow these steps:
+
+1. First, check all available datasets (merged animals.json + any enriched datasets) for relevant information.
+2. Use the dataset information to answer factual parts of the query.
+3. If the dataset does not fully answer the query, use your internal knowledge to provide a complete answer.
+4. Clearly indicate which parts of your answer come from the dataset and which parts are generated from your knowledge.
+5. Provide concise, readable, and structured answers.
+6. Include relevant traits, diet, habitat, and fun facts from datasets where available.
+"""
+
 # --- Global State ---
 ANIMALS_DATA: List[Dict[str, Any]] = []
 ANIMAL_EMBEDDINGS = None
@@ -618,18 +630,37 @@ async def run_model(
         # Add source info to context
         source_label = relevant_animals[0].get('_source', 'Unknown Source')
         
-        # Format as readable text instead of JSON for better fallback visibility
+        # Format as readable text with key fields
         formatted_context = []
         for idx, animal in enumerate(relevant_animals):
-            formatted_context.append(f"{idx+1}. **{animal.get('name', 'Unknown')}**: {animal.get('description', '')[:300]}...")
+            info = f"{idx+1}. **{animal.get('name', 'Unknown')}**\n"
+            if animal.get('description'):
+                info += f"   - Description: {animal.get('description')}\n"
+            if animal.get('diet'):
+                info += f"   - Diet: {animal.get('diet')}\n"
+            if animal.get('habitat'):
+                info += f"   - Habitat: {animal.get('habitat')}\n"
+            if animal.get('traits'):
+                info += f"   - Traits: {animal.get('traits')}\n"
+            if animal.get('fun_fact'):
+                info += f"   - Fun Fact: {animal.get('fun_fact')}\n"
+            
+            # Add physiological data if present
+            physio = []
+            if animal.get('body_mass'): physio.append(f"Mass: {animal.get('body_mass')}g")
+            if animal.get('metabolic_rate'): physio.append(f"Metabolic Rate: {animal.get('metabolic_rate')}W")
+            if physio:
+                info += f"   - Physiology: {', '.join(physio)}\n"
+                
+            formatted_context.append(info)
         
         context_str = f"**Search Source:** {source_label}\n\n" + "\n".join(formatted_context)
 
     # 2. Construct Prompt with Context
     full_prompt = (
-        f"Context:\n{context_str}\n\n"
-        f"User Question: {user_input}\n\n"
-        "Answer based on the context provided."
+        f"{SYSTEM_PROMPT}\n\n"
+        f"[Dataset Context]:\n{context_str}\n\n"
+        f"[User Query]:\n{user_input}\n"
     )
 
     # 3. Prepare Blaxel Task (if enabled)
