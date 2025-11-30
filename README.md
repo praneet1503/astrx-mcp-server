@@ -17,6 +17,7 @@ tags:
   - anthropic
   - modal
   - animals
+  - building-mcp-track-consumer
 ---
 
 # 🦁 Astrx MCP Server
