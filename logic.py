@@ -22,10 +22,11 @@ SESSION_KEYS = {
     "samba": None,
     "claude": None,
     "modal": None,
-    "blaxel": None
+    "blaxel": None,
+    "gemini": None
 }
 
-def save_keys(samba_key: str, claude_key: str, modal_key: str, blaxel_key: str) -> str:
+def save_keys(samba_key: str, claude_key: str, modal_key: str, blaxel_key: str, gemini_key: str) -> str:
     """
     Saves the provided API keys to the session storage.
     """
@@ -34,6 +35,7 @@ def save_keys(samba_key: str, claude_key: str, modal_key: str, blaxel_key: str) 
     SESSION_KEYS["claude"] = claude_key if claude_key and claude_key.strip() else None
     SESSION_KEYS["modal"] = modal_key if modal_key and modal_key.strip() else None
     SESSION_KEYS["blaxel"] = blaxel_key if blaxel_key and blaxel_key.strip() else None
+    SESSION_KEYS["gemini"] = gemini_key if gemini_key and gemini_key.strip() else None
     
     return "Keys Saved Securely (Session Only)"
 
@@ -68,6 +70,15 @@ def get_blaxel_key():
     key = SESSION_KEYS.get("blaxel")
     if not key:
         raise ValueError("Blaxel API Key is missing.")
+    return key
+
+def get_gemini_key():
+    """
+    Returns the Google Gemini API key if present.
+    """
+    key = SESSION_KEYS.get("gemini")
+    if not key:
+        raise ValueError("Google Gemini API Key is missing.")
     return key
 
 def initialize_retriever():
@@ -287,6 +298,37 @@ async def run_claude(prompt: str, model_version: str) -> str:
     # 5. Format Output
     return f"**Powered by Claude**\n\n{text}"
 
+async def run_gemini(prompt: str) -> str:
+    """
+    Executes the prompt using Google's Gemini API via httpx.
+    """
+    try:
+        api_key = get_gemini_key()
+        
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={api_key}"
+        headers = {"Content-Type": "application/json"}
+        payload = {
+            "contents": [{
+                "parts": [{"text": prompt}]
+            }]
+        }
+        
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(url, headers=headers, json=payload)
+            response.raise_for_status()
+            result = response.json()
+            # Extract text from Gemini response structure
+            text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response text found.")
+            
+        return f"**Powered by Google Gemini**\n\n{text}"
+            
+    except ValueError as e:
+        return f"Configuration Error: {str(e)}"
+    except httpx.HTTPStatusError as e:
+        return f"Gemini API Error: {e.response.text}"
+    except Exception as e:
+        return f"Gemini Error: {str(e)}"
+
 async def run_blaxel(prompt: str) -> str:
     """
     Executes the prompt using Blaxel's API via httpx.
@@ -368,24 +410,29 @@ async def run_model(provider: str, user_input: str) -> str:
             version = provider.split("–")[-1].strip()
             try:
                 return await run_claude(full_prompt, version)
-            except httpx.HTTPStatusError as e:
-                # Specific handling for HTTP errors to show response body
-                error_detail = e.response.text
-                print(f"Claude API failed: {e} - {error_detail}")
-                return (
-                    f"**Powered by Claude** (Unavailable)\n\n"
-                    f"Claude is unavailable: {str(e)}\n"
-                    f"Details: {error_detail}\n\n"
-                    f"Showing keyword search result instead:\n\n{context_str}"
-                )
             except Exception as e:
-                # Fallback for Claude
-                print(f"Claude API failed: {e}")
-                return (
-                    f"**Powered by Claude** (Unavailable)\n\n"
-                    f"Claude is unavailable: {str(e)}\n\n"
-                    f"Showing keyword search result instead:\n\n{context_str}"
-                )
+                # Fallback Logic: Try SambaNova if Claude fails
+                print(f"Claude API failed: {e}. Attempting fallback to SambaNova...")
+                try:
+                    # Fallback to a capable SambaNova model (Llama 3.1 70B)
+                    fallback_result = await run_samba(full_prompt, "Llama 3.1 70B")
+                    return (
+                        f"**Powered by SambaNova Cloud** (Fallback from Claude)\n"
+                        f"*(Claude unavailable: {str(e)})*\n\n"
+                        f"{fallback_result.replace('**Powered by SambaNova Cloud**', '').strip()}"
+                    )
+                except Exception as samba_e:
+                    # If fallback also fails, show keyword search
+                    return (
+                        f"**Powered by Claude** (Unavailable)\n"
+                        f"**Fallback to SambaNova** (Unavailable)\n\n"
+                        f"Claude Error: {str(e)}\n"
+                        f"SambaNova Error: {str(samba_e)}\n\n"
+                        f"Showing keyword search result instead:\n\n{context_str}"
+                    )
+        
+        elif provider.startswith("Google Gemini"):
+            return await run_gemini(full_prompt)
         
         elif provider.startswith("Blaxel"):
             return await run_blaxel(full_prompt)

@@ -49,13 +49,15 @@ def create_gradio_app():
             with gr.Row():
                 modal_key = gr.Textbox(label="Modal Token (ID:Secret) (Optional)", type="password", placeholder="e.g., ak-123:as-456")
                 blaxel_key = gr.Textbox(label="Blaxel API Key (Optional)", type="password", placeholder="Enter key...")
+            with gr.Row():
+                gemini_key = gr.Textbox(label="Google Gemini API Key (Optional)", type="password", placeholder="Enter key...")
             
             save_keys_btn = gr.Button("Save Keys", variant="secondary")
             key_status = gr.Markdown("")
 
             save_keys_btn.click(
                 fn=save_keys,
-                inputs=[samba_key, claude_key, modal_key, blaxel_key],
+                inputs=[samba_key, claude_key, modal_key, blaxel_key, gemini_key],
                 outputs=[key_status]
             )
 
@@ -73,6 +75,7 @@ def create_gradio_app():
                 "SambaNova (Optional) – Llama 3.1 405B",
                 "Claude (Necessary) – Haiku",
                 "Claude (Necessary) – Sonnet 3.5",
+                "Google Gemini (Optional) – Pro",
                 "Blaxel (Optional) – MCP Model",
                 "Local (Optional) – Tiny Model"
             ],
