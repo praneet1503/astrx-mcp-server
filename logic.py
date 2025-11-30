@@ -460,7 +460,7 @@ async def run_claude(prompt: str, model_version: str) -> str:
         raise e
         
     # 5. Format Output
-    return f"### 🧠 Powered by Anthropic Claude\n\n{text}"
+    return text
 
 # --- Google Model Mapping ---
 # Maps UI labels to the exact API IDs provided by the user.
@@ -470,16 +470,14 @@ GOOGLE_MODEL_MAP = {
     "Gemini 2.5 Flash": "gemini-2.5-flash",
     "Gemini 2.5 Flash-Lite": "gemini-2.5-flash-lite",
     "Gemini 2.5 Flash Image": "gemini-2.5-flash-image",
-    "Gemma 3": "gemma-3",
-    "Gemma 3n": "gemma-3n",
-    "Gemma 2 27b": "gemma-2-27b",
-    "Gemma 2 9b": "gemma-2-9b"
+    "Gemini 2.0 Flash": "gemini-2.0-flash",
+    "Gemini 2.0 Flash-Lite": "gemini-2.0-flash-lite"
 }
 
 async def run_gemini(prompt: str, model_version: str) -> str:
     """
     Executes the prompt using Google's Gemini API via httpx.
-    Supports the new Gemini 2.5/3.0 and Gemma models.
+    Supports the new Gemini 2.5/3.0 models.
     """
     try:
         api_key, is_demo = get_gemini_key()
@@ -540,7 +538,7 @@ async def run_gemini(prompt: str, model_version: str) -> str:
             # Extract text from Gemini response structure
             text = result.get("candidates", [{}])[0].get("content", {}).get("parts", [{}])[0].get("text", "No response text found.")
             
-        return f"### 💎 Powered by Google ({model_version})\n\n{text}"
+        return text
             
     except ValueError as e:
         return f"Configuration Error: {str(e)}"

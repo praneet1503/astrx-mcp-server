@@ -59,7 +59,7 @@ def create_gradio_app():
         gr.Markdown("# 🚀 Astrx MCP Server")
         
         # --- Sponsor API Keys Panel ---
-        with gr.Accordion("🔑 Sponsor API Keys (Session Only)", open=True):
+        with gr.Accordion("🔑 API Keys (Session Only)", open=True):
             gr.Markdown(
                 "Enter your API keys below. They are stored in memory for this session only and are **not** saved to disk.\n\n"
                 "**Note:** If you leave a field blank, the system will attempt to use a **Demo Key** (if available). "
@@ -104,13 +104,10 @@ def create_gradio_app():
                 # Google - High-Speed
                 "Google – Gemini 2.5 Flash",
                 "Google – Gemini 2.5 Flash-Lite",
+                "Google – Gemini 2.0 Flash",
+                "Google – Gemini 2.0 Flash-Lite",
                 # Google - Specialized
                 "Google – Gemini 2.5 Flash Image",
-                # Google - Open Hosted
-                "Google – Gemma 3",
-                "Google – Gemma 3n",
-                "Google – Gemma 2 27b",
-                "Google – Gemma 2 9b",
                 "Blaxel – MCP Model",
                 "Local – Tiny Model"
             ],
@@ -166,9 +163,9 @@ def create_gradio_app():
             "### 🏆 Hackathon Sponsors\n"
             "- **SambaNova Cloud**: Fast inference for Llama 3.1 & 3.3 models.\n"
             "- **Anthropic Claude**: High-intelligence reasoning.\n"
-            "- **Google Gemini**: Multimodal capabilities.\n"
             "- **Blaxel**: Serverless agent hosting & suggestions.\n"
-            "- **Modal**: Serverless GPU embeddings."
+            "- **Modal**: Serverless GPU embeddings.\n\n"
+            "*(Google Gemini is also supported as a model provider)*"
         )
         gr.Markdown(f"**Status:** Server Ready.")
     return demo
