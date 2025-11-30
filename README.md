@@ -4,20 +4,20 @@ emoji: 🦁
 colorFrom: indigo
 colorTo: purple
 sdk: gradio
-sdk_version: 4.19.2
+sdk_version: 6.0.1
 app_file: app.py
 pinned: false
 license: mit
 tags:
-  - mcp
-  - rag
-  - sambanova
-  - google
-  - gemini
-  - anthropic
-  - modal
-  - animals
-  - building-mcp-track-consumer
+- mcp
+- rag
+- sambanova
+- google
+- gemini
+- anthropic
+- modal
+- animals
+- building-mcp-track-consumer
 ---
 
 # 🦁 Astrx MCP Server
@@ -175,10 +175,9 @@ Contributions are welcome! Please follow these steps:
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **Apache License**.
 
 ---
 
 **Built with ❤️ for the MCP Hackathon.**
 *Powered by SambaNova, Google Gemini, Anthropic, Blaxel, and Modal.*
-
